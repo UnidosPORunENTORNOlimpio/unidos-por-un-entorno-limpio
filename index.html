@@ -1,497 +1,428 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidos por un Entorno Limpio 🌱</title>
 
-  <title>Unidos por un Entorno Limpio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5fbeF;
+            color: #29432d;
+            line-height: 1.6;
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        header {
+            background: linear-gradient(135deg, #a8d5ba, #d8efc8);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        }
 
-    body {
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      background: #f5fbe9;
-      color: #35543b;
-      transition: 0.5s;
-    }
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
 
-    /* ---------- BARRA SUPERIOR ---------- */
+        nav a {
+            text-decoration: none;
+            color: #29432d;
+            font-weight: bold;
+            margin: 0 8px;
+        }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 18px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(12px);
-    }
+        nav a:hover {
+            color: #558b5b;
+        }
 
-    .logo {
-      font-weight: bold;
-      font-size: 20px;
-    }
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #e5f5dc, #ffffff);
+        }
 
-    .style-button {
-      border: none;
-      padding: 10px 16px;
-      border-radius: 30px;
-      background: #dcefc8;
-      color: #35543b;
-      cursor: pointer;
-      font-weight: bold;
-    }
+        .hero-content {
+            max-width: 800px;
+        }
 
-    .style-menu {
-      display: none;
-      position: absolute;
-      right: 7%;
-      top: 65px;
-      background: white;
-      border-radius: 20px;
-      padding: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    }
+        .mascota {
+            font-size: 100px;
+            margin-bottom: 10px;
+        }
 
-    .style-menu button {
-      display: block;
-      width: 150px;
-      border: none;
-      background: transparent;
-      padding: 10px;
-      border-radius: 12px;
-      cursor: pointer;
-      text-align: left;
-    }
+        .hero h2 {
+            font-size: 45px;
+            color: #3d7044;
+            margin-bottom: 15px;
+        }
 
-    .style-menu button:hover {
-      background: #eef8df;
-    }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
 
-    /* ---------- PORTADA ---------- */
+        .boton {
+            display: inline-block;
+            background: #6fa873;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 120px 20px 60px;
-      position: relative;
-      overflow: hidden;
-    }
+        .boton:hover {
+            transform: scale(1.05);
+            background: #4f8a56;
+        }
 
-    .hero-content {
-      max-width: 850px;
-      animation: aparecer 1.5s ease;
-    }
+        section {
+            padding: 70px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-    .mascot {
-      font-size: 90px;
-      margin-bottom: 15px;
-      animation: flotar 3s ease-in-out infinite;
-    }
+        section h2 {
+            text-align: center;
+            color: #3d7044;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
 
-    .small-title {
-      font-size: 18px;
-      letter-spacing: 3px;
-      margin-bottom: 18px;
-      opacity: 0.75;
-    }
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+        }
 
-    h1 {
-      font-size: clamp(42px, 8vw, 85px);
-      line-height: 0.95;
-      margin-bottom: 25px;
-    }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin-top: 35px;
+        }
 
-    .question {
-      font-size: clamp(22px, 4vw, 35px);
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
 
-    .description {
-      max-width: 600px;
-      margin: auto;
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 35px;
-    }
+        .card:hover {
+            transform: translateY(-6px);
+        }
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+        .card h3 {
+            color: #4f8a56;
+            margin-bottom: 10px;
+        }
 
-    .button {
-      text-decoration: none;
-      padding: 15px 25px;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
-    }
+        .emoji {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
 
-    .primary {
-      background: #6fae61;
-      color: white;
-    }
+        .planta {
+            background: #e8f5df;
+            border-radius: 25px;
+            padding: 30px;
+            margin-top: 30px;
+        }
 
-    .secondary {
-      background: white;
-      color: #4e784e;
-      border: 2px solid #c8dfb8;
-    }
+        .dato {
+            background: #fff8d9;
+            border-left: 7px solid #d7b94c;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
 
-    .button:hover {
-      transform: translateY(-5px) scale(1.03);
-    }
+        .compromiso {
+            background: linear-gradient(135deg, #d8efc8, #b7dfc0);
+            text-align: center;
+            border-radius: 30px;
+            padding: 45px 25px;
+        }
 
-    /* ---------- HOJITAS ---------- */
+        .compromiso h2 {
+            color: #315c38;
+        }
 
-    .leaf {
-      position: absolute;
-      font-size: 30px;
-      opacity: 0.55;
-      animation: flotar 4s ease-in-out infinite;
-    }
+        footer {
+            background: #29432d;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 30px;
+        }
 
-    .leaf1 {
-      left: 8%;
-      top: 30%;
-    }
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 32px;
+            }
 
-    .leaf2 {
-      right: 10%;
-      top: 25%;
-      animation-delay: 1s;
-    }
+            .mascota {
+                font-size: 75px;
+            }
 
-    .leaf3 {
-      left: 15%;
-      bottom: 15%;
-      animation-delay: 2s;
-    }
-
-    .leaf4 {
-      right: 15%;
-      bottom: 20%;
-      animation-delay: 1.5s;
-    }
-
-    /* ---------- SEGUNDA SECCIÓN ---------- */
-
-    .section {
-      padding: 100px 8%;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .section p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .cards {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-      margin-top: 50px;
-    }
-
-    .card {
-      background: white;
-      width: 260px;
-      padding: 30px;
-      border-radius: 25px;
-      box-shadow: 0 10px 30px rgba(60,100,60,0.08);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-    }
-
-    .card-icon {
-      font-size: 45px;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-    }
-
-    /* ---------- ANIMACIONES ---------- */
-
-    @keyframes aparecer {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes flotar {
-      0%, 100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-12px);
-      }
-    }
-
-    /* ---------- TEMAS ---------- */
-
-    body.natural {
-      background: #eef4e8;
-      color: #314b35;
-    }
-
-    body.urbano {
-      background: #e9f0f2;
-      color: #263b43;
-    }
-
-    body.dark {
-      background: #17211a;
-      color: #e9f5e6;
-    }
-
-    body.dark nav {
-      background: rgba(23,33,26,0.85);
-    }
-
-    body.dark .style-menu,
-    body.dark .card {
-      background: #243328;
-      color: #e9f5e6;
-    }
-
-    body.dark .secondary {
-      background: #243328;
-      color: white;
-    }
-
-    /* ---------- CELULAR ---------- */
-
-    @media (max-width: 600px) {
-      nav {
-        padding: 15px 5%;
-      }
-
-      .logo {
-        font-size: 15px;
-      }
-
-      .mascot {
-        font-size: 70px;
-      }
-
-      .description {
-        font-size: 16px;
-      }
-
-      .section h2 {
-        font-size: 32px;
-      }
-    }
-  </style>
+            nav a {
+                display: inline-block;
+                margin: 4px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- BARRA SUPERIOR -->
+<header>
+    <h1>🌱 Unidos por un Entorno Limpio</h1>
 
-  <nav>
-    <div class="logo">🌱 Unidos por un Entorno Limpio</div>
-
-    <div>
-      <button class="style-button" onclick="mostrarTemas()">
-        🎨 Cambiar estilo
-      </button>
-
-      <div class="style-menu" id="styleMenu">
-        <button onclick="cambiarTema('cute')">🌸 Cute</button>
-        <button onclick="cambiarTema('natural')">🌿 Natural</button>
-        <button onclick="cambiarTema('urbano')">⚡ Urbano</button>
-        <button onclick="cambiarTema('dark')">🌙 Dark</button>
-      </div>
-    </div>
-  </nav>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#yura">Yura</a>
+        <a href="#plantas">Plantas</a>
+        <a href="#cuidemos">Cuidemos</a>
+        <a href="#sabias">¿Sabías que?</a>
+    </nav>
+</header>
 
 
-  <!-- PORTADA -->
-
-  <section class="hero">
-
-    <div class="leaf leaf1">🌿</div>
-    <div class="leaf leaf2">🍃</div>
-    <div class="leaf leaf3">🌱</div>
-    <div class="leaf leaf4">🍀</div>
+<section class="hero" id="inicio">
 
     <div class="hero-content">
 
-      <!-- TEMPORALMENTE USAMOS UN EMOJI -->
-      <!-- Luego pondremos aquí nuestro Pompompurin -->
+        <div class="mascota">🐶🌱</div>
 
-      <div class="mascot">🐶</div>
+        <h2>Unidos por un Entorno Limpio</h2>
 
-      <div class="small-title">
-        UNA INICIATIVA PARA NUESTRA COMUNIDAD
-      </div>
+        <p>
+            Pequeñas acciones pueden proteger nuestra naturaleza,
+            nuestra comunidad y el lugar que llamamos hogar.
+        </p>
 
-      <div class="question">
-        MIRA A TU ALREDEDOR.
-      </div>
-
-      <h1>
-        ¿Hay algo<br>
-        que podría ser mejor?
-      </h1>
-
-      <p class="description">
-        Nosotros creemos que sí. 🌱
-        Unidos por un Entorno Limpio nace para transformar
-        la preocupación por nuestro entorno en acciones reales.
-      </p>
-
-      <div class="buttons">
-
-        <a href="#proyecto" class="button primary">
-          🌎 Descubre el proyecto
-        </a>
-
-        <a href="#participar" class="button secondary">
-          🤝 Quiero participar
-        </a>
-
-      </div>
+        <a href="#yura" class="boton">Conoce nuestro entorno 🌿</a>
+        <a href="#compromiso" class="boton">Únete 💚</a>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- INTRODUCCIÓN -->
+<section id="yura">
 
-  <section class="section" id="proyecto">
+    <h2>🌄 Conoce Yura</h2>
 
-    <h2>
-      Todo comenzó con una pregunta...
-    </h2>
-
-    <p>
-      ¿Por qué esperar a que alguien cambie nuestro entorno
-      si podemos empezar nosotros?
+    <p class="intro">
+        Yura posee paisajes, plantas y ecosistemas que forman parte
+        de nuestra identidad. Aunque vivimos en una zona donde el agua
+        es un recurso muy importante, la naturaleza se ha adaptado
+        de maneras sorprendentes.
     </p>
 
     <div class="cards">
 
-      <div class="card">
-        <div class="card-icon">👀</div>
-        <h3>Observamos</h3>
-        <p>
-          Identificamos espacios que necesitan atención.
-        </p>
-      </div>
+        <div class="card">
+            <div class="emoji">🌵</div>
+            <h3>Naturaleza</h3>
+            <p>
+                Nuestra zona posee especies vegetales capaces de
+                sobrevivir en condiciones secas y con poca disponibilidad
+                de agua.
+            </p>
+        </div>
 
-      <div class="card">
-        <div class="card-icon">📢</div>
-        <h3>Reportamos</h3>
-        <p>
-          La comunidad puede avisarnos dónde hace falta ayuda.
-        </p>
-      </div>
+        <div class="card">
+            <div class="emoji">💧</div>
+            <h3>El agua importa</h3>
+            <p>
+                Cuidar el agua también significa cuidar los suelos,
+                las plantas, los animales y a las personas.
+            </p>
+        </div>
 
-      <div class="card">
-        <div class="card-icon">🧹</div>
-        <h3>Actuamos</h3>
-        <p>
-          Organizamos acciones para recuperar nuestros espacios.
-        </p>
-      </div>
+        <div class="card">
+            <div class="emoji">🌎</div>
+            <h3>Nuestro hogar</h3>
+            <p>
+                Proteger nuestro entorno empieza por conocerlo,
+                valorarlo y participar activamente en su cuidado.
+            </p>
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- PARTICIPAR -->
+<section id="plantas">
 
-  <section class="section" id="participar">
+    <h2>🌿 Plantas de nuestra zona</h2>
 
-    <h2>💚 Tú también puedes ser parte</h2>
-
-    <p>
-      No necesitas esperar a que alguien más comience.
-      Una pequeña acción puede inspirar muchas más.
+    <p class="intro">
+        Algunas plantas que crecen en zonas áridas pueden parecer
+        simples, pero cumplen funciones importantes dentro del
+        ecosistema.
     </p>
 
-    <br><br>
+    <div class="planta">
 
-    <a href="#" class="button primary">
-      🌱 Quiero unirme
-    </a>
+        <h3>🌼 Encelia farinosa</h3>
 
-  </section>
+        <p>
+            La <i>Encelia farinosa</i> es una planta adaptada a ambientes
+            áridos. Sus características le permiten sobrevivir donde
+            otras especies tendrían dificultades.
+        </p>
+
+        <br>
+
+        <p>
+            Conocer las especies de nuestro entorno nos ayuda a
+            comprender por qué es importante evitar la destrucción
+            innecesaria de la vegetación.
+        </p>
+
+        <br>
+
+        <p>
+            🌱 <strong>Conocer → Valorar → Proteger</strong>
+        </p>
+
+    </div>
+
+</section>
 
 
-  <script>
+<section id="cuidemos">
 
-    function mostrarTemas() {
-      const menu = document.getElementById("styleMenu");
+    <h2>♻️ Cuidemos nuestro entorno</h2>
 
-      if (menu.style.display === "block") {
-        menu.style.display = "none";
-      } else {
-        menu.style.display = "block";
-      }
-    }
+    <div class="cards">
 
-    function cambiarTema(tema) {
+        <div class="card">
+            <div class="emoji">🔥</div>
+            <h3>Evitemos las quemas</h3>
+            <p>
+                Quemar vegetación puede afectar plantas, animales,
+                suelo y calidad del aire.
+            </p>
+        </div>
 
-      document.body.classList.remove(
-        "natural",
-        "urbano",
-        "dark"
-      );
+        <div class="card">
+            <div class="emoji">🗑️</div>
+            <h3>No dejemos basura</h3>
+            <p>
+                Los residuos abandonados pueden permanecer durante
+                mucho tiempo en el ambiente y afectar a otros seres vivos.
+            </p>
+        </div>
 
-      if (tema !== "cute") {
-        document.body.classList.add(tema);
-      }
+        <div class="card">
+            <div class="emoji">🌱</div>
+            <h3>Protejamos las plantas</h3>
+            <p>
+                No arrancar ni destruir plantas innecesariamente
+                es una forma sencilla de cuidar nuestro entorno.
+            </p>
+        </div>
 
-      document.getElementById("styleMenu").style.display = "none";
-    }
+        <div class="card">
+            <div class="emoji">💧</div>
+            <h3>Cuidemos el agua</h3>
+            <p>
+                Utilicemos el agua de manera responsable, especialmente
+                en zonas donde este recurso es limitado.
+            </p>
+        </div>
 
-  </script>
+    </div>
+
+</section>
+
+
+<section id="sabias">
+
+    <h2>💡 ¿Sabías que...?</h2>
+
+    <div class="dato">
+        🌵 Las plantas de zonas áridas poseen adaptaciones que les
+        permiten enfrentar condiciones de poca disponibilidad de agua.
+    </div>
+
+    <div class="dato">
+        🌱 La vegetación forma parte del equilibrio de los ecosistemas
+        y proporciona refugio y recursos para otros organismos.
+    </div>
+
+    <div class="dato">
+        💧 En lugares secos, conservar la humedad del suelo puede ser
+        especialmente importante para el desarrollo de las plantas.
+    </div>
+
+</section>
+
+
+<section id="compromiso">
+
+    <div class="compromiso">
+
+        <h2>💚 Nuestro compromiso</h2>
+
+        <p>
+            No necesitamos hacer algo enorme para comenzar.
+            Podemos empezar con una acción pequeña:
+            no tirar basura, cuidar una planta, ahorrar agua
+            o enseñar a alguien más a proteger nuestro entorno.
+        </p>
+
+        <br>
+
+        <h3>
+            🌎 "El cambio comienza con nosotros."
+        </h3>
+
+        <br>
+
+        <a href="#inicio" class="boton">Volver al inicio ↑</a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>🌱 Unidos por un Entorno Limpio</p>
+
+    <p>Yura, Arequipa 🇵🇪</p>
+
+    <p>Juntos podemos cuidar nuestro hogar. 💚</p>
+
+</footer>
 
 </body>
 </html>
+```
