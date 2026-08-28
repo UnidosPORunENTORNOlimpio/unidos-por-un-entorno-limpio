@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Unidos por un Entorno Limpio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background: #f5fbe9;
+      color: #35543b;
+      transition: 0.5s;
+    }
+
+    /* ---------- BARRA SUPERIOR ---------- */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .style-button {
+      border: none;
+      padding: 10px 16px;
+      border-radius: 30px;
+      background: #dcefc8;
+      color: #35543b;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .style-menu {
+      display: none;
+      position: absolute;
+      right: 7%;
+      top: 65px;
+      background: white;
+      border-radius: 20px;
+      padding: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .style-menu button {
+      display: block;
+      width: 150px;
+      border: none;
+      background: transparent;
+      padding: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .style-menu button:hover {
+      background: #eef8df;
+    }
+
+    /* ---------- PORTADA ---------- */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      animation: aparecer 1.5s ease;
+    }
+
+    .mascot {
+      font-size: 90px;
+      margin-bottom: 15px;
+      animation: flotar 3s ease-in-out infinite;
+    }
+
+    .small-title {
+      font-size: 18px;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+      opacity: 0.75;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 85px);
+      line-height: 0.95;
+      margin-bottom: 25px;
+    }
+
+    .question {
+      font-size: clamp(22px, 4vw, 35px);
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      max-width: 600px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      text-decoration: none;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .primary {
+      background: #6fae61;
+      color: white;
+    }
+
+    .secondary {
+      background: white;
+      color: #4e784e;
+      border: 2px solid #c8dfb8;
+    }
+
+    .button:hover {
+      transform: translateY(-5px) scale(1.03);
+    }
+
+    /* ---------- HOJITAS ---------- */
+
+    .leaf {
+      position: absolute;
+      font-size: 30px;
+      opacity: 0.55;
+      animation: flotar 4s ease-in-out infinite;
+    }
+
+    .leaf1 {
+      left: 8%;
+      top: 30%;
+    }
+
+    .leaf2 {
+      right: 10%;
+      top: 25%;
+      animation-delay: 1s;
+    }
+
+    .leaf3 {
+      left: 15%;
+      bottom: 15%;
+      animation-delay: 2s;
+    }
+
+    .leaf4 {
+      right: 15%;
+      bottom: 20%;
+      animation-delay: 1.5s;
+    }
+
+    /* ---------- SEGUNDA SECCIÓN ---------- */
+
+    .section {
+      padding: 100px 8%;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: white;
+      width: 260px;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(60,100,60,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card-icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* ---------- ANIMACIONES ---------- */
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes flotar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    /* ---------- TEMAS ---------- */
+
+    body.natural {
+      background: #eef4e8;
+      color: #314b35;
+    }
+
+    body.urbano {
+      background: #e9f0f2;
+      color: #263b43;
+    }
+
+    body.dark {
+      background: #17211a;
+      color: #e9f5e6;
+    }
+
+    body.dark nav {
+      background: rgba(23,33,26,0.85);
+    }
+
+    body.dark .style-menu,
+    body.dark .card {
+      background: #243328;
+      color: #e9f5e6;
+    }
+
+    body.dark .secondary {
+      background: #243328;
+      color: white;
+    }
+
+    /* ---------- CELULAR ---------- */
+
+    @media (max-width: 600px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      .mascot {
+        font-size: 70px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .section h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BARRA SUPERIOR -->
+
+  <nav>
+    <div class="logo">🌱 Unidos por un Entorno Limpio</div>
+
+    <div>
+      <button class="style-button" onclick="mostrarTemas()">
+        🎨 Cambiar estilo
+      </button>
+
+      <div class="style-menu" id="styleMenu">
+        <button onclick="cambiarTema('cute')">🌸 Cute</button>
+        <button onclick="cambiarTema('natural')">🌿 Natural</button>
+        <button onclick="cambiarTema('urbano')">⚡ Urbano</button>
+        <button onclick="cambiarTema('dark')">🌙 Dark</button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- PORTADA -->
+
+  <section class="hero">
+
+    <div class="leaf leaf1">🌿</div>
+    <div class="leaf leaf2">🍃</div>
+    <div class="leaf leaf3">🌱</div>
+    <div class="leaf leaf4">🍀</div>
+
+    <div class="hero-content">
+
+      <!-- TEMPORALMENTE USAMOS UN EMOJI -->
+      <!-- Luego pondremos aquí nuestro Pompompurin -->
+
+      <div class="mascot">🐶</div>
+
+      <div class="small-title">
+        UNA INICIATIVA PARA NUESTRA COMUNIDAD
+      </div>
+
+      <div class="question">
+        MIRA A TU ALREDEDOR.
+      </div>
+
+      <h1>
+        ¿Hay algo<br>
+        que podría ser mejor?
+      </h1>
+
+      <p class="description">
+        Nosotros creemos que sí. 🌱
+        Unidos por un Entorno Limpio nace para transformar
+        la preocupación por nuestro entorno en acciones reales.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#proyecto" class="button primary">
+          🌎 Descubre el proyecto
+        </a>
+
+        <a href="#participar" class="button secondary">
+          🤝 Quiero participar
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRODUCCIÓN -->
+
+  <section class="section" id="proyecto">
+
+    <h2>
+      Todo comenzó con una pregunta...
+    </h2>
+
+    <p>
+      ¿Por qué esperar a que alguien cambie nuestro entorno
+      si podemos empezar nosotros?
+    </p>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon">👀</div>
+        <h3>Observamos</h3>
+        <p>
+          Identificamos espacios que necesitan atención.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📢</div>
+        <h3>Reportamos</h3>
+        <p>
+          La comunidad puede avisarnos dónde hace falta ayuda.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🧹</div>
+        <h3>Actuamos</h3>
+        <p>
+          Organizamos acciones para recuperar nuestros espacios.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PARTICIPAR -->
+
+  <section class="section" id="participar">
+
+    <h2>💚 Tú también puedes ser parte</h2>
+
+    <p>
+      No necesitas esperar a que alguien más comience.
+      Una pequeña acción puede inspirar muchas más.
+    </p>
+
+    <br><br>
+
+    <a href="#" class="button primary">
+      🌱 Quiero unirme
+    </a>
+
+  </section>
+
+
+  <script>
+
+    function mostrarTemas() {
+      const menu = document.getElementById("styleMenu");
+
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+
+    function cambiarTema(tema) {
+
+      document.body.classList.remove(
+        "natural",
+        "urbano",
+        "dark"
+      );
+
+      if (tema !== "cute") {
+        document.body.classList.add(tema);
+      }
+
+      document.getElementById("styleMenu").style.display = "none";
+    }
+
+  </script>
+
+</body>
+</html>
