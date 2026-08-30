@@ -1,1572 +1,1673 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Unidos por un Entorno Limpio 🌱</title>
+<html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- FUENTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Unidos por un Entorno Limpio 🌱</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Special+Elite&family=Montserrat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<!-- FUENTES -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Special+Elite&family=Montserrat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
+<style>
 
-        body {
-            color: #f5f3df;
-            line-height: 1.6;
-            font-family: "Special Elite", "Courier New", monospace;
-            min-height: 100vh;
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+    }
 
-            background-image:
-                linear-gradient(
-                    rgba(48, 52, 25, 0.25),
-                    rgba(48, 52, 25, 0.25)
-                ),
-                url("fondo principal.jpg");
+    body {
+        color: #f5f3df;
+        line-height: 1.6;
+        font-family: "Special Elite", "Courier New", monospace;
+        min-height: 100vh;
 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
+        background-image:
+            linear-gradient(
+                rgba(48, 52, 25, 0.25),
+                rgba(48, 52, 25, 0.25)
+            ),
+            url("fondo principal.jpg");
 
-        /* =========================
-           PORTADA
-        ========================= */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 80px 20px;
-            position: relative;
-            overflow: hidden;
-        }
+    /* =========================
+       PORTADA
+    ========================= */
 
-        .hero-content {
-            max-width: 1000px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 80px 20px;
+        position: relative;
+        overflow: hidden;
+    }
 
-        .frase-potente {
-            font-family: "DM Serif Display", Georgia, serif;
-            font-size: clamp(48px, 7vw, 90px);
-            line-height: 1.05;
-            color: #f8f5df;
-            max-width: 1000px;
-            margin-bottom: 30px;
+    .hero-content {
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
 
-            text-shadow:
-                0 4px 8px rgba(0,0,0,0.55),
-                0 8px 20px rgba(0,0,0,0.25);
-        }
+    .frase-potente {
+        font-family: "DM Serif Display", Georgia, serif;
+        font-size: clamp(48px, 7vw, 90px);
+        line-height: 1.05;
+        color: #f8f5df;
+        max-width: 1000px;
+        margin-bottom: 30px;
 
-        .mascota {
-            margin-top: 15px;
-        }
+        text-shadow:
+            0 4px 8px rgba(0,0,0,0.55),
+            0 8px 20px rgba(0,0,0,0.25);
+    }
 
-        .mascota img {
-            width: 220px;
-            max-width: 65vw;
-            height: auto;
-            display: block;
+    .mascota {
+        margin-top: 15px;
+    }
 
-            filter:
-                drop-shadow(0 8px 8px rgba(0,0,0,0.35));
+    .mascota img {
+        width: 220px;
+        max-width: 65vw;
+        height: auto;
+        display: block;
 
-            animation: yuriFlota 3.5s ease-in-out infinite;
-        }
+        filter:
+            drop-shadow(0 8px 8px rgba(0,0,0,0.35));
 
-        @keyframes yuriFlota {
-            0%, 100% {
-                transform: translateY(0);
-            }
+        animation: yuriFlota 3.5s ease-in-out infinite;
+    }
 
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .hero-subtitulo {
-            font-family: "Special Elite", "Courier New", monospace;
-            font-size: 19px;
-            max-width: 700px;
-            margin: 15px auto 25px;
-            color: #f4f1db;
-
-            text-shadow:
-                0 2px 5px rgba(0,0,0,0.65);
-        }
-
-        /* =========================
-           BOTONES
-        ========================= */
-
-        .botones-finales {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .boton {
-            display: inline-block;
-            background: #54582f;
-            color: #f8f5df;
-            padding: 13px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-family: "Montserrat", sans-serif;
-            font-weight: 600;
-            border: 1px solid rgba(255,255,255,0.2);
-            cursor: pointer;
-            transition: 0.3s;
-
-            box-shadow:
-                0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .boton:hover {
-            transform: translateY(-3px) scale(1.03);
-            background: #6b7040;
-        }
-
-        /* =========================
-           BARRA PRINCIPAL
-        ========================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            min-height: 92px;
-            z-index: 2000;
-
-            background-image:
-                linear-gradient(
-                    rgba(55,58,31,0.22),
-                    rgba(55,58,31,0.22)
-                ),
-                url("PANEL DE IMÁGENES.jpg");
-
-            background-size: cover;
-            background-position: center;
-
-            box-shadow:
-                0 5px 20px rgba(0,0,0,0.35);
-
-            transform: translateY(-110%);
-            transition: transform 0.55s ease;
-        }
-
-        header.visible {
+    @keyframes yuriFlota {
+        0%, 100% {
             transform: translateY(0);
         }
 
-        .barra-interior {
-            min-height: 92px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            position: relative;
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .hero-subtitulo {
+        font-family: "Special Elite", "Courier New", monospace;
+        font-size: 19px;
+        max-width: 700px;
+        margin: 15px auto 25px;
+        color: #f4f1db;
+
+        text-shadow:
+            0 2px 5px rgba(0,0,0,0.65);
+    }
+
+    /* =========================
+       BOTONES
+    ========================= */
+
+    .botones-finales {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .boton {
+        display: inline-block;
+        background: #54582f;
+        color: #f8f5df;
+        padding: 13px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        border: 1px solid rgba(255,255,255,0.2);
+        cursor: pointer;
+        transition: 0.3s;
+
+        box-shadow:
+            0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .boton:hover {
+        transform: translateY(-3px) scale(1.03);
+        background: #6b7040;
+    }
+
+    /* =========================
+       BARRA PRINCIPAL
+    ========================= */
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 92px;
+        z-index: 2000;
+
+        background-image:
+            linear-gradient(
+                rgba(55,58,31,0.22),
+                rgba(55,58,31,0.22)
+            ),
+            url("PANEL DE IMÁGENES.jpg");
+
+        background-size: cover;
+        background-position: center;
+
+        box-shadow:
+            0 5px 20px rgba(0,0,0,0.35);
+
+        transform: translateY(-110%);
+        transition: transform 0.55s ease;
+    }
+
+    header.visible {
+        transform: translateY(0);
+    }
+
+    .barra-interior {
+        min-height: 92px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        position: relative;
+    }
+
+    /* =========================
+       CONTROLES IZQUIERDOS
+    ========================= */
+
+    .controles-izquierda {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .control-boton {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+
+        background: #54582f;
+        color: #f8f5df;
+        font-size: 22px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-shadow:
+            0 4px 10px rgba(0,0,0,0.3);
+
+        transition: 0.3s;
+    }
+
+    .control-boton:hover {
+        transform: scale(1.1);
+        background: #6b7040;
+    }
+
+    /* =========================
+       NAVEGACIÓN
+    ========================= */
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    nav button {
+        background: transparent;
+        border: none;
+        color: #f8f5df;
+
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+
+        cursor: pointer;
+        padding: 10px 13px;
+
+        text-shadow:
+            0 2px 4px rgba(0,0,0,0.5);
+
+        transition: 0.3s;
+    }
+
+    nav button:hover {
+        transform: translateY(-2px);
+        color: #ffffff;
+    }
+
+    /* =========================
+       MENÚ DE TRES PUNTOS
+    ========================= */
+
+    .menu-extra {
+        position: relative;
+    }
+
+    .menu-contenido {
+        position: absolute;
+        top: 58px;
+        left: 0;
+
+        width: 245px;
+        padding: 12px;
+
+        background: #54582f;
+        border-radius: 18px;
+
+        box-shadow:
+            0 10px 30px rgba(0,0,0,0.35);
+
+        display: none;
+
+        border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .menu-contenido.abierto {
+        display: block;
+
+        animation:
+            aparecerMenu 0.25s ease;
+    }
+
+    @keyframes aparecerMenu {
+
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
         }
 
-        /* =========================
-           CONTROLES IZQUIERDOS
-        ========================= */
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .menu-contenido button {
+        width: 100%;
+        display: block;
+        text-align: left;
+
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+
+        background: transparent;
+        color: #f8f5df;
+
+        font-family: "Special Elite", monospace;
+        cursor: pointer;
+        margin-bottom: 4px;
+    }
+
+    .menu-contenido button:hover {
+        background: rgba(255,255,255,0.12);
+    }
+
+    /* =========================
+       VENTANAS
+    ========================= */
+
+    .modal {
+        position: fixed;
+        inset: 0;
+        z-index: 3000;
+
+        background: rgba(20,22,12,0.72);
+
+        display: none;
+        justify-content: center;
+        align-items: center;
+
+        padding: 25px;
+    }
+
+    .modal.abierto {
+        display: flex;
+
+        animation:
+            aparecerFondo 0.25s ease;
+    }
+
+    @keyframes aparecerFondo {
+
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .modal-contenido {
+        width: min(900px, 100%);
+        max-height: 85vh;
+        overflow-y: auto;
+
+        background: #54582f;
+        color: #f8f5df;
+
+        border-radius: 30px;
+        padding: 40px;
+
+        position: relative;
+
+        box-shadow:
+            0 15px 50px rgba(0,0,0,0.45);
+
+        border:
+            1px solid rgba(255,255,255,0.15);
+
+        animation:
+            aparecerRecuadro 0.3s ease;
+    }
+
+    @keyframes aparecerRecuadro {
+
+        from {
+            opacity: 0;
+            transform: scale(0.94) translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    .modal-contenido h2 {
+        font-family: "Patrick Hand", cursive;
+        font-size: 42px;
+        margin-bottom: 20px;
+        color: #f5eec8;
+    }
+
+    .modal-contenido h3 {
+        font-family: "Patrick Hand", cursive;
+        font-size: 28px;
+        color: #f5eec8;
+
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .modal-contenido p {
+        font-family: "Special Elite", monospace;
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    .cerrar {
+        position: absolute;
+        top: 15px;
+        right: 18px;
+
+        width: 42px;
+        height: 42px;
+
+        border-radius: 50%;
+        border: none;
+
+        background: rgba(255,255,255,0.12);
+        color: #fff;
+
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .cerrar:hover {
+        background: rgba(255,255,255,0.22);
+    }
+
+    /* =========================
+       CONÓCENOS
+    ========================= */
+
+    .yuri-presentacion {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        margin-top: 25px;
+        padding: 20px;
+
+        background: rgba(0,0,0,0.12);
+        border-radius: 22px;
+    }
+
+    .yuri-presentacion img {
+        width: 160px;
+        max-width: 35%;
+
+        filter:
+            drop-shadow(0 6px 7px rgba(0,0,0,0.3));
+    }
+
+    /* =========================
+       PLANTAS
+    ========================= */
+
+    .planta-tarjeta {
+        margin-top: 25px;
+        padding: 25px;
+
+        border-radius: 22px;
+        background: rgba(0,0,0,0.12);
+    }
+
+    .planta-tarjeta h3 {
+        margin-top: 0;
+    }
+
+    .planta-imagen {
+        width: 100%;
+        max-width: 500px;
+        display: block;
+
+        margin: 20px auto;
+
+        border-radius: 20px;
+
+        box-shadow:
+            0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* =========================
+       ESTILOS
+    ========================= */
+
+    .estilos-opciones {
+        display: grid;
+
+        grid-template-columns:
+            repeat(auto-fit, minmax(180px, 1fr));
+
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .estilo-opcion {
+        border: none;
+        padding: 20px;
+        border-radius: 18px;
+
+        cursor: pointer;
+
+        background: rgba(255,255,255,0.10);
+        color: #f8f5df;
+
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+
+        transition: 0.3s;
+    }
+
+    .estilo-opcion:hover {
+        background: rgba(255,255,255,0.20);
+        transform: translateY(-3px);
+    }
+
+    /* =========================
+       FORMULARIOS
+    ========================= */
+
+    .formulario {
+        margin-top: 25px;
+    }
+
+    .campo {
+        margin-bottom: 18px;
+    }
+
+    .campo label {
+        display: block;
+
+        margin-bottom: 7px;
+
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+
+        color: #f5eec8;
+    }
+
+    .campo input,
+    .campo select,
+    .campo textarea {
+        width: 100%;
+
+        padding: 13px 15px;
+
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 14px;
+
+        background: rgba(255,255,255,0.10);
+
+        color: #fff;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+
+        outline: none;
+    }
+
+    .campo input::placeholder,
+    .campo textarea::placeholder {
+        color: rgba(255,255,255,0.65);
+    }
+
+    .campo select option {
+        color: #222;
+    }
+
+    .campo textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .boton-formulario {
+        border: none;
+
+        padding: 14px 25px;
+
+        border-radius: 25px;
+
+        background: #777d43;
+        color: white;
+
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+    }
+
+    .boton-formulario:hover {
+        transform: translateY(-2px);
+        background: #89914f;
+    }
+
+    .mensaje-exito {
+        display: none;
+
+        margin-top: 20px;
+        padding: 15px;
+
+        border-radius: 15px;
+
+        background: rgba(150,190,100,0.18);
+
+        border: 1px solid rgba(200,230,150,0.25);
+
+        text-align: center;
+    }
+
+    /* =========================
+       FINAL
+    ========================= */
+
+    .final {
+        min-height: 70vh;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        padding: 80px 20px;
+
+        background:
+            rgba(30,32,17,0.48);
+    }
+
+    .final h2 {
+        font-family: "Patrick Hand", cursive;
+
+        font-size: clamp(42px, 6vw, 70px);
+
+        color: #f5eec8;
+
+        margin-bottom: 20px;
+
+        text-shadow:
+            0 4px 8px rgba(0,0,0,0.5);
+    }
+
+    .final p {
+        max-width: 750px;
+
+        font-size: 18px;
+
+        margin-bottom: 15px;
+
+        text-shadow:
+            0 2px 5px rgba(0,0,0,0.6);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        background: #292c18;
+        color: #f5f3df;
+
+        text-align: center;
+
+        padding: 35px 20px;
+
+        font-family: "Special Elite", monospace;
+    }
+
+    footer p {
+        margin: 5px;
+    }
+
+    /* =========================
+       CELULARES
+    ========================= */
+
+    /* =========================
+FORMULARIOS
+========================= */
+
+.formulario {
+display: flex;
+flex-direction: column;
+gap: 14px;
+margin-top: 20px;
+}
+
+.formulario label {
+font-family: "Montserrat", sans-serif;
+font-weight: 600;
+color: #f5eec8;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+width: 100%;
+padding: 13px 15px;
+border: none;
+border-radius: 14px;
+background: rgba(255,255,255,0.92);
+color: #303418;
+font-family: "Montserrat", sans-serif;
+font-size: 15px;
+outline: none;
+}
+
+.formulario textarea {
+min-height: 120px;
+resize: vertical;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+box-shadow: 0 0 0 3px rgba(245,238,200,0.35);
+}
+
+.boton-formulario {
+margin-top: 8px;
+padding: 14px 22px;
+border: none;
+border-radius: 25px;
+background: #777b45;
+color: #fff;
+font-family: "Montserrat", sans-serif;
+font-weight: 700;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.boton-formulario {
+transform: translateY(-2px);
+background: #8b9052;
+}
+
+.mensaje-formulario {
+display: none;
+margin-top: 15px;
+padding: 14px;
+border-radius: 15px;
+background: rgba(255,255,255,0.12);
+text-align: center;
+font-family: "Montserrat", sans-serif;
+}
+
+.mensaje-formulario.mostrar {
+display: block;
+}
+
+@media (max-width: 700px) {
+
+        .barra-interior {
+            min-height: 105px;
+            padding-top: 55px;
+        }
+
+        header {
+            min-height: 105px;
+        }
 
         .controles-izquierda {
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            top: 12px;
+            left: 12px;
+            transform: none;
         }
 
         .control-boton {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-
-            background: #54582f;
-            color: #f8f5df;
-            font-size: 22px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            box-shadow:
-                0 4px 10px rgba(0,0,0,0.3);
-
-            transition: 0.3s;
+            width: 38px;
+            height: 38px;
+            font-size: 19px;
         }
-
-        .control-boton:hover {
-            transform: scale(1.1);
-            background: #6b7040;
-        }
-
-        /* =========================
-           NAVEGACIÓN
-        ========================= */
 
         nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            gap: 2px;
         }
 
         nav button {
-            background: transparent;
-            border: none;
-            color: #f8f5df;
-
-            font-family: "Montserrat", sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-
-            cursor: pointer;
-            padding: 10px 13px;
-
-            text-shadow:
-                0 2px 4px rgba(0,0,0,0.5);
-
-            transition: 0.3s;
-        }
-
-        nav button:hover {
-            transform: translateY(-2px);
-            color: #ffffff;
-        }
-
-        /* =========================
-           MENÚ DE TRES PUNTOS
-        ========================= */
-
-        .menu-extra {
-            position: relative;
+            font-size: 12px;
+            padding: 7px 6px;
         }
 
         .menu-contenido {
-            position: absolute;
-            top: 58px;
-            left: 0;
-
-            width: 245px;
-            padding: 12px;
-
-            background: #54582f;
-            border-radius: 18px;
-
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.35);
-
-            display: none;
-
-            border: 1px solid rgba(255,255,255,0.15);
-        }
-
-        .menu-contenido.abierto {
-            display: block;
-
-            animation:
-                aparecerMenu 0.25s ease;
-        }
-
-        @keyframes aparecerMenu {
-
-            from {
-                opacity: 0;
-                transform: translateY(-8px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .menu-contenido button {
-            width: 100%;
-            display: block;
-            text-align: left;
-
-            padding: 12px;
-            border: none;
-            border-radius: 12px;
-
-            background: transparent;
-            color: #f8f5df;
-
-            font-family: "Special Elite", monospace;
-            cursor: pointer;
-            margin-bottom: 4px;
-        }
-
-        .menu-contenido button:hover {
-            background: rgba(255,255,255,0.12);
-        }
-
-        /* =========================
-           VENTANAS
-        ========================= */
-
-        .modal {
-            position: fixed;
-            inset: 0;
-            z-index: 3000;
-
-            background: rgba(20,22,12,0.72);
-
-            display: none;
-            justify-content: center;
-            align-items: center;
-
-            padding: 25px;
-        }
-
-        .modal.abierto {
-            display: flex;
-
-            animation:
-                aparecerFondo 0.25s ease;
-        }
-
-        @keyframes aparecerFondo {
-
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            top: 45px;
+            left: -10px;
+            width: 220px;
         }
 
         .modal-contenido {
-            width: min(900px, 100%);
-            max-height: 85vh;
-            overflow-y: auto;
-
-            background: #54582f;
-            color: #f8f5df;
-
-            border-radius: 30px;
-            padding: 40px;
-
-            position: relative;
-
-            box-shadow:
-                0 15px 50px rgba(0,0,0,0.45);
-
-            border:
-                1px solid rgba(255,255,255,0.15);
-
-            animation:
-                aparecerRecuadro 0.3s ease;
-        }
-
-        @keyframes aparecerRecuadro {
-
-            from {
-                opacity: 0;
-                transform: scale(0.94) translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
+            padding: 30px 22px;
+            border-radius: 24px;
         }
 
         .modal-contenido h2 {
-            font-family: "Patrick Hand", cursive;
-            font-size: 42px;
-            margin-bottom: 20px;
-            color: #f5eec8;
+            font-size: 34px;
         }
-
-        .modal-contenido h3 {
-            font-family: "Patrick Hand", cursive;
-            font-size: 28px;
-            color: #f5eec8;
-
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .modal-contenido p {
-            font-family: "Special Elite", monospace;
-            font-size: 17px;
-            margin-bottom: 12px;
-        }
-
-        .cerrar {
-            position: absolute;
-            top: 15px;
-            right: 18px;
-
-            width: 42px;
-            height: 42px;
-
-            border-radius: 50%;
-            border: none;
-
-            background: rgba(255,255,255,0.12);
-            color: #fff;
-
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .cerrar:hover {
-            background: rgba(255,255,255,0.22);
-        }
-
-        /* =========================
-           CONÓCENOS
-        ========================= */
 
         .yuri-presentacion {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-
-            margin-top: 25px;
-            padding: 20px;
-
-            background: rgba(0,0,0,0.12);
-            border-radius: 22px;
+            flex-direction: column;
+            text-align: center;
         }
 
         .yuri-presentacion img {
-            width: 160px;
-            max-width: 35%;
-
-            filter:
-                drop-shadow(0 6px 7px rgba(0,0,0,0.3));
+            max-width: 55%;
+            width: 170px;
         }
 
-        /* =========================
-           PLANTAS
-        ========================= */
-
-        .planta-tarjeta {
-            margin-top: 25px;
-            padding: 25px;
-
-            border-radius: 22px;
-            background: rgba(0,0,0,0.12);
+        .mascota img {
+            width: 175px;
         }
 
-        .planta-tarjeta h3 {
-            margin-top: 0;
+        .hero {
+            padding-top: 50px;
         }
+    }
 
-        .planta-imagen {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-
-            margin: 20px auto;
-
-            border-radius: 20px;
-
-            box-shadow:
-                0 8px 20px rgba(0,0,0,0.3);
-        }
-
-        /* =========================
-           ESTILOS
-        ========================= */
-
-        .estilos-opciones {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(180px, 1fr));
-
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .estilo-opcion {
-            border: none;
-            padding: 20px;
-            border-radius: 18px;
-
-            cursor: pointer;
-
-            background: rgba(255,255,255,0.10);
-            color: #f8f5df;
-
-            font-family: "Montserrat", sans-serif;
-            font-weight: 600;
-
-            transition: 0.3s;
-        }
-
-        .estilo-opcion:hover {
-            background: rgba(255,255,255,0.20);
-            transform: translateY(-3px);
-        }
-
-        /* =========================
-           FORMULARIOS
-        ========================= */
-
-        .formulario {
-            margin-top: 25px;
-        }
-
-        .campo {
-            margin-bottom: 18px;
-        }
-
-        .campo label {
-            display: block;
-
-            margin-bottom: 7px;
-
-            font-family: "Montserrat", sans-serif;
-            font-weight: 600;
-
-            color: #f5eec8;
-        }
-
-        .campo input,
-        .campo select,
-        .campo textarea {
-            width: 100%;
-
-            padding: 13px 15px;
-
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 14px;
-
-            background: rgba(255,255,255,0.10);
-
-            color: #fff;
-
-            font-family: "Montserrat", sans-serif;
-            font-size: 15px;
-
-            outline: none;
-        }
-
-        .campo input::placeholder,
-        .campo textarea::placeholder {
-            color: rgba(255,255,255,0.65);
-        }
-
-        .campo select option {
-            color: #222;
-        }
-
-        .campo textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .boton-formulario {
-            border: none;
-
-            padding: 14px 25px;
-
-            border-radius: 25px;
-
-            background: #777d43;
-            color: white;
-
-            font-family: "Montserrat", sans-serif;
-            font-weight: 700;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-        }
-
-        .boton-formulario:hover {
-            transform: translateY(-2px);
-            background: #89914f;
-        }
-
-        .mensaje-exito {
-            display: none;
-
-            margin-top: 20px;
-            padding: 15px;
-
-            border-radius: 15px;
-
-            background: rgba(150,190,100,0.18);
-
-            border: 1px solid rgba(200,230,150,0.25);
-
-            text-align: center;
-        }
-
-        /* =========================
-           FINAL
-        ========================= */
-
-        .final {
-            min-height: 70vh;
-
-            display: flex;
-            flex-direction: column;
-
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-
-            padding: 80px 20px;
-
-            background:
-                rgba(30,32,17,0.48);
-        }
-
-        .final h2 {
-            font-family: "Patrick Hand", cursive;
-
-            font-size: clamp(42px, 6vw, 70px);
-
-            color: #f5eec8;
-
-            margin-bottom: 20px;
-
-            text-shadow:
-                0 4px 8px rgba(0,0,0,0.5);
-        }
-
-        .final p {
-            max-width: 750px;
-
-            font-size: 18px;
-
-            margin-bottom: 15px;
-
-            text-shadow:
-                0 2px 5px rgba(0,0,0,0.6);
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #292c18;
-            color: #f5f3df;
-
-            text-align: center;
-
-            padding: 35px 20px;
-
-            font-family: "Special Elite", monospace;
-        }
-
-        footer p {
-            margin: 5px;
-        }
-
-        /* =========================
-           CELULARES
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .barra-interior {
-                min-height: 105px;
-                padding-top: 55px;
-            }
-
-            header {
-                min-height: 105px;
-            }
-
-            .controles-izquierda {
-                top: 12px;
-                left: 12px;
-                transform: none;
-            }
-
-            .control-boton {
-                width: 38px;
-                height: 38px;
-                font-size: 19px;
-            }
-
-            nav {
-                gap: 2px;
-            }
-
-            nav button {
-                font-size: 12px;
-                padding: 7px 6px;
-            }
-
-            .menu-contenido {
-                top: 45px;
-                left: -10px;
-                width: 220px;
-            }
-
-            .modal-contenido {
-                padding: 30px 22px;
-                border-radius: 24px;
-            }
-
-            .modal-contenido h2 {
-                font-size: 34px;
-            }
-
-            .yuri-presentacion {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .yuri-presentacion img {
-                max-width: 55%;
-                width: 170px;
-            }
-
-            .mascota img {
-                width: 175px;
-            }
-
-            .hero {
-                padding-top: 50px;
-            }
-        }
-
-    </style>
+</style>
 </head>
 
 <body>
 
-<!-- =====================================================
-     PORTADA
-===================================================== -->
+<!-- ===================================================== PORTADA ===================================================== -->
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="frase-potente">
-            ¿EN QUÉ MOMENTO SE JODIÓ EL PERÚ?
-        </div>
+    <div class="frase-potente">
+        ¿EN QUÉ MOMENTO SE JODIÓ EL PERÚ?
+    </div>
 
-        <div class="mascota">
+    <div class="mascota">
 
-            <img
-                src="yuri bienvenida.png"
-                alt="Yuri, mascota de Unidos por un Entorno Limpio"
-            >
-
-        </div>
-
-        <p class="hero-subtitulo">
-            “Cuando dejamos de cuidar lo que nos daba vida.”
-        </p>
+        <img
+            src="yuri bienvenida.png"
+            alt="Yuri, mascota de Unidos por un Entorno Limpio"
+        >
 
     </div>
 
+    <p class="hero-subtitulo">
+        “Cuando dejamos de cuidar lo que nos daba vida.”
+    </p>
+
+</div>
 </section>
 
-
-<!-- =====================================================
-     BARRA PRINCIPAL
-===================================================== -->
+<!-- ===================================================== BARRA PRINCIPAL ===================================================== -->
 
 <header id="barra">
 
-    <div class="barra-interior">
+<div class="barra-interior">
 
-        <div class="controles-izquierda">
+    <div class="controles-izquierda">
 
-            <div class="menu-extra">
-
-                <button
-                    class="control-boton"
-                    onclick="alternarMenu()"
-                    aria-label="Abrir menú"
-                >
-                    ⋮
-                </button>
-
-                <div
-                    class="menu-contenido"
-                    id="menuContenido"
-                >
-
-                    <button onclick="abrirModal('cuidemos')">
-                        ♻️ Cuidemos nuestro entorno
-                    </button>
-
-                    <button onclick="abrirModal('sabias')">
-                        💡 ¿Sabías que?
-                    </button>
-
-                    <button onclick="abrirModal('compromiso')">
-                        💚 Nuestro compromiso
-                    </button>
-
-                    <button onclick="abrirModal('estilos')">
-                        🎨 Estilos
-                    </button>
-
-                </div>
-
-            </div>
+        <div class="menu-extra">
 
             <button
                 class="control-boton"
-                onclick="abrirModal('plantas')"
-                aria-label="Abrir plantas"
+                onclick="alternarMenu()"
+                aria-label="Abrir menú"
             >
-                🌸
+                ⋮
             </button>
 
-        </div>
-
-        <nav>
-
-            <button onclick="abrirModal('quienes')">
-                👋 Conócenos
-            </button>
-
-            <button onclick="abrirModal('proyecto')">
-                📖 Sobre el proyecto
-            </button>
-
-            <button onclick="abrirModal('yura')">
-                🌄 Yura
-            </button>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<!-- =====================================================
-     CONÓCENOS
-===================================================== -->
-
-<div class="modal" id="quienes">
-
-    <div class="modal-contenido">
-
-        <button
-            class="cerrar"
-            onclick="cerrarModal('quienes')"
-        >
-            ×
-        </button>
-
-        <h2>
-            👋 Conócenos
-        </h2>
-
-        <p>
-            Somos un grupo de <strong>5 jóvenes randoms</strong>
-            que cree que cuidar nuestro entorno no tiene que
-            comenzar con una acción enorme.
-        </p>
-
-        <p>
-            Creemos que cuando conocemos el lugar donde vivimos,
-            aprendemos a valorarlo y podemos comenzar a protegerlo.
-        </p>
-
-        <p>
-            🌱 Nuestra intención es compartir información,
-            despertar curiosidad y motivar pequeñas acciones
-            que ayuden a cuidar nuestra comunidad.
-        </p>
-
-        <div class="yuri-presentacion">
-
-            <img
-                src="yuri bienvenida.png"
-                alt="Yuri"
+            <div
+                class="menu-contenido"
+                id="menuContenido"
             >
 
-            <div>
+                <button onclick="abrirModal('cuidemos')">
+                    ♻️ Cuidemos nuestro entorno
+                </button>
 
-                <h3>
-                    🐰 Ella es Yuri
-                </h3>
+                <button onclick="abrirModal('sabias')">
+                    💡 ¿Sabías que?
+                </button>
 
-                <p>
-                    Yuri es nuestra mascota y compañera
-                    durante este recorrido.
-                </p>
+                <button onclick="abrirModal('compromiso')">
+                    💚 Nuestro compromiso
+                </button>
 
-                <p>
-                    Está inspirada en una vizcacha y tiene
-                    una apariencia tranquila y un poquito
-                    soñolienta.
-                </p>
-
-                <p>
-                    Le encanta la comida dulce y esponjosa,
-                    descubrir lugares nuevos y acompañar
-                    a quienes quieren cuidar la naturaleza. 🍰🌱
-                </p>
-
-                <p>
-                    Su misión es acompañarnos mientras
-                    conocemos, valoramos y protegemos
-                    nuestro entorno. 💚
-                </p>
+                <button onclick="abrirModal('estilos')">
+                    🎨 Estilos
+                </button>
 
             </div>
 
         </div>
 
+        <button
+            class="control-boton"
+            onclick="abrirModal('plantas')"
+            aria-label="Abrir plantas"
+        >
+            🌸
+        </button>
+
+    </div>
+
+    <nav>
+
+        <button onclick="abrirModal('quienes')">
+            👋 Conócenos
+        </button>
+
+        <button onclick="abrirModal('proyecto')">
+            📖 Sobre el proyecto
+        </button>
+
+        <button onclick="abrirModal('yura')">
+            🌄 Yura
+        </button>
+
+    </nav>
+
+</div>
+</header>
+
+<!-- ===================================================== CONÓCENOS ===================================================== -->
+
+<div class="modal" id="quienes">
+
+<div class="modal-contenido">
+
+    <button
+        class="cerrar"
+        onclick="cerrarModal('quienes')"
+    >
+        ×
+    </button>
+
+    <h2>
+        👋 Conócenos
+    </h2>
+
+    <p>
+        Somos un grupo de <strong>5 jóvenes randoms</strong>
+        que cree que cuidar nuestro entorno no tiene que
+        comenzar con una acción enorme.
+    </p>
+
+    <p>
+        Creemos que cuando conocemos el lugar donde vivimos,
+        aprendemos a valorarlo y podemos comenzar a protegerlo.
+    </p>
+
+    <p>
+        🌱 Nuestra intención es compartir información,
+        despertar curiosidad y motivar pequeñas acciones
+        que ayuden a cuidar nuestra comunidad.
+    </p>
+
+    <div class="yuri-presentacion">
+
+        <img
+            src="yuri bienvenida.png"
+            alt="Yuri"
+        >
+
+        <div>
+
+            <h3>
+                🐰 Ella es Yuri
+            </h3>
+
+            <p>
+                Yuri es nuestra mascota y compañera
+                durante este recorrido.
+            </p>
+
+            <p>
+                Está inspirada en una vizcacha y tiene
+                una apariencia tranquila y un poquito
+                soñolienta.
+            </p>
+
+            <p>
+                Le encanta la comida dulce y esponjosa,
+                descubrir lugares nuevos y acompañar
+                a quienes quieren cuidar la naturaleza. 🍰🌱
+            </p>
+
+            <p>
+                Su misión es acompañarnos mientras
+                conocemos, valoramos y protegemos
+                nuestro entorno. 💚
+            </p>
+
+        </div>
+
     </div>
 
 </div>
+</div>
 
-
-<!-- =====================================================
-     SOBRE EL PROYECTO
-===================================================== -->
+<!-- ===================================================== SOBRE EL PROYECTO ===================================================== -->
 
 <div class="modal" id="proyecto">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('proyecto')"
-        >
-            ×
-        </button>
+    <button
+        class="cerrar"
+        onclick="cerrarModal('proyecto')"
+    >
+        ×
+    </button>
 
-        <h2>
-            📖 Sobre el proyecto
-        </h2>
+    <h2>
+        📖 Sobre el proyecto
+    </h2>
 
-        <p>
-            <strong>Unidos por un Entorno Limpio</strong>
-            es una iniciativa de sensibilización ambiental
-            creada para acercarnos a la naturaleza de nuestro
-            entorno.
-        </p>
+    <p>
+        <strong>Unidos por un Entorno Limpio</strong>
+        es una iniciativa de sensibilización ambiental
+        creada para acercarnos a la naturaleza de nuestro
+        entorno.
+    </p>
 
-        <p>
-            Queremos que conocer nuestro ambiente sea también
-            una forma de aprender a valorarlo.
-        </p>
+    <p>
+        Queremos que conocer nuestro ambiente sea también
+        una forma de aprender a valorarlo.
+    </p>
 
-        <p>
-            A través de información, recomendaciones y recursos
-            interactivos buscamos incentivar el cuidado de
-            nuestros ecosistemas, plantas, suelos y recursos.
-        </p>
+    <p>
+        A través de información, recomendaciones y recursos
+        interactivos buscamos incentivar el cuidado de
+        nuestros ecosistemas, plantas, suelos y recursos.
+    </p>
 
-        <h3>
-            🌎 Nuestra idea
-        </h3>
+    <h3>
+        🌎 Nuestra idea
+    </h3>
 
-        <p>
-            Conocer → Valorar → Proteger
-        </p>
-
-    </div>
+    <p>
+        Conocer → Valorar → Proteger
+    </p>
 
 </div>
+</div>
 
-
-<!-- =====================================================
-     YURA
-===================================================== -->
+<!-- ===================================================== YURA ===================================================== -->
 
 <div class="modal" id="yura">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('yura')"
-        >
-            ×
-        </button>
+    <button
+        class="cerrar"
+        onclick="cerrarModal('yura')"
+    >
+        ×
+    </button>
 
-        <h2>
-            🌄 Yura
-        </h2>
+    <h2>
+        🌄 Yura
+    </h2>
 
-        <p>
-            Yura posee paisajes, plantas y ecosistemas que
-            forman parte de nuestra identidad.
-        </p>
+    <p>
+        Yura posee paisajes, plantas y ecosistemas que
+        forman parte de nuestra identidad.
+    </p>
 
-        <p>
-            Vivimos en una zona donde el agua es un recurso
-            muy importante y donde la naturaleza ha desarrollado
-            diferentes formas de adaptarse a condiciones secas.
-        </p>
+    <p>
+        Vivimos en una zona donde el agua es un recurso
+        muy importante y donde la naturaleza ha desarrollado
+        diferentes formas de adaptarse a condiciones secas.
+    </p>
 
-        <h3>
-            🌵 Naturaleza
-        </h3>
+    <h3>
+        🌵 Naturaleza
+    </h3>
 
-        <p>
-            Algunas especies vegetales pueden sobrevivir
-            en condiciones de poca disponibilidad de agua.
-        </p>
+    <p>
+        Algunas especies vegetales pueden sobrevivir
+        en condiciones de poca disponibilidad de agua.
+    </p>
 
-        <h3>
-            💧 El agua importa
-        </h3>
+    <h3>
+        💧 El agua importa
+    </h3>
 
-        <p>
-            Cuidar el agua también significa cuidar los suelos,
-            las plantas, los animales y a las personas.
-        </p>
+    <p>
+        Cuidar el agua también significa cuidar los suelos,
+        las plantas, los animales y a las personas.
+    </p>
 
-        <h3>
-            🌎 Nuestro hogar
-        </h3>
+    <h3>
+        🌎 Nuestro hogar
+    </h3>
 
-        <p>
-            Proteger nuestro entorno empieza por conocerlo,
-            valorarlo y participar en su cuidado.
-        </p>
-
-    </div>
+    <p>
+        Proteger nuestro entorno empieza por conocerlo,
+        valorarlo y participar en su cuidado.
+    </p>
 
 </div>
+</div>
 
-
-<!-- =====================================================
-     PLANTAS
-===================================================== -->
+<!-- ===================================================== PLANTAS ===================================================== -->
 
 <div class="modal" id="plantas">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('plantas')"
+    <button
+        class="cerrar"
+        onclick="cerrarModal('plantas')"
+    >
+        ×
+    </button>
+
+    <h2>
+        🌿 Plantas de nuestra zona
+    </h2>
+
+    <p>
+        Algunas plantas que crecen en zonas áridas pueden
+        parecer simples, pero cumplen funciones importantes
+        dentro del ecosistema.
+    </p>
+
+    <div class="planta-tarjeta">
+
+        <h3>
+            🌼 Encelia farinosa
+        </h3>
+
+        <img
+            class="planta-imagen"
+            src="Brittlebrush {Encelia farinosa}.jfif"
+            alt="Encelia farinosa"
         >
-            ×
-        </button>
-
-        <h2>
-            🌿 Plantas de nuestra zona
-        </h2>
 
         <p>
-            Algunas plantas que crecen en zonas áridas pueden
-            parecer simples, pero cumplen funciones importantes
-            dentro del ecosistema.
+            La <i>Encelia farinosa</i> es una planta adaptada
+            a ambientes áridos. Sus características le permiten
+            sobrevivir donde otras especies tendrían dificultades.
         </p>
 
-        <div class="planta-tarjeta">
+        <p>
+            Conocer las especies de nuestro entorno nos ayuda
+            a comprender por qué es importante evitar la
+            destrucción innecesaria de la vegetación.
+        </p>
 
-            <h3>
-                🌼 Encelia farinosa
-            </h3>
-
-            <img
-                class="planta-imagen"
-                src="Brittlebrush {Encelia farinosa}.jfif"
-                alt="Encelia farinosa"
-            >
-
-            <p>
-                La <i>Encelia farinosa</i> es una planta adaptada
-                a ambientes áridos. Sus características le permiten
-                sobrevivir donde otras especies tendrían dificultades.
-            </p>
-
-            <p>
-                Conocer las especies de nuestro entorno nos ayuda
-                a comprender por qué es importante evitar la
-                destrucción innecesaria de la vegetación.
-            </p>
-
-            <p>
-                🌱 <strong>
-                    Conocer → Valorar → Proteger
-                </strong>
-            </p>
-
-        </div>
+        <p>
+            🌱 <strong>
+                Conocer → Valorar → Proteger
+            </strong>
+        </p>
 
     </div>
 
 </div>
-<!-- =====================================================
-     VENTANA: ÚNETE
-===================================================== -->
+</div> <!-- ===================================================== VENTANA: ÚNETE ===================================================== -->
 
 <div class="modal" id="unete">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
+
+    <button
+        class="cerrar"
+        onclick="cerrarModal('unete')"
+    >
+        ×
+    </button>
+
+    <h2>💚 Únete a Unidos por un Entorno Limpio</h2>
+
+    <p>
+        ¿Quieres ser parte del cambio? 🌱
+        Déjanos tus datos y cuéntanos cómo te gustaría participar.
+    </p>
+
+    <form
+        onsubmit="enviarFormulario(event, 'unete')"
+        class="formulario"
+    >
+
+        <label>👤 Nombre</label>
+        <input
+            type="text"
+            name="nombre"
+            placeholder="Escribe tu nombre"
+            required
+        >
+
+        <label>📧 Correo electrónico</label>
+        <input
+            type="email"
+            name="correo"
+            placeholder="ejemplo@gmail.com"
+            required
+        >
+
+        <label>🌱 ¿Cómo te gustaría participar?</label>
+
+        <select name="participacion" required>
+
+            <option value="">
+                Selecciona una opción
+            </option>
+
+            <option>
+                Participar en actividades
+            </option>
+
+            <option>
+                Ayudar con campañas ambientales
+            </option>
+
+            <option>
+                Compartir información
+            </option>
+
+            <option>
+                Apoyar como voluntario/a
+            </option>
+
+            <option>
+                Otra forma de ayudar
+            </option>
+
+        </select>
+
+        <label>💬 Cuéntanos un poco más</label>
+
+        <textarea
+            name="mensaje"
+            rows="4"
+            placeholder="¿Qué te gustaría hacer para ayudar?"
+        ></textarea>
 
         <button
-            class="cerrar"
-            onclick="cerrarModal('unete')"
+            type="submit"
+            class="boton-formulario"
         >
-            ×
+            💚 Quiero unirme
         </button>
 
-        <h2>
-            💚 Únete a nosotros
-        </h2>
+    </form>
 
-        <p>
-            ¿Quieres ser parte del cambio? 🌱
-        </p>
+    <div
+        id="mensaje-unete"
+        class="mensaje-formulario"
+    ></div>
 
-        <p>
-            No necesitas hacer algo enorme. Puedes comenzar
-            compartiendo una idea, participando en una actividad
-            o ayudando a cuidar un espacio de tu comunidad.
-        </p>
-
-        <div class="formulario">
-
-            <label for="nombreUnete">
-                🌿 ¿Cómo te llamas?
-            </label>
-
-            <input
-                type="text"
-                id="nombreUnete"
-                placeholder="Escribe tu nombre"
-            >
-
-            <label for="edadUnete">
-                🎒 ¿Qué edad tienes?
-            </label>
-
-            <input
-                type="number"
-                id="edadUnete"
-                placeholder="Tu edad"
-            >
-
-            <label for="participarUnete">
-                💚 ¿Cómo te gustaría participar?
-            </label>
-
-            <select id="participarUnete">
-
-                <option value="">
-                    Selecciona una opción
-                </option>
-
-                <option>
-                    🌱 Actividades ambientales
-                </option>
-
-                <option>
-                    🧹 Limpieza de espacios
-                </option>
-
-                <option>
-                    🌿 Cuidado de plantas
-                </option>
-
-                <option>
-                    📢 Difusión del proyecto
-                </option>
-
-                <option>
-                    💡 Proponer ideas
-                </option>
-
-            </select>
-
-            <label for="mensajeUnete">
-                ✨ Cuéntanos algo
-            </label>
-
-            <textarea
-                id="mensajeUnete"
-                rows="4"
-                placeholder="¿Por qué te gustaría unirte?"
-            ></textarea>
-
-            <button
-                type="button"
-                class="boton formulario-boton"
-                onclick="enviarUnete()"
-            >
-                💚 Quiero unirme
-            </button>
-
-        </div>
-
-        <div
-            id="mensajeUneteFinal"
-            class="mensaje-formulario"
-        ></div>
-
-    </div>
-
+</div>
 </div>
 
 
 
-<!-- =====================================================
-     VENTANA: REPORTA
-===================================================== -->
+<!-- ===================================================== VENTANA: REPORTA ===================================================== -->
 
 <div class="modal" id="reporta">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
+
+    <button
+        class="cerrar"
+        onclick="cerrarModal('reporta')"
+    >
+        ×
+    </button>
+
+    <h2>🚨 Reporta un problema</h2>
+
+    <p>
+        ¿Encontraste basura, contaminación, destrucción de
+        vegetación u otro problema ambiental? 🌎
+    </p>
+
+    <p>
+        Cuéntanos qué ocurrió para poder registrar el reporte.
+    </p>
+
+    <form
+        onsubmit="enviarFormulario(event, 'reporta')"
+        class="formulario"
+    >
+
+        <label>👤 Nombre</label>
+
+        <input
+            type="text"
+            name="nombre"
+            placeholder="Escribe tu nombre"
+            required
+        >
+
+        <label>📍 Lugar del problema</label>
+
+        <input
+            type="text"
+            name="lugar"
+            placeholder="Ej. Yura, Arequipa"
+            required
+        >
+
+        <label>🚨 ¿Qué ocurrió?</label>
+
+        <select name="tipo" required>
+
+            <option value="">
+                Selecciona el tipo de problema
+            </option>
+
+            <option>
+                Basura o residuos
+            </option>
+
+            <option>
+                Contaminación
+            </option>
+
+            <option>
+                Quema de vegetación
+            </option>
+
+            <option>
+                Daño a plantas
+            </option>
+
+            <option>
+                Contaminación del agua
+            </option>
+
+            <option>
+                Otro problema ambiental
+            </option>
+
+        </select>
+
+        <label>📝 Describe lo ocurrido</label>
+
+        <textarea
+            name="descripcion"
+            rows="5"
+            placeholder="Cuéntanos qué viste..."
+            required
+        ></textarea>
+
+        <label>📷 Evidencia (opcional)</label>
+
+        <input
+            type="file"
+            accept="image/*"
+            name="evidencia"
+        >
 
         <button
-            class="cerrar"
-            onclick="cerrarModal('reporta')"
+            type="submit"
+            class="boton-formulario boton-reporte"
         >
-            ×
+            🚨 Enviar reporte
         </button>
 
-        <h2>
-            🚨 Reporta un problema
-        </h2>
+    </form>
 
-        <p>
-            ¿Viste basura, una quema, daño a la vegetación
-            u otro problema ambiental?
-        </p>
+    <div
+        id="mensaje-reporta"
+        class="mensaje-formulario"
+    ></div>
 
-        <p>
-            Cuéntanos qué ocurrió para ayudarnos a conocer
-            mejor lo que sucede en nuestro entorno. 🌎
-        </p>
-
-        <div class="formulario">
-
-            <label for="tipoReporte">
-                🚨 ¿Qué quieres reportar?
-            </label>
-
-            <select id="tipoReporte">
-
-                <option value="">
-                    Selecciona una opción
-                </option>
-
-                <option>
-                    🗑️ Acumulación de basura
-                </option>
-
-                <option>
-                    🔥 Quema de vegetación
-                </option>
-
-                <option>
-                    🌱 Daño a plantas
-                </option>
-
-                <option>
-                    💧 Desperdicio o contaminación de agua
-                </option>
-
-                <option>
-                    🏞️ Daño a un espacio natural
-                </option>
-
-                <option>
-                    ⚠️ Otro problema
-                </option>
-
-            </select>
-
-            <label for="lugarReporte">
-                📍 ¿Dónde ocurrió?
-            </label>
-
-            <input
-                type="text"
-                id="lugarReporte"
-                placeholder="Ejemplo: Yura, cerca de..."
-            >
-
-            <label for="descripcionReporte">
-                📝 Describe lo ocurrido
-            </label>
-
-            <textarea
-                id="descripcionReporte"
-                rows="5"
-                placeholder="Cuéntanos qué viste..."
-            ></textarea>
-
-            <label for="fotoReporte">
-                📷 Si tienes una foto, puedes seleccionarla
-            </label>
-
-            <input
-                type="file"
-                id="fotoReporte"
-                accept="image/*"
-            >
-
-            <button
-                type="button"
-                class="boton formulario-boton"
-                onclick="enviarReporte()"
-            >
-                🚨 Enviar reporte
-            </button>
-
-        </div>
-
-        <div
-            id="mensajeReporteFinal"
-            class="mensaje-formulario"
-        ></div>
-
-    </div>
-
+</div>
 </div>
 
 
 
-<!-- =====================================================
-     VENTANA: DONACIONES
-===================================================== -->
+<!-- ===================================================== VENTANA: DONACIONES ===================================================== -->
 
 <div class="modal" id="donaciones">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('donaciones')"
-        >
-            ×
-        </button>
+    <button
+        class="cerrar"
+        onclick="cerrarModal('donaciones')"
+    >
+        ×
+    </button>
 
-        <h2>
-            🤲 Apoya nuestro proyecto
-        </h2>
+    <h2>🤲 Apoya nuestro proyecto</h2>
+
+    <p>
+        Tu apoyo puede ayudarnos a realizar actividades,
+        campañas y acciones para cuidar nuestro entorno. 🌱
+    </p>
+
+    <div class="donacion-tarjeta">
+
+        <h3>🌱 ¿Qué podemos hacer con tu apoyo?</h3>
 
         <p>
-            Cada aporte puede ayudarnos a realizar actividades
-            para cuidar y conocer mejor nuestro entorno. 🌱
+            ♻️ Campañas de limpieza
         </p>
 
         <p>
-            Las donaciones pueden utilizarse para materiales,
-            actividades ambientales y recursos educativos.
+            🌱 Actividades de conservación
         </p>
 
-        <div class="donacion-tarjeta">
+        <p>
+            📚 Materiales para sensibilización ambiental
+        </p>
 
-            <h3>
-                🌱 ¿Qué puedes apoyar?
-            </h3>
-
-            <p>
-                🪴 Materiales para actividades ambientales
-            </p>
-
-            <p>
-                🌿 Cuidado y conservación de plantas
-            </p>
-
-            <p>
-                📚 Material educativo
-            </p>
-
-            <p>
-                🧹 Actividades de limpieza y sensibilización
-            </p>
-
-        </div>
-
-        <div class="formulario">
-
-            <label for="nombreDonacion">
-                💚 Nombre
-            </label>
-
-            <input
-                type="text"
-                id="nombreDonacion"
-                placeholder="Tu nombre"
-            >
-
-            <label for="tipoDonacion">
-                🤲 ¿Cómo deseas colaborar?
-            </label>
-
-            <select id="tipoDonacion">
-
-                <option value="">
-                    Selecciona una opción
-                </option>
-
-                <option>
-                    💰 Aporte económico
-                </option>
-
-                <option>
-                    🌱 Donación de materiales
-                </option>
-
-                <option>
-                    📚 Donación de recursos educativos
-                </option>
-
-                <option>
-                    🤝 Quiero colaborar de otra manera
-                </option>
-
-            </select>
-
-            <label for="mensajeDonacion">
-                💌 Mensaje
-            </label>
-
-            <textarea
-                id="mensajeDonacion"
-                rows="4"
-                placeholder="Cuéntanos cómo te gustaría colaborar..."
-            ></textarea>
-
-            <button
-                type="button"
-                class="boton formulario-boton"
-                onclick="enviarDonacion()"
-            >
-                🤲 Quiero colaborar
-            </button>
-
-        </div>
-
-        <div
-            id="mensajeDonacionFinal"
-            class="mensaje-formulario"
-        ></div>
+        <p>
+            💧 Actividades relacionadas con el cuidado del agua
+        </p>
 
     </div>
 
+    <h3>💚 Si deseas colaborar</h3>
+
+    <p>
+        Puedes comunicarte con nuestro equipo para conocer
+        las formas disponibles de apoyar el proyecto.
+    </p>
+
+    <form
+        onsubmit="enviarFormulario(event, 'donaciones')"
+        class="formulario"
+    >
+
+        <label>👤 Nombre</label>
+
+        <input
+            type="text"
+            name="nombre"
+            placeholder="Escribe tu nombre"
+            required
+        >
+
+        <label>📧 Correo electrónico</label>
+
+        <input
+            type="email"
+            name="correo"
+            placeholder="ejemplo@gmail.com"
+            required
+        >
+
+        <label>🤲 ¿Cómo deseas colaborar?</label>
+
+        <select name="colaboracion" required>
+
+            <option value="">
+                Selecciona una opción
+            </option>
+
+            <option>
+                Donación económica
+            </option>
+
+            <option>
+                Donación de materiales
+            </option>
+
+            <option>
+                Apoyo para actividades
+            </option>
+
+            <option>
+                Otro tipo de colaboración
+            </option>
+
+        </select>
+
+        <label>💬 Mensaje</label>
+
+        <textarea
+            name="mensaje"
+            rows="4"
+            placeholder="Cuéntanos cómo te gustaría colaborar..."
+        ></textarea>
+
+        <button
+            type="submit"
+            class="boton-formulario"
+        >
+            🤲 Quiero colaborar
+        </button>
+
+    </form>
+
+    <div
+        id="mensaje-donaciones"
+        class="mensaje-formulario"
+    ></div>
+
+</div>
 </div>
 
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- ===================================================== FOOTER ===================================================== -->
 
 <footer>
 
-    <p>
-        🌱 Unidos por un Entorno Limpio
-    </p>
+<p>
+    🌱 Unidos por un Entorno Limpio
+</p>
 
-    <p>
-        Yura, Arequipa 🇵🇪
-    </p>
+<p>
+    Yura, Arequipa 🇵🇪
+</p>
 
-    <p>
-        Juntos podemos cuidar nuestro hogar. 💚
-    </p>
-
+<p>
+    Juntos podemos cuidar nuestro hogar. 💚
+</p>
 </footer>
 
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<!-- ===================================================== JAVASCRIPT ===================================================== -->
 
 <script>
 
-    /* =========================
-       BARRA APARECE AL DESLIZAR
-    ========================= */
+/* =========================
+   FORMULARIOS
+========================= */
 
-    const barra = document.getElementById("barra");
+document.querySelectorAll(".formulario").forEach(function(formulario) {
 
-    window.addEventListener("scroll", function() {
+    formulario.addEventListener("submit", function(event) {
 
-        if (window.scrollY > 80) {
+        event.preventDefault();
 
-            barra.classList.add("visible");
+        const mensaje = formulario.parentElement.querySelector(
+            ".mensaje-formulario"
+        );
 
-        } else {
+        if (mensaje) {
 
-            barra.classList.remove("visible");
+            mensaje.classList.add("mostrar");
+
+            mensaje.textContent =
+                "💚 ¡Gracias por participar! Tu información fue registrada.";
 
         }
+
+        formulario.reset();
 
     });
 
+});
 
 
-    /* =========================
-       ABRIR MODALES
-    ========================= */
+/* =========================
+   BARRA APARECE AL DESLIZAR
+========================= */
 
-    function abrirModal(id) {
+const barra = document.getElementById("barra");
 
-        const modal = document.getElementById(id);
+window.addEventListener("scroll", function() {
 
-        if (modal) {
+    if (window.scrollY > 80) {
 
-            modal.classList.add("abierto");
+        barra.classList.add("visible");
 
-            document.body.style.overflow = "hidden";
+    } else {
 
-        }
-
-        cerrarMenu();
+        barra.classList.remove("visible");
 
     }
 
+});
 
 
-    /* =========================
-       CERRAR MODALES
-    ========================= */
+/* =========================
+   ABRIR MODALES
+========================= */
 
-    function cerrarModal(id) {
+function abrirModal(id) {
 
-        const modal = document.getElementById(id);
+    const modal = document.getElementById(id);
 
-        if (modal) {
+    if (modal) {
+
+        modal.classList.add("abierto");
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+    cerrarMenu();
+
+}
+
+
+/* =========================
+   CERRAR MODALES
+========================= */
+
+function cerrarModal(id) {
+
+    const modal = document.getElementById(id);
+
+    if (modal) {
+
+        modal.classList.remove("abierto");
+
+        document.body.style.overflow = "";
+
+    }
+
+}
+
+
+/* =========================
+   TRES PUNTOS
+========================= */
+
+function alternarMenu() {
+
+    const menu =
+        document.getElementById("menuContenido");
+
+    menu.classList.toggle("abierto");
+
+}
+
+
+function cerrarMenu() {
+
+    const menu =
+        document.getElementById("menuContenido");
+
+    if (menu) {
+
+        menu.classList.remove("abierto");
+
+    }
+
+}
+
+
+/* =========================
+   CERRAR AL HACER CLIC
+   FUERA DEL RECUADRO
+========================= */
+
+document.querySelectorAll(".modal").forEach(function(modal) {
+
+    modal.addEventListener("click", function(event) {
+
+        if (event.target === modal) {
 
             modal.classList.remove("abierto");
 
@@ -1574,183 +1675,31 @@
 
         }
 
-    }
+    });
 
+});
 
 
-    /* =========================
-       TRES PUNTOS
-    ========================= */
+/* =========================
+   ESC PARA CERRAR
+========================= */
 
-    function alternarMenu() {
+document.addEventListener("keydown", function(event) {
 
-        const menu =
-            document.getElementById("menuContenido");
+    if (event.key === "Escape") {
 
-        menu.classList.toggle("abierto");
+        document.querySelectorAll(".modal").forEach(function(modal) {
 
-    }
-
-
-
-    function cerrarMenu() {
-
-        const menu =
-            document.getElementById("menuContenido");
-
-        menu.classList.remove("abierto");
-
-    }
-
-
-
-    /* =========================
-       FORMULARIO — ÚNETE
-    ========================= */
-
-    function enviarUnete() {
-
-        const nombre =
-            document.getElementById("nombreUnete").value.trim();
-
-        const edad =
-            document.getElementById("edadUnete").value.trim();
-
-        const participar =
-            document.getElementById("participarUnete").value;
-
-        const mensaje =
-            document.getElementById("mensajeUnete").value.trim();
-
-        const resultado =
-            document.getElementById("mensajeUneteFinal");
-
-        if (!nombre || !edad || !participar || !mensaje) {
-
-            resultado.innerHTML =
-                "⚠️ Completa todos los campos antes de enviar.";
-
-            return;
-
-        }
-
-        resultado.innerHTML =
-            "💚 ¡Gracias, " + nombre +
-            "! Tu intención de participar ha sido registrada en esta página. 🌱";
-
-    }
-
-
-
-    /* =========================
-       FORMULARIO — REPORTA
-    ========================= */
-
-    function enviarReporte() {
-
-        const tipo =
-            document.getElementById("tipoReporte").value;
-
-        const lugar =
-            document.getElementById("lugarReporte").value.trim();
-
-        const descripcion =
-            document.getElementById("descripcionReporte").value.trim();
-
-        const resultado =
-            document.getElementById("mensajeReporteFinal");
-
-        if (!tipo || !lugar || !descripcion) {
-
-            resultado.innerHTML =
-                "⚠️ Completa los campos principales del reporte.";
-
-            return;
-
-        }
-
-        resultado.innerHTML =
-            "🚨 Reporte recibido. Gracias por ayudarnos a identificar problemas en nuestro entorno. 🌎";
-
-    }
-
-
-
-    /* =========================
-       FORMULARIO — DONACIONES
-    ========================= */
-
-    function enviarDonacion() {
-
-        const nombre =
-            document.getElementById("nombreDonacion").value.trim();
-
-        const tipo =
-            document.getElementById("tipoDonacion").value;
-
-        const resultado =
-            document.getElementById("mensajeDonacionFinal");
-
-        if (!nombre || !tipo) {
-
-            resultado.innerHTML =
-                "⚠️ Completa tu nombre y selecciona cómo deseas colaborar.";
-
-            return;
-
-        }
-
-        resultado.innerHTML =
-            "🤲 ¡Gracias, " + nombre +
-            "! Gracias por querer apoyar nuestro proyecto. 🌱💚";
-
-    }
-
-
-
-    /* =========================
-       CERRAR AL HACER CLIC
-       FUERA DEL RECUADRO
-    ========================= */
-
-    document.querySelectorAll(".modal").forEach(function(modal) {
-
-        modal.addEventListener("click", function(event) {
-
-            if (event.target === modal) {
-
-                modal.classList.remove("abierto");
-
-                document.body.style.overflow = "";
-
-            }
+            modal.classList.remove("abierto");
 
         });
 
-    });
+        cerrarMenu();
 
+        document.body.style.overflow = "";
 
+    }
 
-    /* =========================
-       ESC PARA CERRAR
-    ========================= */
-
-    document.addEventListener("keydown", function(event) {
-
-        if (event.key === "Escape") {
-
-            document.querySelectorAll(".modal").forEach(function(modal) {
-
-                modal.classList.remove("abierto");
-
-            });
-
-            cerrarMenu();
-
-            document.body.style.overflow = "";
-
-        }
-
-    });
+});
 
 </script>
