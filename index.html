@@ -14,10 +14,6 @@
 
     <style>
 
-        /* =========================
-           CONFIGURACIÓN GENERAL
-        ========================= */
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -28,9 +24,7 @@
         body {
             color: #f5f3df;
             line-height: 1.6;
-
             font-family: "Special Elite", "Courier New", monospace;
-
             min-height: 100vh;
 
             background-image:
@@ -45,54 +39,36 @@
             background-attachment: fixed;
         }
 
-
         /* =========================
            PORTADA
         ========================= */
 
         .hero {
             min-height: 100vh;
-
             display: flex;
             justify-content: center;
             align-items: center;
-
             text-align: center;
-
             padding: 80px 20px;
-
             position: relative;
-
             overflow: hidden;
         }
 
         .hero-content {
             max-width: 1000px;
-
             display: flex;
             flex-direction: column;
             align-items: center;
-
             position: relative;
             z-index: 2;
         }
 
-
-        /* =========================
-           FRASE POTENTE
-        ========================= */
-
         .frase-potente {
             font-family: "DM Serif Display", Georgia, serif;
-
             font-size: clamp(48px, 7vw, 90px);
-
             line-height: 1.05;
-
             color: #f8f5df;
-
             max-width: 1000px;
-
             margin-bottom: 30px;
 
             text-shadow:
@@ -100,22 +76,14 @@
                 0 8px 20px rgba(0,0,0,0.25);
         }
 
-
-        /* =========================
-           YURI
-        ========================= */
-
         .mascota {
             margin-top: 15px;
         }
 
         .mascota img {
             width: 220px;
-
             max-width: 65vw;
-
             height: auto;
-
             display: block;
 
             filter:
@@ -125,7 +93,6 @@
         }
 
         @keyframes yuriFlota {
-
             0%, 100% {
                 transform: translateY(0);
             }
@@ -133,29 +100,18 @@
             50% {
                 transform: translateY(-10px);
             }
-
         }
-
-
-        /* =========================
-           TEXTO DE PORTADA
-        ========================= */
 
         .hero-subtitulo {
             font-family: "Special Elite", "Courier New", monospace;
-
             font-size: 19px;
-
             max-width: 700px;
-
             margin: 15px auto 25px;
-
             color: #f4f1db;
 
             text-shadow:
                 0 2px 5px rgba(0,0,0,0.65);
         }
-
 
         /* =========================
            BOTONES
@@ -163,37 +119,23 @@
 
         .botones-finales {
             display: flex;
-
             justify-content: center;
-
             flex-wrap: wrap;
-
             gap: 12px;
-
             margin-top: 25px;
         }
 
         .boton {
             display: inline-block;
-
             background: #54582f;
-
             color: #f8f5df;
-
             padding: 13px 25px;
-
             border-radius: 25px;
-
             text-decoration: none;
-
             font-family: "Montserrat", sans-serif;
-
             font-weight: 600;
-
             border: 1px solid rgba(255,255,255,0.2);
-
             cursor: pointer;
-
             transition: 0.3s;
 
             box-shadow:
@@ -202,10 +144,8 @@
 
         .boton:hover {
             transform: translateY(-3px) scale(1.03);
-
             background: #6b7040;
         }
-
 
         /* =========================
            BARRA PRINCIPAL
@@ -213,14 +153,10 @@
 
         header {
             position: fixed;
-
             top: 0;
             left: 0;
-
             width: 100%;
-
             min-height: 92px;
-
             z-index: 2000;
 
             background-image:
@@ -237,9 +173,7 @@
                 0 5px 20px rgba(0,0,0,0.35);
 
             transform: translateY(-110%);
-
-            transition:
-                transform 0.55s ease;
+            transition: transform 0.55s ease;
         }
 
         header.visible {
@@ -248,18 +182,12 @@
 
         .barra-interior {
             min-height: 92px;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             padding: 12px 20px;
-
             position: relative;
         }
-
 
         /* =========================
            CONTROLES IZQUIERDOS
@@ -267,40 +195,28 @@
 
         .controles-izquierda {
             position: absolute;
-
             left: 18px;
-
             top: 50%;
-
             transform: translateY(-50%);
 
             display: flex;
-
             align-items: center;
-
             gap: 8px;
         }
 
         .control-boton {
             width: 45px;
             height: 45px;
-
             border-radius: 50%;
-
             border: none;
-
             cursor: pointer;
 
             background: #54582f;
-
             color: #f8f5df;
-
             font-size: 22px;
 
             display: flex;
-
             justify-content: center;
-
             align-items: center;
 
             box-shadow:
@@ -311,10 +227,8 @@
 
         .control-boton:hover {
             transform: scale(1.1);
-
             background: #6b7040;
         }
-
 
         /* =========================
            NAVEGACIÓN
@@ -322,31 +236,22 @@
 
         nav {
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             gap: 12px;
-
             flex-wrap: wrap;
         }
 
         nav button {
             background: transparent;
-
             border: none;
-
             color: #f8f5df;
 
             font-family: "Montserrat", sans-serif;
-
             font-weight: 700;
-
             font-size: 15px;
 
             cursor: pointer;
-
             padding: 10px 13px;
 
             text-shadow:
@@ -357,10 +262,8 @@
 
         nav button:hover {
             transform: translateY(-2px);
-
             color: #ffffff;
         }
-
 
         /* =========================
            MENÚ DE TRES PUNTOS
@@ -372,17 +275,13 @@
 
         .menu-contenido {
             position: absolute;
-
             top: 58px;
-
             left: 0;
 
             width: 245px;
-
             padding: 12px;
 
             background: #54582f;
-
             border-radius: 18px;
 
             box-shadow:
@@ -411,30 +310,22 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-
         }
 
         .menu-contenido button {
             width: 100%;
-
             display: block;
-
             text-align: left;
 
             padding: 12px;
-
             border: none;
-
             border-radius: 12px;
 
             background: transparent;
-
             color: #f8f5df;
 
             font-family: "Special Elite", monospace;
-
             cursor: pointer;
-
             margin-bottom: 4px;
         }
 
@@ -442,24 +333,19 @@
             background: rgba(255,255,255,0.12);
         }
 
-
         /* =========================
-           VENTANAS / RECUADROS
+           VENTANAS
         ========================= */
 
         .modal {
             position: fixed;
-
             inset: 0;
-
             z-index: 3000;
 
             background: rgba(20,22,12,0.72);
 
             display: none;
-
             justify-content: center;
-
             align-items: center;
 
             padding: 25px;
@@ -481,22 +367,17 @@
             to {
                 opacity: 1;
             }
-
         }
 
         .modal-contenido {
             width: min(900px, 100%);
-
             max-height: 85vh;
-
             overflow-y: auto;
 
             background: #54582f;
-
             color: #f8f5df;
 
             border-radius: 30px;
-
             padding: 40px;
 
             position: relative;
@@ -522,59 +403,45 @@
                 opacity: 1;
                 transform: scale(1) translateY(0);
             }
-
         }
 
         .modal-contenido h2 {
             font-family: "Patrick Hand", cursive;
-
             font-size: 42px;
-
             margin-bottom: 20px;
-
             color: #f5eec8;
         }
 
         .modal-contenido h3 {
             font-family: "Patrick Hand", cursive;
-
             font-size: 28px;
-
             color: #f5eec8;
 
             margin-top: 20px;
-
             margin-bottom: 10px;
         }
 
         .modal-contenido p {
             font-family: "Special Elite", monospace;
-
             font-size: 17px;
-
             margin-bottom: 12px;
         }
 
         .cerrar {
             position: absolute;
-
             top: 15px;
-
             right: 18px;
 
             width: 42px;
             height: 42px;
 
             border-radius: 50%;
-
             border: none;
 
             background: rgba(255,255,255,0.12);
-
             color: #fff;
 
             font-size: 24px;
-
             cursor: pointer;
         }
 
@@ -582,36 +449,29 @@
             background: rgba(255,255,255,0.22);
         }
 
-
         /* =========================
-           YURI DENTRO DE CONÓCENOS
+           CONÓCENOS
         ========================= */
 
         .yuri-presentacion {
             display: flex;
-
             align-items: center;
-
             gap: 30px;
 
             margin-top: 25px;
-
             padding: 20px;
 
             background: rgba(0,0,0,0.12);
-
             border-radius: 22px;
         }
 
         .yuri-presentacion img {
             width: 160px;
-
             max-width: 35%;
 
             filter:
                 drop-shadow(0 6px 7px rgba(0,0,0,0.3));
         }
-
 
         /* =========================
            PLANTAS
@@ -619,11 +479,9 @@
 
         .planta-tarjeta {
             margin-top: 25px;
-
             padding: 25px;
 
             border-radius: 22px;
-
             background: rgba(0,0,0,0.12);
         }
 
@@ -631,6 +489,18 @@
             margin-top: 0;
         }
 
+        .planta-imagen {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+
+            margin: 20px auto;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.3);
+        }
 
         /* =========================
            ESTILOS
@@ -643,25 +513,20 @@
                 repeat(auto-fit, minmax(180px, 1fr));
 
             gap: 15px;
-
             margin-top: 25px;
         }
 
         .estilo-opcion {
             border: none;
-
             padding: 20px;
-
             border-radius: 18px;
 
             cursor: pointer;
 
             background: rgba(255,255,255,0.10);
-
             color: #f8f5df;
 
             font-family: "Montserrat", sans-serif;
-
             font-weight: 600;
 
             transition: 0.3s;
@@ -669,24 +534,115 @@
 
         .estilo-opcion:hover {
             background: rgba(255,255,255,0.20);
-
             transform: translateY(-3px);
         }
 
+        /* =========================
+           FORMULARIOS
+        ========================= */
+
+        .formulario {
+            margin-top: 25px;
+        }
+
+        .campo {
+            margin-bottom: 18px;
+        }
+
+        .campo label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-family: "Montserrat", sans-serif;
+            font-weight: 600;
+
+            color: #f5eec8;
+        }
+
+        .campo input,
+        .campo select,
+        .campo textarea {
+            width: 100%;
+
+            padding: 13px 15px;
+
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 14px;
+
+            background: rgba(255,255,255,0.10);
+
+            color: #fff;
+
+            font-family: "Montserrat", sans-serif;
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .campo input::placeholder,
+        .campo textarea::placeholder {
+            color: rgba(255,255,255,0.65);
+        }
+
+        .campo select option {
+            color: #222;
+        }
+
+        .campo textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .boton-formulario {
+            border: none;
+
+            padding: 14px 25px;
+
+            border-radius: 25px;
+
+            background: #777d43;
+            color: white;
+
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .boton-formulario:hover {
+            transform: translateY(-2px);
+            background: #89914f;
+        }
+
+        .mensaje-exito {
+            display: none;
+
+            margin-top: 20px;
+            padding: 15px;
+
+            border-radius: 15px;
+
+            background: rgba(150,190,100,0.18);
+
+            border: 1px solid rgba(200,230,150,0.25);
+
+            text-align: center;
+        }
 
         /* =========================
-           SECCIÓN FINAL
+           FINAL
         ========================= */
 
         .final {
             min-height: 70vh;
 
             display: flex;
-
             flex-direction: column;
 
             justify-content: center;
-
             align-items: center;
 
             text-align: center;
@@ -721,14 +677,12 @@
                 0 2px 5px rgba(0,0,0,0.6);
         }
 
-
         /* =========================
-           PIE DE PÁGINA
+           FOOTER
         ========================= */
 
         footer {
             background: #292c18;
-
             color: #f5f3df;
 
             text-align: center;
@@ -742,7 +696,6 @@
             margin: 5px;
         }
 
-
         /* =========================
            CELULARES
         ========================= */
@@ -751,7 +704,6 @@
 
             .barra-interior {
                 min-height: 105px;
-
                 padding-top: 55px;
             }
 
@@ -761,16 +713,13 @@
 
             .controles-izquierda {
                 top: 12px;
-
                 left: 12px;
-
                 transform: none;
             }
 
             .control-boton {
                 width: 38px;
                 height: 38px;
-
                 font-size: 19px;
             }
 
@@ -780,21 +729,17 @@
 
             nav button {
                 font-size: 12px;
-
                 padding: 7px 6px;
             }
 
             .menu-contenido {
                 top: 45px;
-
                 left: -10px;
-
                 width: 220px;
             }
 
             .modal-contenido {
                 padding: 30px 22px;
-
                 border-radius: 24px;
             }
 
@@ -804,13 +749,11 @@
 
             .yuri-presentacion {
                 flex-direction: column;
-
                 text-align: center;
             }
 
             .yuri-presentacion img {
                 max-width: 55%;
-
                 width: 170px;
             }
 
@@ -821,15 +764,12 @@
             .hero {
                 padding-top: 50px;
             }
-
         }
 
     </style>
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      PORTADA
@@ -840,9 +780,8 @@
     <div class="hero-content">
 
         <div class="frase-potente">
-           ¿EN QUÉ MOMENTO SE JODIÓ EL PERÚ?
+            ¿EN QUÉ MOMENTO SE JODIÓ EL PERÚ?
         </div>
-
 
         <div class="mascota">
 
@@ -853,16 +792,13 @@
 
         </div>
 
-
         <p class="hero-subtitulo">
-
-“Cuando dejamos de cuidar lo que nos daba vida.”
+            “Cuando dejamos de cuidar lo que nos daba vida.”
         </p>
 
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -873,10 +809,7 @@
 
     <div class="barra-interior">
 
-
         <div class="controles-izquierda">
-
-            <!-- TRES PUNTOS -->
 
             <div class="menu-extra">
 
@@ -887,7 +820,6 @@
                 >
                     ⋮
                 </button>
-
 
                 <div
                     class="menu-contenido"
@@ -914,9 +846,6 @@
 
             </div>
 
-
-            <!-- FLOR -->
-
             <button
                 class="control-boton"
                 onclick="abrirModal('plantas')"
@@ -926,10 +855,6 @@
             </button>
 
         </div>
-
-
-
-        <!-- OPCIONES PRINCIPALES -->
 
         <nav>
 
@@ -952,9 +877,8 @@
 </header>
 
 
-
 <!-- =====================================================
-     VENTANA: CONÓCENOS
+     CONÓCENOS
 ===================================================== -->
 
 <div class="modal" id="quienes">
@@ -968,31 +892,26 @@
             ×
         </button>
 
-
         <h2>
             👋 Conócenos
         </h2>
 
-
         <p>
-            Somos un grupo de 4 jóvenes que cree que cuidar
-            nuestro entorno no tiene que comenzar con una
-            acción enorme.
+            Somos un grupo de <strong>5 jóvenes randoms</strong>
+            que cree que cuidar nuestro entorno no tiene que
+            comenzar con una acción enorme.
         </p>
-
 
         <p>
             Creemos que cuando conocemos el lugar donde vivimos,
             aprendemos a valorarlo y podemos comenzar a protegerlo.
         </p>
 
-
         <p>
             🌱 Nuestra intención es compartir información,
             despertar curiosidad y motivar pequeñas acciones
             que ayuden a cuidar nuestra comunidad.
         </p>
-
 
         <div class="yuri-presentacion">
 
@@ -1019,9 +938,15 @@
                 </p>
 
                 <p>
+                    Le encanta la comida dulce y esponjosa,
+                    descubrir lugares nuevos y acompañar
+                    a quienes quieren cuidar la naturaleza. 🍰🌱
+                </p>
+
+                <p>
                     Su misión es acompañarnos mientras
                     conocemos, valoramos y protegemos
-                    nuestro entorno. 🌱
+                    nuestro entorno. 💚
                 </p>
 
             </div>
@@ -1033,9 +958,8 @@
 </div>
 
 
-
 <!-- =====================================================
-     VENTANA: SOBRE EL PROYECTO
+     SOBRE EL PROYECTO
 ===================================================== -->
 
 <div class="modal" id="proyecto">
@@ -1049,11 +973,9 @@
             ×
         </button>
 
-
         <h2>
             📖 Sobre el proyecto
         </h2>
-
 
         <p>
             <strong>Unidos por un Entorno Limpio</strong>
@@ -1062,19 +984,16 @@
             entorno.
         </p>
 
-
         <p>
             Queremos que conocer nuestro ambiente sea también
             una forma de aprender a valorarlo.
         </p>
-
 
         <p>
             A través de información, recomendaciones y recursos
             interactivos buscamos incentivar el cuidado de
             nuestros ecosistemas, plantas, suelos y recursos.
         </p>
-
 
         <h3>
             🌎 Nuestra idea
@@ -1089,9 +1008,8 @@
 </div>
 
 
-
 <!-- =====================================================
-     VENTANA: YURA
+     YURA
 ===================================================== -->
 
 <div class="modal" id="yura">
@@ -1105,24 +1023,20 @@
             ×
         </button>
 
-
         <h2>
             🌄 Yura
         </h2>
-
 
         <p>
             Yura posee paisajes, plantas y ecosistemas que
             forman parte de nuestra identidad.
         </p>
 
-
         <p>
             Vivimos en una zona donde el agua es un recurso
             muy importante y donde la naturaleza ha desarrollado
             diferentes formas de adaptarse a condiciones secas.
         </p>
-
 
         <h3>
             🌵 Naturaleza
@@ -1133,7 +1047,6 @@
             en condiciones de poca disponibilidad de agua.
         </p>
 
-
         <h3>
             💧 El agua importa
         </h3>
@@ -1142,7 +1055,6 @@
             Cuidar el agua también significa cuidar los suelos,
             las plantas, los animales y a las personas.
         </p>
-
 
         <h3>
             🌎 Nuestro hogar
@@ -1158,9 +1070,8 @@
 </div>
 
 
-
 <!-- =====================================================
-     VENTANA: PLANTAS
+     PLANTAS
 ===================================================== -->
 
 <div class="modal" id="plantas">
@@ -1174,11 +1085,9 @@
             ×
         </button>
 
-
         <h2>
             🌿 Plantas de nuestra zona
         </h2>
-
 
         <p>
             Algunas plantas que crecen en zonas áridas pueden
@@ -1186,12 +1095,17 @@
             dentro del ecosistema.
         </p>
 
-
         <div class="planta-tarjeta">
 
             <h3>
                 🌼 Encelia farinosa
             </h3>
+
+            <img
+                class="planta-imagen"
+                src="Brittlebrush {Encelia farinosa}.jfif"
+                alt="Encelia farinosa"
+            >
 
             <p>
                 La <i>Encelia farinosa</i> es una planta adaptada
@@ -1216,265 +1130,6 @@
     </div>
 
 </div>
-
-
-
-<!-- =====================================================
-     VENTANA: CUIDEMOS
-===================================================== -->
-
-<div class="modal" id="cuidemos">
-
-    <div class="modal-contenido">
-
-        <button
-            class="cerrar"
-            onclick="cerrarModal('cuidemos')"
-        >
-            ×
-        </button>
-
-
-        <h2>
-            ♻️ Cuidemos nuestro entorno
-        </h2>
-
-
-        <h3>
-            🔥 Evitemos las quemas
-        </h3>
-
-        <p>
-            Quemar vegetación puede afectar plantas, animales,
-            suelo y calidad del aire.
-        </p>
-
-
-        <h3>
-            🗑️ No dejemos basura
-        </h3>
-
-        <p>
-            Los residuos abandonados pueden permanecer durante
-            mucho tiempo en el ambiente y afectar a otros seres vivos.
-        </p>
-
-
-        <h3>
-            🌱 Protejamos las plantas
-        </h3>
-
-        <p>
-            No arrancar ni destruir plantas innecesariamente
-            es una forma sencilla de cuidar nuestro entorno.
-        </p>
-
-
-        <h3>
-            💧 Cuidemos el agua
-        </h3>
-
-        <p>
-            Utilicemos el agua de manera responsable,
-            especialmente en zonas donde este recurso es limitado.
-        </p>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     VENTANA: ¿SABÍAS QUE?
-===================================================== -->
-
-<div class="modal" id="sabias">
-
-    <div class="modal-contenido">
-
-        <button
-            class="cerrar"
-            onclick="cerrarModal('sabias')"
-        >
-            ×
-        </button>
-
-
-        <h2>
-            💡 ¿Sabías que...?
-        </h2>
-
-
-        <p>
-            🌵 Las plantas de zonas áridas poseen adaptaciones
-            que les permiten enfrentar condiciones de poca
-            disponibilidad de agua.
-        </p>
-
-
-        <p>
-            🌱 La vegetación forma parte del equilibrio de los
-            ecosistemas y proporciona refugio y recursos para
-            otros organismos.
-        </p>
-
-
-        <p>
-            💧 En lugares secos, conservar la humedad del suelo
-            puede ser especialmente importante para el desarrollo
-            de las plantas.
-        </p>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     VENTANA: COMPROMISO
-===================================================== -->
-
-<div class="modal" id="compromiso">
-
-    <div class="modal-contenido">
-
-        <button
-            class="cerrar"
-            onclick="cerrarModal('compromiso')"
-        >
-            ×
-        </button>
-
-
-        <h2>
-            💚 Nuestro compromiso
-        </h2>
-
-
-        <p>
-            No necesitamos hacer algo enorme para comenzar.
-        </p>
-
-
-        <p>
-            Podemos empezar con una acción pequeña:
-            no tirar basura, cuidar una planta, ahorrar agua
-            o enseñar a alguien más a proteger nuestro entorno.
-        </p>
-
-
-        <h3>
-            🌎 El cambio comienza con nosotros.
-        </h3>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     VENTANA: ESTILOS
-===================================================== -->
-
-<div class="modal" id="estilos">
-
-    <div class="modal-contenido">
-
-        <button
-            class="cerrar"
-            onclick="cerrarModal('estilos')"
-        >
-            ×
-        </button>
-
-
-        <h2>
-            🎨 Estilos
-        </h2>
-
-
-        <p>
-            Aquí podremos elegir la apariencia de nuestra página.
-        </p>
-
-
-        <div class="estilos-opciones">
-
-            <button class="estilo-opcion">
-                🌿 Natural
-            </button>
-
-            <button class="estilo-opcion">
-                🌸 Cute
-            </button>
-
-            <button class="estilo-opcion">
-                🌙 Nocturno
-            </button>
-
-            <button class="estilo-opcion">
-                📜 Vintage
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     PARTE FINAL
-===================================================== -->
-
-<section class="final">
-
-    <h2>
-        Juntos podemos hacer la diferencia.
-    </h2>
-
-
-    <p>
-        Una pequeña acción puede convertirse en el comienzo
-        de un cambio mucho más grande.
-    </p>
-
-
-    <div class="botones-finales">
-
-        <button
-            class="boton"
-            onclick="abrirModal('unete')"
-        >
-            💚 Únete
-        </button>
-
-
-        <button
-            class="boton"
-            onclick="abrirModal('reporta')"
-        >
-            🚨 Reporta
-        </button>
-
-
-        <button
-            class="boton"
-            onclick="abrirModal('donaciones')"
-        >
-            🤲 Donaciones
-        </button>
-
-    </div>
-
-</section>
-
-
-
 <!-- =====================================================
      VENTANA: ÚNETE
 ===================================================== -->
@@ -1490,22 +1145,98 @@
             ×
         </button>
 
-
         <h2>
-            💚 Únete
+            💚 Únete a nosotros
         </h2>
 
-
         <p>
-            Queremos que más personas formen parte del cuidado
-            de nuestro entorno.
+            ¿Quieres ser parte del cambio? 🌱
         </p>
 
-
         <p>
-            Próximamente podremos colocar aquí una forma
-            de participar en nuestras actividades.
+            No necesitas hacer algo enorme. Puedes comenzar
+            compartiendo una idea, participando en una actividad
+            o ayudando a cuidar un espacio de tu comunidad.
         </p>
+
+        <div class="formulario">
+
+            <label for="nombreUnete">
+                🌿 ¿Cómo te llamas?
+            </label>
+
+            <input
+                type="text"
+                id="nombreUnete"
+                placeholder="Escribe tu nombre"
+            >
+
+            <label for="edadUnete">
+                🎒 ¿Qué edad tienes?
+            </label>
+
+            <input
+                type="number"
+                id="edadUnete"
+                placeholder="Tu edad"
+            >
+
+            <label for="participarUnete">
+                💚 ¿Cómo te gustaría participar?
+            </label>
+
+            <select id="participarUnete">
+
+                <option value="">
+                    Selecciona una opción
+                </option>
+
+                <option>
+                    🌱 Actividades ambientales
+                </option>
+
+                <option>
+                    🧹 Limpieza de espacios
+                </option>
+
+                <option>
+                    🌿 Cuidado de plantas
+                </option>
+
+                <option>
+                    📢 Difusión del proyecto
+                </option>
+
+                <option>
+                    💡 Proponer ideas
+                </option>
+
+            </select>
+
+            <label for="mensajeUnete">
+                ✨ Cuéntanos algo
+            </label>
+
+            <textarea
+                id="mensajeUnete"
+                rows="4"
+                placeholder="¿Por qué te gustaría unirte?"
+            ></textarea>
+
+            <button
+                type="button"
+                class="boton formulario-boton"
+                onclick="enviarUnete()"
+            >
+                💚 Quiero unirme
+            </button>
+
+        </div>
+
+        <div
+            id="mensajeUneteFinal"
+            class="mensaje-formulario"
+        ></div>
 
     </div>
 
@@ -1528,17 +1259,102 @@
             ×
         </button>
 
-
         <h2>
-            🚨 Reporta
+            🚨 Reporta un problema
         </h2>
 
+        <p>
+            ¿Viste basura, una quema, daño a la vegetación
+            u otro problema ambiental?
+        </p>
 
         <p>
-            Si encuentras un problema relacionado con el cuidado
-            del entorno, aquí podremos colocar próximamente
-            un formulario para reportarlo.
+            Cuéntanos qué ocurrió para ayudarnos a conocer
+            mejor lo que sucede en nuestro entorno. 🌎
         </p>
+
+        <div class="formulario">
+
+            <label for="tipoReporte">
+                🚨 ¿Qué quieres reportar?
+            </label>
+
+            <select id="tipoReporte">
+
+                <option value="">
+                    Selecciona una opción
+                </option>
+
+                <option>
+                    🗑️ Acumulación de basura
+                </option>
+
+                <option>
+                    🔥 Quema de vegetación
+                </option>
+
+                <option>
+                    🌱 Daño a plantas
+                </option>
+
+                <option>
+                    💧 Desperdicio o contaminación de agua
+                </option>
+
+                <option>
+                    🏞️ Daño a un espacio natural
+                </option>
+
+                <option>
+                    ⚠️ Otro problema
+                </option>
+
+            </select>
+
+            <label for="lugarReporte">
+                📍 ¿Dónde ocurrió?
+            </label>
+
+            <input
+                type="text"
+                id="lugarReporte"
+                placeholder="Ejemplo: Yura, cerca de..."
+            >
+
+            <label for="descripcionReporte">
+                📝 Describe lo ocurrido
+            </label>
+
+            <textarea
+                id="descripcionReporte"
+                rows="5"
+                placeholder="Cuéntanos qué viste..."
+            ></textarea>
+
+            <label for="fotoReporte">
+                📷 Si tienes una foto, puedes seleccionarla
+            </label>
+
+            <input
+                type="file"
+                id="fotoReporte"
+                accept="image/*"
+            >
+
+            <button
+                type="button"
+                class="boton formulario-boton"
+                onclick="enviarReporte()"
+            >
+                🚨 Enviar reporte
+            </button>
+
+        </div>
+
+        <div
+            id="mensajeReporteFinal"
+            class="mensaje-formulario"
+        ></div>
 
     </div>
 
@@ -1561,23 +1377,108 @@
             ×
         </button>
 
-
         <h2>
-            🤲 Donaciones
+            🤲 Apoya nuestro proyecto
         </h2>
 
-
         <p>
-            Las donaciones estarán destinadas a apoyar
-            actividades relacionadas con el cuidado y
-            protección de nuestro entorno.
+            Cada aporte puede ayudarnos a realizar actividades
+            para cuidar y conocer mejor nuestro entorno. 🌱
         </p>
 
-
         <p>
-            Próximamente podremos agregar aquí la información
-            necesaria para quienes deseen colaborar.
+            Las donaciones pueden utilizarse para materiales,
+            actividades ambientales y recursos educativos.
         </p>
+
+        <div class="donacion-tarjeta">
+
+            <h3>
+                🌱 ¿Qué puedes apoyar?
+            </h3>
+
+            <p>
+                🪴 Materiales para actividades ambientales
+            </p>
+
+            <p>
+                🌿 Cuidado y conservación de plantas
+            </p>
+
+            <p>
+                📚 Material educativo
+            </p>
+
+            <p>
+                🧹 Actividades de limpieza y sensibilización
+            </p>
+
+        </div>
+
+        <div class="formulario">
+
+            <label for="nombreDonacion">
+                💚 Nombre
+            </label>
+
+            <input
+                type="text"
+                id="nombreDonacion"
+                placeholder="Tu nombre"
+            >
+
+            <label for="tipoDonacion">
+                🤲 ¿Cómo deseas colaborar?
+            </label>
+
+            <select id="tipoDonacion">
+
+                <option value="">
+                    Selecciona una opción
+                </option>
+
+                <option>
+                    💰 Aporte económico
+                </option>
+
+                <option>
+                    🌱 Donación de materiales
+                </option>
+
+                <option>
+                    📚 Donación de recursos educativos
+                </option>
+
+                <option>
+                    🤝 Quiero colaborar de otra manera
+                </option>
+
+            </select>
+
+            <label for="mensajeDonacion">
+                💌 Mensaje
+            </label>
+
+            <textarea
+                id="mensajeDonacion"
+                rows="4"
+                placeholder="Cuéntanos cómo te gustaría colaborar..."
+            ></textarea>
+
+            <button
+                type="button"
+                class="boton formulario-boton"
+                onclick="enviarDonacion()"
+            >
+                🤲 Quiero colaborar
+            </button>
+
+        </div>
+
+        <div
+            id="mensajeDonacionFinal"
+            class="mensaje-formulario"
+        ></div>
 
     </div>
 
@@ -1704,6 +1605,110 @@
 
 
     /* =========================
+       FORMULARIO — ÚNETE
+    ========================= */
+
+    function enviarUnete() {
+
+        const nombre =
+            document.getElementById("nombreUnete").value.trim();
+
+        const edad =
+            document.getElementById("edadUnete").value.trim();
+
+        const participar =
+            document.getElementById("participarUnete").value;
+
+        const mensaje =
+            document.getElementById("mensajeUnete").value.trim();
+
+        const resultado =
+            document.getElementById("mensajeUneteFinal");
+
+        if (!nombre || !edad || !participar || !mensaje) {
+
+            resultado.innerHTML =
+                "⚠️ Completa todos los campos antes de enviar.";
+
+            return;
+
+        }
+
+        resultado.innerHTML =
+            "💚 ¡Gracias, " + nombre +
+            "! Tu intención de participar ha sido registrada en esta página. 🌱";
+
+    }
+
+
+
+    /* =========================
+       FORMULARIO — REPORTA
+    ========================= */
+
+    function enviarReporte() {
+
+        const tipo =
+            document.getElementById("tipoReporte").value;
+
+        const lugar =
+            document.getElementById("lugarReporte").value.trim();
+
+        const descripcion =
+            document.getElementById("descripcionReporte").value.trim();
+
+        const resultado =
+            document.getElementById("mensajeReporteFinal");
+
+        if (!tipo || !lugar || !descripcion) {
+
+            resultado.innerHTML =
+                "⚠️ Completa los campos principales del reporte.";
+
+            return;
+
+        }
+
+        resultado.innerHTML =
+            "🚨 Reporte recibido. Gracias por ayudarnos a identificar problemas en nuestro entorno. 🌎";
+
+    }
+
+
+
+    /* =========================
+       FORMULARIO — DONACIONES
+    ========================= */
+
+    function enviarDonacion() {
+
+        const nombre =
+            document.getElementById("nombreDonacion").value.trim();
+
+        const tipo =
+            document.getElementById("tipoDonacion").value;
+
+        const resultado =
+            document.getElementById("mensajeDonacionFinal");
+
+        if (!nombre || !tipo) {
+
+            resultado.innerHTML =
+                "⚠️ Completa tu nombre y selecciona cómo deseas colaborar.";
+
+            return;
+
+        }
+
+        resultado.innerHTML =
+            "🤲 ¡Gracias, " + nombre +
+            "! Gracias por querer apoyar nuestro proyecto. 🌱💚";
+
+    }
+
+
+
+    /* =========================
        CERRAR AL HACER CLIC
        FUERA DEL RECUADRO
     ========================= */
@@ -1749,7 +1754,3 @@
     });
 
 </script>
-
-
-</body>
-</html>
