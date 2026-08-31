@@ -12,11 +12,25 @@
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Special+Elite&family=Montserrat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
 
-
 <style>
 
 /* =====================================================
-   CONFIGURACIÓN GENERAL
+   VARIABLES DE ESTILO
+===================================================== */
+
+:root {
+    --fondo: url("fondo principal.jpg");
+    --principal: #54582f;
+    --principal-hover: #6b7040;
+    --texto: #f8f5df;
+    --titulo: #f5eec8;
+    --oscuro: #292c18;
+    --sombra: rgba(0,0,0,0.35);
+}
+
+
+/* =====================================================
+   ESTILOS GENERALES
 ===================================================== */
 
 * {
@@ -27,13 +41,9 @@
 }
 
 body {
-
-    color: #f5f3df;
-
+    color: var(--texto);
     line-height: 1.6;
-
     font-family: "Special Elite", "Courier New", monospace;
-
     min-height: 100vh;
 
     background-image:
@@ -41,12 +51,10 @@ body {
             rgba(48,52,25,0.25),
             rgba(48,52,25,0.25)
         ),
-        url("fondo principal.jpg");
+        var(--fondo);
 
     background-size: cover;
-
     background-position: center;
-
     background-attachment: fixed;
 
     transition:
@@ -60,13 +68,10 @@ body {
 ===================================================== */
 
 .hero {
-
     min-height: 100vh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     text-align: center;
@@ -74,54 +79,18 @@ body {
     padding: 80px 20px;
 
     position: relative;
-
     overflow: hidden;
 }
 
-
 .hero-content {
-
     max-width: 1000px;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 
     position: relative;
-
     z-index: 2;
-}
-
-
-/* =====================================================
-   IMAGEN DE LOS 5 JÓVENES
-===================================================== */
-
-.jovenes-portada {
-
-    width: min(850px, 90vw);
-
-    margin-bottom: 25px;
-
-    animation: aparecer 1s ease;
-
-    filter:
-        drop-shadow(
-            0 10px 15px rgba(0,0,0,0.35)
-        );
-}
-
-.jovenes-portada img {
-
-    width: 100%;
-
-    height: auto;
-
-    display: block;
-
-    border-radius: 20px;
 }
 
 
@@ -130,22 +99,17 @@ body {
 ===================================================== */
 
 .frase-potente {
+    font-family: "DM Serif Display", Georgia, serif;
 
-    font-family:
-        "DM Serif Display",
-        Georgia,
-        serif;
-
-    font-size:
-        clamp(48px,7vw,90px);
+    font-size: clamp(48px, 7vw, 90px);
 
     line-height: 1.05;
 
-    color: #f8f5df;
+    color: var(--texto);
 
     max-width: 1000px;
 
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 
     text-shadow:
         0 4px 8px rgba(0,0,0,0.55),
@@ -158,31 +122,21 @@ body {
 ===================================================== */
 
 .mascota {
-
     margin-top: 15px;
-
-    animation: aparecer 1s ease;
 }
 
 .mascota img {
-
-    width: 220px;
-
+    width: 230px;
     max-width: 65vw;
-
     height: auto;
 
     display: block;
 
     filter:
-        drop-shadow(
-            0 8px 8px rgba(0,0,0,0.35)
-        );
+        drop-shadow(0 8px 8px rgba(0,0,0,0.35));
 
-    animation:
-        yuriFlota 3.5s ease-in-out infinite;
+    animation: yuriFlota 3.5s ease-in-out infinite;
 }
-
 
 @keyframes yuriFlota {
 
@@ -196,34 +150,18 @@ body {
 }
 
 
-@keyframes aparecer {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
 /* =====================================================
-   TEXTO PORTADA
+   SUBTÍTULO
 ===================================================== */
 
 .hero-subtitulo {
-
     font-size: 19px;
 
     max-width: 700px;
 
-    margin:
-        15px auto 25px;
+    margin: 15px auto 25px;
 
-    color: #f4f1db;
+    color: var(--texto);
 
     text-shadow:
         0 2px 5px rgba(0,0,0,0.65);
@@ -235,11 +173,8 @@ body {
 ===================================================== */
 
 .botones-finales {
-
     display: flex;
-
     justify-content: center;
-
     flex-wrap: wrap;
 
     gap: 12px;
@@ -247,14 +182,12 @@ body {
     margin-top: 25px;
 }
 
-
 .boton {
-
     display: inline-block;
 
-    background: #54582f;
+    background: var(--principal);
 
-    color: #f8f5df;
+    color: var(--texto);
 
     padding: 13px 25px;
 
@@ -262,14 +195,11 @@ body {
 
     text-decoration: none;
 
-    font-family:
-        "Montserrat",
-        sans-serif;
+    font-family: "Montserrat", sans-serif;
 
     font-weight: 600;
 
-    border:
-        1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
 
     cursor: pointer;
 
@@ -279,27 +209,21 @@ body {
         0 5px 15px rgba(0,0,0,0.2);
 }
 
-
 .boton:hover {
+    transform: translateY(-3px) scale(1.03);
 
-    transform:
-        translateY(-3px)
-        scale(1.03);
-
-    background: #6b7040;
+    background: var(--principal-hover);
 }
 
 
 /* =====================================================
-   BARRA PRINCIPAL
+   BARRA
 ===================================================== */
 
 header {
-
     position: fixed;
 
     top: 0;
-
     left: 0;
 
     width: 100%;
@@ -316,29 +240,22 @@ header {
         url("PANEL DE IMÁGENES.jpg");
 
     background-size: cover;
-
     background-position: center;
 
     box-shadow:
         0 5px 20px rgba(0,0,0,0.35);
 
-    transform:
-        translateY(-110%);
+    transform: translateY(-110%);
 
     transition:
         transform 0.55s ease;
 }
 
-
 header.visible {
-
-    transform:
-        translateY(0);
+    transform: translateY(0);
 }
 
-
 .barra-interior {
-
     min-height: 92px;
 
     display: flex;
@@ -358,28 +275,21 @@ header.visible {
 ===================================================== */
 
 .controles-izquierda {
-
     position: absolute;
 
     left: 18px;
-
     top: 50%;
 
-    transform:
-        translateY(-50%);
+    transform: translateY(-50%);
 
     display: flex;
-
     align-items: center;
 
     gap: 8px;
 }
 
-
 .control-boton {
-
     width: 45px;
-
     height: 45px;
 
     border-radius: 50%;
@@ -388,16 +298,15 @@ header.visible {
 
     cursor: pointer;
 
-    background: #54582f;
+    background: var(--principal);
 
-    color: #f8f5df;
+    color: var(--texto);
 
     font-size: 22px;
 
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     box-shadow:
@@ -406,12 +315,10 @@ header.visible {
     transition: 0.3s;
 }
 
-
 .control-boton:hover {
-
     transform: scale(1.1);
 
-    background: #6b7040;
+    background: var(--principal-hover);
 }
 
 
@@ -420,11 +327,9 @@ header.visible {
 ===================================================== */
 
 nav {
-
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     gap: 12px;
@@ -432,18 +337,14 @@ nav {
     flex-wrap: wrap;
 }
 
-
 nav button {
-
     background: transparent;
 
     border: none;
 
-    color: #f8f5df;
+    color: var(--texto);
 
-    font-family:
-        "Montserrat",
-        sans-serif;
+    font-family: "Montserrat", sans-serif;
 
     font-weight: 700;
 
@@ -459,11 +360,8 @@ nav button {
     transition: 0.3s;
 }
 
-
 nav button:hover {
-
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 
     color: #ffffff;
 }
@@ -474,24 +372,20 @@ nav button:hover {
 ===================================================== */
 
 .menu-extra {
-
     position: relative;
 }
 
-
 .menu-contenido {
-
     position: absolute;
 
     top: 58px;
-
     left: 0;
 
     width: 245px;
 
     padding: 12px;
 
-    background: #54582f;
+    background: var(--principal);
 
     border-radius: 18px;
 
@@ -504,15 +398,12 @@ nav button:hover {
         1px solid rgba(255,255,255,0.15);
 }
 
-
 .menu-contenido.abierto {
-
     display: block;
 
     animation:
         aparecerMenu 0.25s ease;
 }
-
 
 @keyframes aparecerMenu {
 
@@ -527,9 +418,7 @@ nav button:hover {
     }
 }
 
-
 .menu-contenido button {
-
     width: 100%;
 
     display: block;
@@ -544,22 +433,17 @@ nav button:hover {
 
     background: transparent;
 
-    color: #f8f5df;
+    color: var(--texto);
 
-    font-family:
-        "Special Elite",
-        monospace;
+    font-family: "Special Elite", monospace;
 
     cursor: pointer;
 
     margin-bottom: 4px;
 }
 
-
 .menu-contenido button:hover {
-
-    background:
-        rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.12);
 }
 
 
@@ -568,34 +452,28 @@ nav button:hover {
 ===================================================== */
 
 .modal {
-
     position: fixed;
 
     inset: 0;
 
     z-index: 3000;
 
-    background:
-        rgba(20,22,12,0.72);
+    background: rgba(20,22,12,0.72);
 
     display: none;
 
     justify-content: center;
-
     align-items: center;
 
     padding: 25px;
 }
 
-
 .modal.abierto {
-
     display: flex;
 
     animation:
         aparecerFondo 0.25s ease;
 }
-
 
 @keyframes aparecerFondo {
 
@@ -608,19 +486,16 @@ nav button:hover {
     }
 }
 
-
 .modal-contenido {
-
-    width:
-        min(900px,100%);
+    width: min(900px,100%);
 
     max-height: 85vh;
 
     overflow-y: auto;
 
-    background: #54582f;
+    background: var(--principal);
 
-    color: #f8f5df;
+    color: var(--texto);
 
     border-radius: 30px;
 
@@ -638,85 +513,60 @@ nav button:hover {
         aparecerRecuadro 0.3s ease;
 }
 
-
 @keyframes aparecerRecuadro {
 
     from {
-
         opacity: 0;
-
-        transform:
-            scale(0.94)
-            translateY(10px);
+        transform: scale(0.94) translateY(10px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
+        transform: scale(1) translateY(0);
     }
 }
 
-
 .modal-contenido h2 {
-
-    font-family:
-        "Patrick Hand",
-        cursive;
+    font-family: "Patrick Hand", cursive;
 
     font-size: 42px;
 
     margin-bottom: 20px;
 
-    color: #f5eec8;
+    color: var(--titulo);
 }
 
-
 .modal-contenido h3 {
-
-    font-family:
-        "Patrick Hand",
-        cursive;
+    font-family: "Patrick Hand", cursive;
 
     font-size: 28px;
 
-    color: #f5eec8;
+    color: var(--titulo);
 
     margin-top: 20px;
-
     margin-bottom: 10px;
 }
 
-
 .modal-contenido p {
-
     font-size: 17px;
 
     margin-bottom: 12px;
 }
 
-
 .cerrar {
-
     position: absolute;
 
     top: 15px;
-
     right: 18px;
 
     width: 42px;
-
     height: 42px;
 
     border-radius: 50%;
 
     border: none;
 
-    background:
-        rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.12);
 
     color: #fff;
 
@@ -725,20 +575,58 @@ nav button:hover {
     cursor: pointer;
 }
 
-
 .cerrar:hover {
-
-    background:
-        rgba(255,255,255,0.22);
+    background: rgba(255,255,255,0.22);
 }
 
 
 /* =====================================================
-   YURI PRESENTACIÓN
+   CONÓCENOS - 5 JÓVENES
+===================================================== */
+
+.jovenes-contenedor {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,0.12);
+
+    border-radius: 25px;
+
+    text-align: center;
+}
+
+.jovenes-contenedor h3 {
+    margin-top: 0;
+}
+
+.jovenes-imagen {
+    width: 100%;
+
+    max-width: 760px;
+
+    display: block;
+
+    margin: 20px auto 10px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35);
+
+    transition: 0.4s;
+}
+
+.jovenes-imagen:hover {
+    transform: scale(1.02);
+}
+
+
+/* =====================================================
+   YURI EN CONÓCENOS
 ===================================================== */
 
 .yuri-presentacion {
-
     display: flex;
 
     align-items: center;
@@ -749,23 +637,18 @@ nav button:hover {
 
     padding: 20px;
 
-    background:
-        rgba(0,0,0,0.12);
+    background: rgba(0,0,0,0.12);
 
     border-radius: 22px;
 }
 
-
 .yuri-presentacion img {
-
-    width: 160px;
+    width: 170px;
 
     max-width: 35%;
 
     filter:
-        drop-shadow(
-            0 6px 7px rgba(0,0,0,0.3)
-        );
+        drop-shadow(0 6px 7px rgba(0,0,0,0.3));
 }
 
 
@@ -774,20 +657,16 @@ nav button:hover {
 ===================================================== */
 
 .planta-tarjeta {
-
     margin-top: 25px;
 
     padding: 25px;
 
     border-radius: 22px;
 
-    background:
-        rgba(0,0,0,0.12);
+    background: rgba(0,0,0,0.12);
 }
 
-
 .planta-tarjeta h3 {
-
     margin-top: 0;
 }
 
@@ -797,63 +676,44 @@ nav button:hover {
 ===================================================== */
 
 .estilos-opciones {
-
     display: grid;
 
     grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(180px,1fr)
-        );
+        repeat(auto-fit,minmax(180px,1fr));
 
     gap: 15px;
 
     margin-top: 25px;
 }
 
-
 .estilo-opcion {
-
     border: none;
 
-    padding: 20px;
+    padding: 25px 20px;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     cursor: pointer;
 
-    background:
-        rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.10);
 
-    color: #f8f5df;
+    color: var(--texto);
 
-    font-family:
-        "Montserrat",
-        sans-serif;
+    font-family: "Montserrat", sans-serif;
 
     font-weight: 600;
+
+    font-size: 16px;
 
     transition: 0.3s;
 }
 
-
 .estilo-opcion:hover {
-
-    background:
-        rgba(255,255,255,0.20);
+    background: rgba(255,255,255,0.20);
 
     transform:
-        translateY(-3px);
-}
-
-
-.estilo-opcion.activo {
-
-    outline:
-        3px solid #f5eec8;
-
-    transform:
-        translateY(-3px);
+        translateY(-4px)
+        scale(1.02);
 }
 
 
@@ -862,89 +722,66 @@ nav button:hover {
 ===================================================== */
 
 .formulario {
+    margin-top: 25px;
 
-    margin-top: 20px;
+    padding: 25px;
 
-    display: flex;
+    background: rgba(0,0,0,0.12);
 
-    flex-direction: column;
-
-    gap: 14px;
+    border-radius: 22px;
 }
-
 
 .formulario label {
+    display: block;
 
-    font-family:
-        "Montserrat",
-        sans-serif;
+    margin-top: 12px;
+    margin-bottom: 5px;
+
+    font-family: "Montserrat", sans-serif;
 
     font-weight: 600;
-
-    margin-top: 5px;
 }
-
 
 .formulario input,
 .formulario textarea,
 .formulario select {
-
     width: 100%;
 
-    padding: 13px 15px;
+    padding: 12px 14px;
 
     border: none;
 
     border-radius: 12px;
 
-    background:
-        rgba(255,255,255,0.90);
-
-    color: #252817;
-
-    font-family:
-        "Montserrat",
-        sans-serif;
-
-    font-size: 14px;
-
     outline: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    background: rgba(255,255,255,0.92);
+
+    color: #222;
 }
 
-
 .formulario textarea {
-
-    min-height: 120px;
+    min-height: 110px;
 
     resize: vertical;
 }
 
-
-.formulario input:focus,
-.formulario textarea:focus,
-.formulario select:focus {
-
-    box-shadow:
-        0 0 0 3px
-        rgba(245,238,200,0.55);
-}
-
-
 .formulario button {
+    margin-top: 18px;
 
     border: none;
 
-    border-radius: 20px;
+    padding: 13px 24px;
 
-    padding: 13px 20px;
+    border-radius: 25px;
 
-    background: #777b43;
+    background: var(--titulo);
 
-    color: white;
+    color: #333;
 
-    font-family:
-        "Montserrat",
-        sans-serif;
+    font-family: "Montserrat", sans-serif;
 
     font-weight: 700;
 
@@ -953,39 +790,18 @@ nav button:hover {
     transition: 0.3s;
 }
 
-
 .formulario button:hover {
+    transform: translateY(-2px);
 
-    transform:
-        translateY(-2px);
-
-    background: #8b9050;
-}
-
-
-.mensaje-formulario {
-
-    display: none;
-
-    padding: 13px;
-
-    margin-top: 5px;
-
-    border-radius: 12px;
-
-    background:
-        rgba(255,255,255,0.15);
-
-    text-align: center;
+    opacity: 0.9;
 }
 
 
 /* =====================================================
-   FINAL
+   PARTE FINAL
 ===================================================== */
 
 .final {
-
     min-height: 70vh;
 
     display: flex;
@@ -1004,17 +820,12 @@ nav button:hover {
         rgba(30,32,17,0.48);
 }
 
-
 .final h2 {
+    font-family: "Patrick Hand", cursive;
 
-    font-family:
-        "Patrick Hand",
-        cursive;
+    font-size: clamp(42px,6vw,70px);
 
-    font-size:
-        clamp(42px,6vw,70px);
-
-    color: #f5eec8;
+    color: var(--titulo);
 
     margin-bottom: 20px;
 
@@ -1022,9 +833,7 @@ nav button:hover {
         0 4px 8px rgba(0,0,0,0.5);
 }
 
-
 .final p {
-
     max-width: 750px;
 
     font-size: 18px;
@@ -1041,304 +850,144 @@ nav button:hover {
 ===================================================== */
 
 footer {
+    background: var(--oscuro);
 
-    background: #292c18;
-
-    color: #f5f3df;
+    color: var(--texto);
 
     text-align: center;
 
     padding: 35px 20px;
 
-    font-family:
-        "Special Elite",
-        monospace;
+    font-family: "Special Elite", monospace;
 }
 
-
 footer p {
-
     margin: 5px;
 }
 
 
 /* =====================================================
-   =====================================================
-   ESTILOS ESPECIALES
-   =====================================================
+   TEMA CUTE
 ===================================================== */
 
-
-/* =====================================================
-   🌸 CUTE
-===================================================== */
-
-body.cute {
+body.estilo-cute {
+    --principal: #d66b91;
+    --principal-hover: #e889aa;
+    --texto: #fff8fc;
+    --titulo: #ffe1ed;
+    --oscuro: #6f4054;
 
     background-image:
         linear-gradient(
-            rgba(255,210,225,0.20),
-            rgba(255,240,200,0.25)
+            rgba(255,180,210,0.20),
+            rgba(255,180,210,0.20)
         ),
         url("FONDOCUTE2.jfif");
-
-    color: #60434b;
-
-    font-family:
-        "Patrick Hand",
-        cursive;
 }
 
-
-body.cute .frase-potente {
-
-    color: #fff5f8;
-
-    text-shadow:
-        0 4px 10px rgba(120,60,80,0.45);
+body.estilo-cute .modal-contenido,
+body.estilo-cute .menu-contenido {
+    border-radius: 30px;
 }
 
-
-body.cute header {
-
-    background-image:
-        linear-gradient(
-            rgba(255,180,205,0.25),
-            rgba(255,225,230,0.20)
-        ),
-        url("PANEL DE IMÁGENES.jpg");
-}
-
-
-body.cute .control-boton,
-body.cute .boton {
-
-    background: #d88fa6;
-}
-
-
-body.cute .control-boton:hover,
-body.cute .boton:hover {
-
-    background: #c97894;
-}
-
-
-body.cute .modal-contenido {
-
-    background: #d88fa6;
-
-    border-radius: 35px;
-}
-
-
-body.cute .menu-contenido {
-
-    background: #d88fa6;
-}
-
-
-body.cute .modal-contenido h2,
-body.cute .modal-contenido h3 {
-
-    color: #fff4f7;
-}
-
-
-body.cute .jovenes-portada img {
-
-    content:
-        url("5jovenescute.png");
-}
-
-
-body.cute .mascota img {
-
-    content:
-        url("yuribienvenidacute.png");
+body.estilo-cute .boton,
+body.estilo-cute .control-boton {
+    border-radius: 30px;
 }
 
 
 /* =====================================================
-   🌙 NOCTURNO
+   TEMA NOCTURNO
 ===================================================== */
 
-body.nocturno {
+body.estilo-nocturno {
+    --principal: #202944;
+    --principal-hover: #33436c;
+    --texto: #eaf0ff;
+    --titulo: #cddcff;
+    --oscuro: #101525;
 
     background-image:
         linear-gradient(
-            rgba(8,15,35,0.58),
-            rgba(10,15,30,0.70)
-        ),
-        url("fondonoche.jfif");
-
-    color: #e7ecff;
-}
-
-
-body.nocturno header {
-
-    background-image:
-        linear-gradient(
-            rgba(10,15,35,0.50),
-            rgba(10,15,35,0.60)
+            rgba(5,8,20,0.55),
+            rgba(5,8,20,0.55)
         ),
         url("fondonoche.jfif");
 }
 
 
-body.nocturno .control-boton,
-body.nocturno .boton {
-
-    background: #35456f;
-}
-
-
-body.nocturno .control-boton:hover,
-body.nocturno .boton:hover {
-
-    background: #50659a;
-}
-
-
-body.nocturno .modal-contenido {
-
-    background: #283452;
-
-    color: #edf2ff;
-}
-
-
-body.nocturno .menu-contenido {
-
-    background: #283452;
-}
-
-
-body.nocturno .modal-contenido h2,
-body.nocturno .modal-contenido h3 {
-
-    color: #dce6ff;
-}
-
-
-body.nocturno .jovenes-portada img {
-
-    content:
-        url("5jovenesnoche.jfif");
-}
-
-
-body.nocturno .mascota img {
-
-    content:
-        url("yuribienvenidanoche.png");
-}
-
-
 /* =====================================================
-   🌄 YURA
+   TEMA URBANO
 ===================================================== */
 
-body.yura {
+body.estilo-urbano {
+    --principal: #34383d;
+    --principal-hover: #515860;
+    --texto: #f2f2f2;
+    --titulo: #ffffff;
+    --oscuro: #202326;
 
     background-image:
         linear-gradient(
-            rgba(100,73,38,0.20),
-            rgba(65,48,30,0.30)
+            rgba(20,24,28,0.38),
+            rgba(20,24,28,0.38)
         ),
-        url("fondoyura.jfif");
-
-    color: #fff4dc;
+        url("fondourbano.jfif");
 }
 
-
-body.yura header {
-
-    background-image:
-        linear-gradient(
-            rgba(85,55,25,0.30),
-            rgba(75,45,20,0.35)
-        ),
-        url("fondoyura.jfif");
+body.estilo-urbano .modal-contenido,
+body.estilo-urbano .menu-contenido {
+    border-radius: 12px;
 }
 
-
-body.yura .control-boton,
-body.yura .boton {
-
-    background: #9b6d32;
-}
-
-
-body.yura .control-boton:hover,
-body.yura .boton:hover {
-
-    background: #b8823c;
-}
-
-
-body.yura .modal-contenido {
-
-    background: #70502f;
-
-    color: #fff4dc;
-}
-
-
-body.yura .menu-contenido {
-
-    background: #70502f;
-}
-
-
-body.yura .modal-contenido h2,
-body.yura .modal-contenido h3 {
-
-    color: #ffe3a9;
-}
-
-
-body.yura .jovenes-portada img {
-
-    content:
-        url("5yurajovenes.png");
-}
-
-
-/*
-   Si tienes una imagen específica de Yuri
-   para Yura puedes cambiar esta línea por
-   el nombre exacto de tu archivo.
-*/
-
-body.yura .mascota img {
-
-    content:
-        url("yuribienvenida.png");
+body.estilo-urbano .boton,
+body.estilo-urbano .control-boton {
+    border-radius: 8px;
 }
 
 
 /* =====================================================
-   MÓVIL
+   TEMA YURA
+===================================================== */
+
+body.estilo-yura {
+    --principal: #7b5b35;
+    --principal-hover: #987448;
+    --texto: #fff7df;
+    --titulo: #ffe0a3;
+    --oscuro: #49351f;
+
+    background-image:
+        linear-gradient(
+            rgba(91,63,31,0.20),
+            rgba(91,63,31,0.20)
+        ),
+        url("fondoyura.jfif");
+}
+
+body.estilo-yura .modal-contenido,
+body.estilo-yura .menu-contenido {
+    border-radius: 18px;
+}
+
+
+/* =====================================================
+   CELULARES
 ===================================================== */
 
 @media (max-width:700px) {
 
     .barra-interior {
-
         min-height: 105px;
 
         padding-top: 55px;
     }
 
     header {
-
         min-height: 105px;
     }
 
     .controles-izquierda {
-
         top: 12px;
 
         left: 12px;
@@ -1347,29 +996,23 @@ body.yura .mascota img {
     }
 
     .control-boton {
-
         width: 38px;
-
         height: 38px;
 
         font-size: 19px;
     }
 
     nav {
-
         gap: 2px;
     }
 
     nav button {
-
         font-size: 12px;
 
-        padding:
-            7px 6px;
+        padding: 7px 6px;
     }
 
     .menu-contenido {
-
         top: 45px;
 
         left: -10px;
@@ -1378,44 +1021,32 @@ body.yura .mascota img {
     }
 
     .modal-contenido {
-
-        padding:
-            30px 22px;
+        padding: 30px 22px;
 
         border-radius: 24px;
     }
 
     .modal-contenido h2 {
-
         font-size: 34px;
     }
 
     .yuri-presentacion {
-
         flex-direction: column;
 
         text-align: center;
     }
 
     .yuri-presentacion img {
-
         max-width: 55%;
 
         width: 170px;
     }
 
     .mascota img {
-
         width: 175px;
     }
 
-    .jovenes-portada {
-
-        width: 94vw;
-    }
-
     .hero {
-
         padding-top: 50px;
     }
 
@@ -1436,46 +1067,21 @@ body.yura .mascota img {
 
     <div class="hero-content">
 
-
-        <!-- 5 JÓVENES -->
-
-        <div class="jovenes-portada">
-
-            <img
-                src="5jovenesnatural.png"
-                alt="Los cinco jóvenes de Unidos por un Entorno Limpio"
-            >
-
-        </div>
-
-
-        <!-- FRASE -->
-
         <div class="frase-potente">
-
             ¿EN QUÉ MOMENTO SE JODIÓ EL PERÚ?
-
         </div>
-
-
-        <!-- YURI -->
 
         <div class="mascota">
 
             <img
-                src="yuri bienvenida.png"
+                src="yuribienvenidayura.png"
                 alt="Yuri dando la bienvenida"
             >
 
         </div>
 
-
-        <!-- FRASE DE YURI -->
-
         <p class="hero-subtitulo">
-
             “Cuando dejamos de cuidar lo que nos daba vida.”
-
         </p>
 
     </div>
@@ -1483,20 +1089,15 @@ body.yura .mascota img {
 </section>
 
 
-
 <!-- =====================================================
-     BARRA
+     BARRA PRINCIPAL
 ===================================================== -->
 
 <header id="barra">
 
     <div class="barra-interior">
 
-
         <div class="controles-izquierda">
-
-
-            <!-- MENÚ -->
 
             <div class="menu-extra">
 
@@ -1508,33 +1109,24 @@ body.yura .mascota img {
                     ⋮
                 </button>
 
-
                 <div
                     class="menu-contenido"
                     id="menuContenido"
                 >
 
-                    <button
-                        onclick="abrirModal('cuidemos')"
-                    >
+                    <button onclick="abrirModal('cuidemos')">
                         ♻️ Cuidemos nuestro entorno
                     </button>
 
-                    <button
-                        onclick="abrirModal('sabias')"
-                    >
+                    <button onclick="abrirModal('sabias')">
                         💡 ¿Sabías que?
                     </button>
 
-                    <button
-                        onclick="abrirModal('compromiso')"
-                    >
+                    <button onclick="abrirModal('compromiso')">
                         💚 Nuestro compromiso
                     </button>
 
-                    <button
-                        onclick="abrirModal('estilos')"
-                    >
+                    <button onclick="abrirModal('estilos')">
                         🎨 Estilos
                     </button>
 
@@ -1542,8 +1134,6 @@ body.yura .mascota img {
 
             </div>
 
-
-            <!-- FLOR -->
 
             <button
                 class="control-boton"
@@ -1556,24 +1146,17 @@ body.yura .mascota img {
         </div>
 
 
-
         <nav>
 
-            <button
-                onclick="abrirModal('quienes')"
-            >
+            <button onclick="abrirModal('quienes')">
                 👋 Conócenos
             </button>
 
-            <button
-                onclick="abrirModal('proyecto')"
-            >
+            <button onclick="abrirModal('proyecto')">
                 📖 Sobre el proyecto
             </button>
 
-            <button
-                onclick="abrirModal('yura')"
-            >
+            <button onclick="abrirModal('yura')">
                 🌄 Yura
             </button>
 
@@ -1584,15 +1167,11 @@ body.yura .mascota img {
 </header>
 
 
-
 <!-- =====================================================
      CONÓCENOS
 ===================================================== -->
 
-<div
-    class="modal"
-    id="quienes"
->
+<div class="modal" id="quienes">
 
     <div class="modal-contenido">
 
@@ -1603,11 +1182,9 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             👋 Conócenos
         </h2>
-
 
         <p>
             Somos un grupo de 5 jóvenes que cree que cuidar
@@ -1615,27 +1192,42 @@ body.yura .mascota img {
             acción enorme.
         </p>
 
-
         <p>
             Creemos que cuando conocemos el lugar donde vivimos,
             aprendemos a valorarlo y podemos comenzar a protegerlo.
         </p>
 
+        <!-- IMAGEN DE LOS 5 JÓVENES -->
 
-        <p>
-            🌱 Nuestra intención es compartir información,
-            despertar curiosidad y motivar pequeñas acciones
-            que ayuden a cuidar nuestra comunidad.
-        </p>
+        <div class="jovenes-contenedor">
 
+            <h3>
+                🌱 Los 5 jóvenes detrás del proyecto
+            </h3>
+
+            <img
+                class="jovenes-imagen"
+                src="5jovenescute.png"
+                alt="Los cinco jóvenes del proyecto"
+            >
+
+            <p>
+                Juntos queremos compartir información,
+                despertar curiosidad y motivar pequeñas acciones
+                para cuidar nuestra comunidad.
+            </p>
+
+        </div>
+
+
+        <!-- YURI -->
 
         <div class="yuri-presentacion">
 
             <img
-                src="yuri bienvenida.png"
+                src="yuribienvenidayura.png"
                 alt="Yuri"
             >
-
 
             <div>
 
@@ -1649,15 +1241,9 @@ body.yura .mascota img {
                 </p>
 
                 <p>
-                    Está inspirada en una vizcacha y tiene
-                    una apariencia tranquila y un poquito
-                    soñolienta.
-                </p>
-
-                <p>
-                    Su misión es acompañarnos mientras
-                    conocemos, valoramos y protegemos
-                    nuestro entorno. 🌱
+                    Está inspirada en una vizcacha y nos
+                    acompaña mientras conocemos, valoramos
+                    y protegemos nuestro entorno.
                 </p>
 
             </div>
@@ -1669,15 +1255,11 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
-     PROYECTO
+     SOBRE EL PROYECTO
 ===================================================== -->
 
-<div
-    class="modal"
-    id="proyecto"
->
+<div class="modal" id="proyecto">
 
     <div class="modal-contenido">
 
@@ -1688,11 +1270,9 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             📖 Sobre el proyecto
         </h2>
-
 
         <p>
             <strong>Unidos por un Entorno Limpio</strong>
@@ -1701,12 +1281,10 @@ body.yura .mascota img {
             entorno.
         </p>
 
-
         <p>
             Queremos que conocer nuestro ambiente sea también
             una forma de aprender a valorarlo.
         </p>
-
 
         <p>
             A través de información, recomendaciones y recursos
@@ -1714,11 +1292,9 @@ body.yura .mascota img {
             nuestros ecosistemas, plantas, suelos y recursos.
         </p>
 
-
         <h3>
             🌎 Nuestra idea
         </h3>
-
 
         <p>
             Conocer → Valorar → Proteger
@@ -1729,15 +1305,11 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
      YURA
 ===================================================== -->
 
-<div
-    class="modal"
-    id="yura"
->
+<div class="modal" id="yura">
 
     <div class="modal-contenido">
 
@@ -1748,17 +1320,14 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             🌄 Yura
         </h2>
-
 
         <p>
             Yura posee paisajes, plantas y ecosistemas que
             forman parte de nuestra identidad.
         </p>
-
 
         <p>
             Vivimos en una zona donde el agua es un recurso
@@ -1766,33 +1335,27 @@ body.yura .mascota img {
             diferentes formas de adaptarse a condiciones secas.
         </p>
 
-
         <h3>
             🌵 Naturaleza
         </h3>
-
 
         <p>
             Algunas especies vegetales pueden sobrevivir
             en condiciones de poca disponibilidad de agua.
         </p>
 
-
         <h3>
             💧 El agua importa
         </h3>
-
 
         <p>
             Cuidar el agua también significa cuidar los suelos,
             las plantas, los animales y a las personas.
         </p>
 
-
         <h3>
             🌎 Nuestro hogar
         </h3>
-
 
         <p>
             Proteger nuestro entorno empieza por conocerlo,
@@ -1804,15 +1367,11 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
      PLANTAS
 ===================================================== -->
 
-<div
-    class="modal"
-    id="plantas"
->
+<div class="modal" id="plantas">
 
     <div class="modal-contenido">
 
@@ -1823,11 +1382,9 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             🌿 Plantas de nuestra zona
         </h2>
-
 
         <p>
             Algunas plantas que crecen en zonas áridas pueden
@@ -1835,32 +1392,23 @@ body.yura .mascota img {
             dentro del ecosistema.
         </p>
 
-
         <div class="planta-tarjeta">
 
             <h3>
                 🌼 Encelia farinosa
             </h3>
 
-
             <p>
                 La <i>Encelia farinosa</i> es una planta adaptada
-                a ambientes áridos.
+                a ambientes áridos. Sus características le permiten
+                sobrevivir donde otras especies tendrían dificultades.
             </p>
-
-
-            <p>
-                Sus características le permiten sobrevivir
-                donde otras especies tendrían dificultades.
-            </p>
-
 
             <p>
                 Conocer las especies de nuestro entorno nos ayuda
                 a comprender por qué es importante evitar la
                 destrucción innecesaria de la vegetación.
             </p>
-
 
             <p>
                 🌱 <strong>
@@ -1875,15 +1423,11 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
      CUIDEMOS
 ===================================================== -->
 
-<div
-    class="modal"
-    id="cuidemos"
->
+<div class="modal" id="cuidemos">
 
     <div class="modal-contenido">
 
@@ -1894,11 +1438,9 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             ♻️ Cuidemos nuestro entorno
         </h2>
-
 
         <h3>
             🔥 Evitemos las quemas
@@ -1909,16 +1451,14 @@ body.yura .mascota img {
             suelo y calidad del aire.
         </p>
 
-
         <h3>
             🗑️ No dejemos basura
         </h3>
 
         <p>
             Los residuos abandonados pueden permanecer durante
-            mucho tiempo en el ambiente.
+            mucho tiempo en el ambiente y afectar a otros seres vivos.
         </p>
-
 
         <h3>
             🌱 Protejamos las plantas
@@ -1928,7 +1468,6 @@ body.yura .mascota img {
             No arrancar ni destruir plantas innecesariamente
             es una forma sencilla de cuidar nuestro entorno.
         </p>
-
 
         <h3>
             💧 Cuidemos el agua
@@ -1944,15 +1483,11 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
      SABÍAS QUE
 ===================================================== -->
 
-<div
-    class="modal"
-    id="sabias"
->
+<div class="modal" id="sabias">
 
     <div class="modal-contenido">
 
@@ -1963,11 +1498,9 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             💡 ¿Sabías que...?
         </h2>
-
 
         <p>
             🌵 Las plantas de zonas áridas poseen adaptaciones
@@ -1975,13 +1508,11 @@ body.yura .mascota img {
             disponibilidad de agua.
         </p>
 
-
         <p>
             🌱 La vegetación forma parte del equilibrio de los
             ecosistemas y proporciona refugio y recursos para
             otros organismos.
         </p>
-
 
         <p>
             💧 En lugares secos, conservar la humedad del suelo
@@ -1994,15 +1525,11 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
      COMPROMISO
 ===================================================== -->
 
-<div
-    class="modal"
-    id="compromiso"
->
+<div class="modal" id="compromiso">
 
     <div class="modal-contenido">
 
@@ -2013,23 +1540,19 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             💚 Nuestro compromiso
         </h2>
 
-
         <p>
             No necesitamos hacer algo enorme para comenzar.
         </p>
-
 
         <p>
             Podemos empezar con una acción pequeña:
             no tirar basura, cuidar una planta, ahorrar agua
             o enseñar a alguien más a proteger nuestro entorno.
         </p>
-
 
         <h3>
             🌎 El cambio comienza con nosotros.
@@ -2040,15 +1563,11 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
      ESTILOS
 ===================================================== -->
 
-<div
-    class="modal"
-    id="estilos"
->
+<div class="modal" id="estilos">
 
     <div class="modal-contenido">
 
@@ -2059,51 +1578,60 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
-            🎨 Cambiar estilo
+            🎨 Estilos
         </h2>
 
-
         <p>
-            Elige una apariencia para nuestra página.
-            También cambiarán las imágenes de los jóvenes
-            y de Yuri.
+            Elige una apariencia diferente para nuestra página.
+            El cambio se aplicará a todo el sitio.
         </p>
-
 
         <div class="estilos-opciones">
 
-
             <button
-                class="estilo-opcion activo"
-                onclick="cambiarEstilo('natural',this)"
+                class="estilo-opcion"
+                onclick="cambiarEstilo('natural')"
             >
-                🌿 Natural
+                🌿
+                <br>
+                Natural
             </button>
-
 
             <button
                 class="estilo-opcion"
-                onclick="cambiarEstilo('cute',this)"
+                onclick="cambiarEstilo('cute')"
             >
-                🌸 Cute
+                🌸
+                <br>
+                Cute
             </button>
-
 
             <button
                 class="estilo-opcion"
-                onclick="cambiarEstilo('nocturno',this)"
+                onclick="cambiarEstilo('nocturno')"
             >
-                🌙 Nocturno
+                🌙
+                <br>
+                Nocturno
             </button>
-
 
             <button
                 class="estilo-opcion"
-                onclick="cambiarEstilo('yura',this)"
+                onclick="cambiarEstilo('urbano')"
             >
-                🌄 Yura
+                🏙️
+                <br>
+                Urbano
+            </button>
+
+            <button
+                class="estilo-opcion"
+                onclick="cambiarEstilo('yura')"
+            >
+                🌄
+                <br>
+                Yura
             </button>
 
         </div>
@@ -2113,9 +1641,8 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
-     PARTE FINAL
+     FINAL
 ===================================================== -->
 
 <section class="final">
@@ -2124,25 +1651,12 @@ body.yura .mascota img {
         Juntos podemos hacer la diferencia.
     </h2>
 
-
     <p>
         Una pequeña acción puede convertirse en el comienzo
         de un cambio mucho más grande.
     </p>
 
-
-    <div
-        class="botones-finales"
-        style="
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            flex-wrap:wrap;
-            gap:15px;
-            margin-top:30px;
-            width:100%;
-        "
-    >
+    <div class="botones-finales">
 
         <button
             type="button"
@@ -2152,7 +1666,6 @@ body.yura .mascota img {
             💚 Únete
         </button>
 
-
         <button
             type="button"
             class="boton"
@@ -2160,7 +1673,6 @@ body.yura .mascota img {
         >
             🚨 Reporta
         </button>
-
 
         <button
             type="button"
@@ -2175,15 +1687,11 @@ body.yura .mascota img {
 </section>
 
 
-
 <!-- =====================================================
      FORMULARIO ÚNETE
 ===================================================== -->
 
-<div
-    class="modal"
-    id="unete"
->
+<div class="modal" id="unete">
 
     <div class="modal-contenido">
 
@@ -2194,25 +1702,22 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             💚 Únete
         </h2>
 
-
         <p>
-            ¿Quieres formar parte de nuestras actividades?
-            Déjanos tus datos.
+            Si quieres formar parte de las actividades
+            de cuidado ambiental, puedes dejarnos tus datos.
         </p>
-
 
         <form
             class="formulario"
-            onsubmit="enviarFormulario(event,'mensajeUnete')"
+            onsubmit="enviarFormulario(event,'¡Gracias por querer unirte! 🌱')"
         >
 
             <label>
-                Nombre
+                Nombre:
             </label>
 
             <input
@@ -2221,17 +1726,15 @@ body.yura .mascota img {
                 placeholder="Escribe tu nombre"
             >
 
-
             <label>
-                Correo electrónico
+                Correo:
             </label>
 
             <input
                 type="email"
                 required
-                placeholder="ejemplo@correo.com"
+                placeholder="ejemplo@gmail.com"
             >
-
 
             <label>
                 ¿Cómo te gustaría participar?
@@ -2248,31 +1751,22 @@ body.yura .mascota img {
                 </option>
 
                 <option>
+                    Difusión
+                </option>
+
+                <option>
                     Limpieza de espacios
                 </option>
 
                 <option>
-                    Cuidado de plantas
-                </option>
-
-                <option>
-                    Difusión del proyecto
+                    Educación ambiental
                 </option>
 
             </select>
 
-
             <button type="submit">
-                💚 Quiero participar
+                Enviar 💚
             </button>
-
-
-            <div
-                class="mensaje-formulario"
-                id="mensajeUnete"
-            >
-                ¡Gracias por querer formar parte del cambio! 🌱
-            </div>
 
         </form>
 
@@ -2281,15 +1775,11 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
      FORMULARIO REPORTA
 ===================================================== -->
 
-<div
-    class="modal"
-    id="reporta"
->
+<div class="modal" id="reporta">
 
     <div class="modal-contenido">
 
@@ -2300,25 +1790,22 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             🚨 Reporta
         </h2>
 
-
         <p>
-            ¿Encontraste un problema ambiental?
-            Cuéntanos qué ocurrió.
+            ¿Encontraste basura, quema de vegetación u otro
+            problema ambiental? Cuéntanos.
         </p>
-
 
         <form
             class="formulario"
-            onsubmit="enviarFormulario(event,'mensajeReporta')"
+            onsubmit="enviarFormulario(event,'¡Reporte recibido! Gracias por ayudarnos a cuidar nuestro entorno. 🌱')"
         >
 
             <label>
-                Nombre
+                Nombre:
             </label>
 
             <input
@@ -2327,15 +1814,14 @@ body.yura .mascota img {
                 placeholder="Escribe tu nombre"
             >
 
-
             <label>
-                Tipo de problema
+                Tipo de problema:
             </label>
 
             <select required>
 
                 <option value="">
-                    Selecciona una opción
+                    Selecciona
                 </option>
 
                 <option>
@@ -2347,11 +1833,11 @@ body.yura .mascota img {
                 </option>
 
                 <option>
-                    Destrucción de plantas
+                    Daño a plantas
                 </option>
 
                 <option>
-                    Desperdicio de agua
+                    Contaminación
                 </option>
 
                 <option>
@@ -2360,39 +1846,18 @@ body.yura .mascota img {
 
             </select>
 
-
             <label>
-                Lugar
-            </label>
-
-            <input
-                type="text"
-                required
-                placeholder="¿Dónde ocurrió?"
-            >
-
-
-            <label>
-                Describe lo ocurrido
+                Cuéntanos qué ocurrió:
             </label>
 
             <textarea
                 required
-                placeholder="Cuéntanos qué viste..."
+                placeholder="Describe el problema..."
             ></textarea>
 
-
             <button type="submit">
-                🚨 Enviar reporte
+                Enviar reporte 🚨
             </button>
-
-
-            <div
-                class="mensaje-formulario"
-                id="mensajeReporta"
-            >
-                ¡Reporte registrado! Gracias por ayudarnos a cuidar nuestro entorno. 🌎
-            </div>
 
         </form>
 
@@ -2401,15 +1866,11 @@ body.yura .mascota img {
 </div>
 
 
-
 <!-- =====================================================
      FORMULARIO DONACIONES
 ===================================================== -->
 
-<div
-    class="modal"
-    id="donaciones"
->
+<div class="modal" id="donaciones">
 
     <div class="modal-contenido">
 
@@ -2420,25 +1881,22 @@ body.yura .mascota img {
             ×
         </button>
 
-
         <h2>
             🤲 Donaciones
         </h2>
 
-
         <p>
-            Si deseas colaborar con nuestro proyecto,
-            puedes indicarnos qué tipo de apoyo deseas brindar.
+            Tu colaboración puede ayudar a realizar
+            actividades de educación y cuidado ambiental.
         </p>
-
 
         <form
             class="formulario"
-            onsubmit="enviarFormulario(event,'mensajeDonacion')"
+            onsubmit="enviarFormulario(event,'¡Gracias por tu interés en colaborar! 💚')"
         >
 
             <label>
-                Nombre
+                Nombre:
             </label>
 
             <input
@@ -2447,26 +1905,28 @@ body.yura .mascota img {
                 placeholder="Escribe tu nombre"
             >
 
-
             <label>
-                Correo electrónico
+                Correo:
             </label>
 
             <input
                 type="email"
                 required
-                placeholder="ejemplo@correo.com"
+                placeholder="ejemplo@gmail.com"
             >
 
-
             <label>
-                Tipo de colaboración
+                ¿Cómo deseas colaborar?
             </label>
 
             <select required>
 
                 <option value="">
-                    Selecciona una opción
+                    Selecciona
+                </option>
+
+                <option>
+                    Donación económica
                 </option>
 
                 <option>
@@ -2474,47 +1934,32 @@ body.yura .mascota img {
                 </option>
 
                 <option>
-                    Apoyo económico
+                    Plantas
                 </option>
 
                 <option>
-                    Plantas o semillas
-                </option>
-
-                <option>
-                    Otro tipo de apoyo
+                    Participación voluntaria
                 </option>
 
             </select>
 
-
             <label>
-                Mensaje
+                Mensaje:
             </label>
 
             <textarea
-                placeholder="Cuéntanos cómo te gustaría colaborar..."
+                placeholder="Escribe un mensaje..."
             ></textarea>
 
-
             <button type="submit">
-                🤲 Enviar información
+                Enviar 🤲
             </button>
-
-
-            <div
-                class="mensaje-formulario"
-                id="mensajeDonacion"
-            >
-                ¡Muchas gracias por tu interés en apoyar el proyecto! 💚
-            </div>
 
         </form>
 
     </div>
 
 </div>
-
 
 
 <!-- =====================================================
@@ -2538,38 +1983,31 @@ body.yura .mascota img {
 </footer>
 
 
-
 <!-- =====================================================
      JAVASCRIPT
 ===================================================== -->
 
 <script>
 
-
 /* =====================================================
-   BARRA AL DESLIZAR
+   BARRA APARECE AL DESLIZAR
 ===================================================== */
 
-const barra =
-    document.getElementById("barra");
+const barra = document.getElementById("barra");
 
+window.addEventListener("scroll", function() {
 
-window.addEventListener(
-    "scroll",
-    function() {
+    if (window.scrollY > 80) {
 
-        if (window.scrollY > 80) {
+        barra.classList.add("visible");
 
-            barra.classList.add("visible");
+    } else {
 
-        } else {
-
-            barra.classList.remove("visible");
-
-        }
+        barra.classList.remove("visible");
 
     }
-);
+
+});
 
 
 /* =====================================================
@@ -2578,18 +2016,18 @@ window.addEventListener(
 
 function abrirModal(id) {
 
-    const modal =
-        document.getElementById(id);
+    const modal = document.getElementById(id);
 
     if (modal) {
 
         modal.classList.add("abierto");
 
-        document.body.style.overflow =
-            "hidden";
+        document.body.style.overflow = "hidden";
+
     }
 
     cerrarMenu();
+
 }
 
 
@@ -2599,16 +2037,16 @@ function abrirModal(id) {
 
 function cerrarModal(id) {
 
-    const modal =
-        document.getElementById(id);
+    const modal = document.getElementById(id);
 
     if (modal) {
 
         modal.classList.remove("abierto");
 
-        document.body.style.overflow =
-            "";
+        document.body.style.overflow = "";
+
     }
+
 }
 
 
@@ -2619,22 +2057,20 @@ function cerrarModal(id) {
 function alternarMenu() {
 
     const menu =
-        document.getElementById(
-            "menuContenido"
-        );
+        document.getElementById("menuContenido");
 
     menu.classList.toggle("abierto");
+
 }
 
 
 function cerrarMenu() {
 
     const menu =
-        document.getElementById(
-            "menuContenido"
-        );
+        document.getElementById("menuContenido");
 
     menu.classList.remove("abierto");
+
 }
 
 
@@ -2642,73 +2078,40 @@ function cerrarMenu() {
    CAMBIAR ESTILO
 ===================================================== */
 
-function cambiarEstilo(estilo, boton) {
+function cambiarEstilo(estilo) {
 
     document.body.classList.remove(
-        "cute",
-        "nocturno",
-        "yura"
+        "estilo-cute",
+        "estilo-nocturno",
+        "estilo-urbano",
+        "estilo-yura"
     );
 
+    if (estilo === "cute") {
 
-    if (estilo !== "natural") {
-
-        document.body.classList.add(estilo);
+        document.body.classList.add("estilo-cute");
 
     }
 
+    if (estilo === "nocturno") {
 
-    document
-        .querySelectorAll(".estilo-opcion")
-        .forEach(function(btn) {
-
-            btn.classList.remove("activo");
-
-        });
-
-
-    if (boton) {
-
-        boton.classList.add("activo");
+        document.body.classList.add("estilo-nocturno");
 
     }
 
+    if (estilo === "urbano") {
 
-    /* Actualizar imagen de Yuri
-       para la presentación */
+        document.body.classList.add("estilo-urbano");
 
-    const yuriImagenes =
-        document.querySelectorAll(
-            ".yuri-presentacion img"
-        );
+    }
 
+    if (estilo === "yura") {
 
-    yuriImagenes.forEach(
-        function(img) {
+        document.body.classList.add("estilo-yura");
 
-            if (estilo === "cute") {
+    }
 
-                img.src =
-                    "yuribienvenidacute.png";
-
-            }
-
-            else if (estilo === "nocturno") {
-
-                img.src =
-                    "yuribienvenidanoche.png";
-
-            }
-
-            else {
-
-                img.src =
-                    "yuri bienvenida.png";
-
-            }
-
-        }
-    );
+    cerrarModal("estilos");
 
 }
 
@@ -2717,27 +2120,11 @@ function cambiarEstilo(estilo, boton) {
    FORMULARIOS
 ===================================================== */
 
-function enviarFormulario(
-    event,
-    mensajeId
-) {
+function enviarFormulario(event, mensaje) {
 
     event.preventDefault();
 
-
-    const mensaje =
-        document.getElementById(
-            mensajeId
-        );
-
-
-    if (mensaje) {
-
-        mensaje.style.display =
-            "block";
-
-    }
-
+    alert(mensaje);
 
     event.target.reset();
 
@@ -2748,69 +2135,46 @@ function enviarFormulario(
    CERRAR AL HACER CLIC FUERA
 ===================================================== */
 
-document
-    .querySelectorAll(".modal")
-    .forEach(function(modal) {
+document.querySelectorAll(".modal").forEach(function(modal) {
 
-        modal.addEventListener(
-            "click",
-            function(event) {
+    modal.addEventListener("click", function(event) {
 
-                if (
-                    event.target === modal
-                ) {
+        if (event.target === modal) {
 
-                    modal.classList.remove(
-                        "abierto"
-                    );
+            modal.classList.remove("abierto");
 
-                    document.body.style.overflow =
-                        "";
+            document.body.style.overflow = "";
 
-                }
-
-            }
-        );
+        }
 
     });
+
+});
 
 
 /* =====================================================
    ESC PARA CERRAR
 ===================================================== */
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+document.addEventListener("keydown", function(event) {
 
-        if (
-            event.key === "Escape"
-        ) {
+    if (event.key === "Escape") {
 
-            document
-                .querySelectorAll(".modal")
-                .forEach(
-                    function(modal) {
+        document.querySelectorAll(".modal").forEach(function(modal) {
 
-                        modal.classList.remove(
-                            "abierto"
-                        );
+            modal.classList.remove("abierto");
 
-                    }
-                );
+        });
 
-            cerrarMenu();
+        cerrarMenu();
 
-            document.body.style.overflow =
-                "";
-
-        }
+        document.body.style.overflow = "";
 
     }
-);
+
+});
 
 </script>
-
 
 </body>
 </html>
