@@ -17,79 +17,113 @@
 <style>
 
     /* =====================================================
-       VARIABLES DE ESTILO
+       VARIABLES
     ===================================================== */
 
     :root {
         --fondo: #303419;
         --fondo-secundario: #54582f;
-        --fondo-tarjeta: rgba(0,0,0,0.12);
         --texto: #f5f3df;
         --texto-claro: #f8f5df;
         --titulo: #f5eec8;
         --boton: #54582f;
         --boton-hover: #6b7040;
-        --sombra: rgba(0,0,0,0.35);
         --overlay: rgba(48,52,25,0.25);
+        --sombra: rgba(0,0,0,0.35);
     }
 
 
     /* =====================================================
-       ESTILO CUTE 🌸
+       TEMA CUTE 🌸
     ===================================================== */
 
     body.tema-cute {
-        --fondo: #5d4352;
-        --fondo-secundario: #9a6680;
-        --fondo-tarjeta: rgba(255,255,255,0.13);
+        --fondo: #754d63;
+        --fondo-secundario: #a96d8d;
         --texto: #fff5fa;
-        --texto-claro: #fff8fc;
-        --titulo: #ffe0ee;
-        --boton: #a85f82;
-        --boton-hover: #c47a9c;
-        --sombra: rgba(70,30,50,0.35);
-        --overlay: rgba(70,35,55,0.22);
+        --texto-claro: #fffaff;
+        --titulo: #ffddea;
+        --boton: #b7688d;
+        --boton-hover: #d483a7;
+        --overlay: rgba(83,38,61,0.18);
+        --sombra: rgba(65,25,48,0.40);
+
+        background-image:
+            linear-gradient(
+                var(--overlay),
+                var(--overlay)
+            ),
+            url("FONDOCUTE2.jfif");
     }
 
 
     /* =====================================================
-       ESTILO NOCTURNO 🌙
+       TEMA NOCTURNO 🌙
     ===================================================== */
 
     body.tema-nocturno {
-        --fondo: #101827;
-        --fondo-secundario: #202d46;
-        --fondo-tarjeta: rgba(255,255,255,0.08);
+        --fondo: #111827;
+        --fondo-secundario: #253452;
         --texto: #e9f1ff;
-        --texto-claro: #f4f8ff;
-        --titulo: #bcd6ff;
-        --boton: #33486d;
-        --boton-hover: #45618f;
-        --sombra: rgba(0,0,0,0.55);
-        --overlay: rgba(5,10,20,0.38);
+        --texto-claro: #f5f8ff;
+        --titulo: #c5dcff;
+        --boton: #34496d;
+        --boton-hover: #4c6593;
+        --overlay: rgba(5,10,25,0.20);
+        --sombra: rgba(0,0,0,0.60);
+
+        background-image:
+            linear-gradient(
+                var(--overlay),
+                var(--overlay)
+            ),
+            url("fondonoche.jfif");
     }
 
 
     /* =====================================================
-       ESTILO VINTAGE 📜
+       TEMA URBANO 🏙️
+    ===================================================== */
+
+    body.tema-urbano {
+        --fondo: #25282c;
+        --fondo-secundario: #454b52;
+        --texto: #f1f1f1;
+        --texto-claro: #ffffff;
+        --titulo: #d7e0e5;
+        --boton: #59636b;
+        --boton-hover: #707c85;
+        --overlay: rgba(20,22,25,0.25);
+        --sombra: rgba(0,0,0,0.55);
+
+        background-image:
+            linear-gradient(
+                var(--overlay),
+                var(--overlay)
+            ),
+            url("fondourbano.jfif");
+    }
+
+
+    /* =====================================================
+       TEMA VINTAGE 📜
     ===================================================== */
 
     body.tema-vintage {
         --fondo: #403426;
         --fondo-secundario: #725c43;
-        --fondo-tarjeta: rgba(255,239,202,0.10);
         --texto: #f4e7c8;
         --texto-claro: #fff0cf;
         --titulo: #e8c98e;
         --boton: #72583b;
-        --boton-hover: #8d704d;
-        --sombra: rgba(20,12,5,0.50);
-        --overlay: rgba(45,30,18,0.32);
+        --boton-hover: #90714d;
+        --overlay: rgba(45,30,18,0.28);
+        --sombra: rgba(20,12,5,0.55);
     }
 
 
     /* =====================================================
-       CONFIGURACIÓN GENERAL
+       GENERAL
     ===================================================== */
 
     * {
@@ -120,7 +154,7 @@
         background-attachment: fixed;
 
         transition:
-            background-color 0.5s ease,
+            background-image 0.5s ease,
             color 0.5s ease;
     }
 
@@ -157,10 +191,6 @@
         z-index: 2;
     }
 
-
-    /* =====================================================
-       FRASE POTENTE
-    ===================================================== */
 
     .frase-potente {
         font-family: "DM Serif Display", Georgia, serif;
@@ -218,10 +248,6 @@
 
     }
 
-
-    /* =====================================================
-       TEXTO DE PORTADA
-    ===================================================== */
 
     .hero-subtitulo {
         font-family: "Special Elite", "Courier New", monospace;
@@ -292,7 +318,7 @@
 
 
     /* =====================================================
-       BARRA PRINCIPAL
+       BARRA
     ===================================================== */
 
     header {
@@ -348,7 +374,7 @@
 
 
     /* =====================================================
-       CONTROLES IZQUIERDOS
+       CONTROLES
     ===================================================== */
 
     .controles-izquierda {
@@ -453,7 +479,7 @@
 
 
     /* =====================================================
-       MENÚ DE TRES PUNTOS
+       MENÚ TRES PUNTOS
     ===================================================== */
 
     .menu-extra {
@@ -539,7 +565,7 @@
 
 
     /* =====================================================
-       VENTANAS / MODALES
+       MODALES
     ===================================================== */
 
     .modal {
@@ -688,7 +714,7 @@
 
 
     /* =====================================================
-       YURI DENTRO DE CONÓCENOS
+       YURI PRESENTACIÓN
     ===================================================== */
 
     .yuri-presentacion {
@@ -702,7 +728,7 @@
 
         padding: 20px;
 
-        background: var(--fondo-tarjeta);
+        background: rgba(0,0,0,0.12);
 
         border-radius: 22px;
     }
@@ -729,7 +755,7 @@
 
         border-radius: 22px;
 
-        background: var(--fondo-tarjeta);
+        background: rgba(0,0,0,0.12);
     }
 
 
@@ -793,7 +819,7 @@
 
         border-radius: 22px;
 
-        background: var(--fondo-tarjeta);
+        background: rgba(0,0,0,0.12);
 
         display: flex;
 
@@ -854,8 +880,6 @@
         border-color: rgba(255,255,255,0.65);
 
         background: rgba(0,0,0,0.25);
-
-        transform: translateY(-1px);
     }
 
 
@@ -937,56 +961,12 @@
 
         opacity: 0.85;
 
-        margin-top: 3px;
+        margin-top: 15px;
     }
 
 
     /* =====================================================
-       DONACIONES
-    ===================================================== */
-
-    .donacion-opciones {
-        display: grid;
-
-        grid-template-columns:
-            repeat(auto-fit, minmax(150px, 1fr));
-
-        gap: 12px;
-
-        margin: 15px 0;
-    }
-
-
-    .donacion-opcion {
-        padding: 15px;
-
-        border-radius: 15px;
-
-        border: 1px solid rgba(255,255,255,0.18);
-
-        background: rgba(255,255,255,0.08);
-
-        color: var(--texto-claro);
-
-        cursor: pointer;
-
-        font-family: "Montserrat", sans-serif;
-
-        font-weight: 700;
-
-        transition: 0.3s;
-    }
-
-
-    .donacion-opcion:hover {
-        background: rgba(255,255,255,0.17);
-
-        transform: translateY(-2px);
-    }
-
-
-    /* =====================================================
-       SECCIÓN FINAL
+       FINAL
     ===================================================== */
 
     .final {
@@ -1006,8 +986,6 @@
 
         background:
             rgba(30,32,17,0.48);
-
-        transition: background 0.5s ease;
     }
 
 
@@ -1038,7 +1016,7 @@
 
 
     /* =====================================================
-       PIE DE PÁGINA
+       FOOTER
     ===================================================== */
 
     footer {
@@ -1064,7 +1042,7 @@
 
 
     /* =====================================================
-       CELULARES
+       MÓVIL
     ===================================================== */
 
     @media (max-width: 700px) {
@@ -1210,10 +1188,7 @@
 ```
 <div class="barra-interior">
 
-
     <div class="controles-izquierda">
-
-        <!-- TRES PUNTOS -->
 
         <div class="menu-extra">
 
@@ -1252,8 +1227,6 @@
         </div>
 
 
-        <!-- FLOR -->
-
         <button
             class="control-boton"
             onclick="abrirModal('plantas')"
@@ -1264,9 +1237,6 @@
 
     </div>
 
-
-
-    <!-- OPCIONES PRINCIPALES -->
 
     <nav>
 
@@ -1290,7 +1260,7 @@
 </header>
 
 <!-- =====================================================
-     VENTANA: CONÓCENOS
+     CONÓCENOS
 ===================================================== -->
 
 <div class="modal" id="quienes">
@@ -1298,17 +1268,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('quienes')"
-    >
+    <button class="cerrar" onclick="cerrarModal('quienes')">
         ×
     </button>
 
 
-    <h2>
-        👋 Conócenos
-    </h2>
+    <h2>👋 Conócenos</h2>
 
 
     <p>
@@ -1341,9 +1306,7 @@
 
         <div>
 
-            <h3>
-                🐰 Ella es Yuri
-            </h3>
+            <h3>🐰 Ella es Yuri</h3>
 
             <p>
                 Yuri es nuestra mascota y compañera
@@ -1372,7 +1335,7 @@
 </div>
 
 <!-- =====================================================
-     VENTANA: SOBRE EL PROYECTO
+     PROYECTO
 ===================================================== -->
 
 <div class="modal" id="proyecto">
@@ -1380,17 +1343,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('proyecto')"
-    >
+    <button class="cerrar" onclick="cerrarModal('proyecto')">
         ×
     </button>
 
 
-    <h2>
-        📖 Sobre el proyecto
-    </h2>
+    <h2>📖 Sobre el proyecto</h2>
 
 
     <p>
@@ -1414,9 +1372,7 @@
     </p>
 
 
-    <h3>
-        🌎 Nuestra idea
-    </h3>
+    <h3>🌎 Nuestra idea</h3>
 
     <p>
         Conocer → Valorar → Proteger
@@ -1428,7 +1384,7 @@
 </div>
 
 <!-- =====================================================
-     VENTANA: YURA
+     YURA
 ===================================================== -->
 
 <div class="modal" id="yura">
@@ -1436,17 +1392,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('yura')"
-    >
+    <button class="cerrar" onclick="cerrarModal('yura')">
         ×
     </button>
 
 
-    <h2>
-        🌄 Yura
-    </h2>
+    <h2>🌄 Yura</h2>
 
 
     <p>
@@ -1462,9 +1413,7 @@
     </p>
 
 
-    <h3>
-        🌵 Naturaleza
-    </h3>
+    <h3>🌵 Naturaleza</h3>
 
     <p>
         Algunas especies vegetales pueden sobrevivir
@@ -1472,9 +1421,7 @@
     </p>
 
 
-    <h3>
-        💧 El agua importa
-    </h3>
+    <h3>💧 El agua importa</h3>
 
     <p>
         Cuidar el agua también significa cuidar los suelos,
@@ -1482,9 +1429,7 @@
     </p>
 
 
-    <h3>
-        🌎 Nuestro hogar
-    </h3>
+    <h3>🌎 Nuestro hogar</h3>
 
     <p>
         Proteger nuestro entorno empieza por conocerlo,
@@ -1497,7 +1442,7 @@
 </div>
 
 <!-- =====================================================
-     VENTANA: PLANTAS
+     PLANTAS
 ===================================================== -->
 
 <div class="modal" id="plantas">
@@ -1505,17 +1450,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('plantas')"
-    >
+    <button class="cerrar" onclick="cerrarModal('plantas')">
         ×
     </button>
 
 
-    <h2>
-        🌿 Plantas de nuestra zona
-    </h2>
+    <h2>🌿 Plantas de nuestra zona</h2>
 
 
     <p>
@@ -1527,9 +1467,8 @@
 
     <div class="planta-tarjeta">
 
-        <h3>
-            🌼 Encelia farinosa
-        </h3>
+        <h3>🌼 Encelia farinosa</h3>
+
 
         <p>
             La <i>Encelia farinosa</i> es una planta adaptada
@@ -1537,11 +1476,13 @@
             sobrevivir donde otras especies tendrían dificultades.
         </p>
 
+
         <p>
             Conocer las especies de nuestro entorno nos ayuda
             a comprender por qué es importante evitar la
             destrucción innecesaria de la vegetación.
         </p>
+
 
         <p>
             🌱 <strong>
@@ -1557,7 +1498,7 @@
 </div>
 
 <!-- =====================================================
-     VENTANA: CUIDEMOS
+     CUIDEMOS
 ===================================================== -->
 
 <div class="modal" id="cuidemos">
@@ -1565,22 +1506,15 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('cuidemos')"
-    >
+    <button class="cerrar" onclick="cerrarModal('cuidemos')">
         ×
     </button>
 
 
-    <h2>
-        ♻️ Cuidemos nuestro entorno
-    </h2>
+    <h2>♻️ Cuidemos nuestro entorno</h2>
 
 
-    <h3>
-        🔥 Evitemos las quemas
-    </h3>
+    <h3>🔥 Evitemos las quemas</h3>
 
     <p>
         Quemar vegetación puede afectar plantas, animales,
@@ -1588,9 +1522,7 @@
     </p>
 
 
-    <h3>
-        🗑️ No dejemos basura
-    </h3>
+    <h3>🗑️ No dejemos basura</h3>
 
     <p>
         Los residuos abandonados pueden permanecer durante
@@ -1598,9 +1530,7 @@
     </p>
 
 
-    <h3>
-        🌱 Protejamos las plantas
-    </h3>
+    <h3>🌱 Protejamos las plantas</h3>
 
     <p>
         No arrancar ni destruir plantas innecesariamente
@@ -1608,9 +1538,7 @@
     </p>
 
 
-    <h3>
-        💧 Cuidemos el agua
-    </h3>
+    <h3>💧 Cuidemos el agua</h3>
 
     <p>
         Utilicemos el agua de manera responsable,
@@ -1623,7 +1551,7 @@
 </div>
 
 <!-- =====================================================
-     VENTANA: ¿SABÍAS QUE?
+     SABÍAS QUE
 ===================================================== -->
 
 <div class="modal" id="sabias">
@@ -1631,17 +1559,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('sabias')"
-    >
+    <button class="cerrar" onclick="cerrarModal('sabias')">
         ×
     </button>
 
 
-    <h2>
-        💡 ¿Sabías que...?
-    </h2>
+    <h2>💡 ¿Sabías que...?</h2>
 
 
     <p>
@@ -1670,7 +1593,7 @@
 </div>
 
 <!-- =====================================================
-     VENTANA: COMPROMISO
+     COMPROMISO
 ===================================================== -->
 
 <div class="modal" id="compromiso">
@@ -1678,17 +1601,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('compromiso')"
-    >
+    <button class="cerrar" onclick="cerrarModal('compromiso')">
         ×
     </button>
 
 
-    <h2>
-        💚 Nuestro compromiso
-    </h2>
+    <h2>💚 Nuestro compromiso</h2>
 
 
     <p>
@@ -1713,7 +1631,7 @@
 </div>
 
 <!-- =====================================================
-     VENTANA: ESTILOS
+     ESTILOS
 ===================================================== -->
 
 <div class="modal" id="estilos">
@@ -1721,17 +1639,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('estilos')"
-    >
+    <button class="cerrar" onclick="cerrarModal('estilos')">
         ×
     </button>
 
 
-    <h2>
-        🎨 Estilos
-    </h2>
+    <h2>🎨 Estilos</h2>
 
 
     <p>
@@ -1768,6 +1681,14 @@
 
         <button
             class="estilo-opcion"
+            onclick="cambiarTema('urbano')"
+        >
+            🏙️ Urbano
+        </button>
+
+
+        <button
+            class="estilo-opcion"
             onclick="cambiarTema('vintage')"
         >
             📜 Vintage
@@ -1777,8 +1698,7 @@
 
 
     <p style="margin-top:20px; opacity:0.75;">
-        💡 El estilo que elijas se conservará cuando vuelvas
-        a abrir la página.
+        💡 Puedes cambiar de temática todas las veces que quieras.
     </p>
 
 </div>
@@ -1787,7 +1707,7 @@
 </div>
 
 <!-- =====================================================
-     PARTE FINAL
+     FINAL
 ===================================================== -->
 
 <section class="final">
@@ -1806,7 +1726,15 @@
 
 <div
     class="botones-finales"
-    style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:15px; margin-top:30px; width:100%;"
+    style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:15px;
+        margin-top:30px;
+        width:100%;
+    "
 >
 
     <button
@@ -1841,7 +1769,7 @@
 </section>
 
 <!-- =====================================================
-     VENTANA: ÚNETE — FORMULARIO REAL
+     ÚNETE
 ===================================================== -->
 
 <div class="modal" id="unete">
@@ -1849,17 +1777,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('unete')"
-    >
+    <button class="cerrar" onclick="cerrarModal('unete')">
         ×
     </button>
 
 
-    <h2>
-        💚 Únete
-    </h2>
+    <h2>💚 Únete</h2>
 
 
     <p>
@@ -1882,7 +1805,6 @@
             <input
                 type="text"
                 id="nombreUnete"
-                name="nombre"
                 placeholder="Escribe tu nombre"
                 required
             >
@@ -1899,7 +1821,6 @@
             <input
                 type="email"
                 id="correoUnete"
-                name="correo"
                 placeholder="ejemplo@correo.com"
                 required
             >
@@ -1913,33 +1834,29 @@
                 🌱 ¿Cómo te gustaría participar?
             </label>
 
-            <select
-                id="actividadUnete"
-                name="actividad"
-                required
-            >
+            <select id="actividadUnete" required>
 
                 <option value="">
                     Selecciona una opción
                 </option>
 
-                <option value="limpieza">
+                <option>
                     🧹 Campañas de limpieza
                 </option>
 
-                <option value="plantas">
+                <option>
                     🌱 Cuidado de plantas
                 </option>
 
-                <option value="educacion">
+                <option>
                     📚 Actividades educativas
                 </option>
 
-                <option value="difusion">
+                <option>
                     📢 Difusión y sensibilización
                 </option>
 
-                <option value="otro">
+                <option>
                     💚 Otra actividad
                 </option>
 
@@ -1950,13 +1867,12 @@
 
         <div class="campo">
 
-            <label for="mensajeUnete">
+            <label for="mensajeUneteTexto">
                 💬 Cuéntanos algo
             </label>
 
             <textarea
-                id="mensajeUnete"
-                name="mensaje"
+                id="mensajeUneteTexto"
                 placeholder="¿Por qué te gustaría participar?"
             ></textarea>
 
@@ -1987,7 +1903,7 @@
 </div>
 
 <!-- =====================================================
-     VENTANA: REPORTA — FORMULARIO REAL
+     REPORTA
 ===================================================== -->
 
 <div class="modal" id="reporta">
@@ -1995,17 +1911,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('reporta')"
-    >
+    <button class="cerrar" onclick="cerrarModal('reporta')">
         ×
     </button>
 
 
-    <h2>
-        🚨 Reporta
-    </h2>
+    <h2>🚨 Reporta</h2>
 
 
     <p>
@@ -2028,7 +1939,6 @@
             <input
                 type="text"
                 id="nombreReporta"
-                name="nombre"
                 placeholder="Tu nombre"
                 required
             >
@@ -2042,37 +1952,33 @@
                 🚨 Tipo de problema
             </label>
 
-            <select
-                id="tipoReporte"
-                name="tipo"
-                required
-            >
+            <select id="tipoReporte" required>
 
                 <option value="">
                     Selecciona una opción
                 </option>
 
-                <option value="basura">
+                <option>
                     🗑️ Acumulación de basura
                 </option>
 
-                <option value="quema">
+                <option>
                     🔥 Quema de vegetación
                 </option>
 
-                <option value="contaminacion">
+                <option>
                     💨 Contaminación
                 </option>
 
-                <option value="plantas">
+                <option>
                     🌱 Daño a plantas
                 </option>
 
-                <option value="agua">
+                <option>
                     💧 Contaminación o desperdicio de agua
                 </option>
 
-                <option value="otro">
+                <option>
                     ⚠️ Otro problema
                 </option>
 
@@ -2090,7 +1996,6 @@
             <input
                 type="text"
                 id="lugarReporta"
-                name="lugar"
                 placeholder="¿Dónde ocurrió?"
                 required
             >
@@ -2106,7 +2011,6 @@
 
             <textarea
                 id="descripcionReporta"
-                name="descripcion"
                 placeholder="Cuéntanos qué ocurrió..."
                 required
             ></textarea>
@@ -2139,7 +2043,7 @@
 </div>
 
 <!-- =====================================================
-     VENTANA: DONACIONES — FORMULARIO
+     DONACIONES
 ===================================================== -->
 
 <div class="modal" id="donaciones">
@@ -2147,17 +2051,12 @@
 ```
 <div class="modal-contenido">
 
-    <button
-        class="cerrar"
-        onclick="cerrarModal('donaciones')"
-    >
+    <button class="cerrar" onclick="cerrarModal('donaciones')">
         ×
     </button>
 
 
-    <h2>
-        🤲 Donaciones
-    </h2>
+    <h2>🤲 Donaciones</h2>
 
 
     <p>
@@ -2180,7 +2079,6 @@
             <input
                 type="text"
                 id="nombreDonacion"
-                name="nombre"
                 placeholder="Tu nombre"
                 required
             >
@@ -2194,33 +2092,29 @@
                 🤲 ¿Cómo deseas colaborar?
             </label>
 
-            <select
-                id="tipoDonacion"
-                name="tipo"
-                required
-            >
+            <select id="tipoDonacion" required>
 
                 <option value="">
                     Selecciona una opción
                 </option>
 
-                <option value="dinero">
+                <option>
                     💰 Aporte económico
                 </option>
 
-                <option value="materiales">
+                <option>
                     📦 Donación de materiales
                 </option>
 
-                <option value="plantas">
+                <option>
                     🌱 Donación de plantas
                 </option>
 
-                <option value="voluntariado">
+                <option>
                     🙋 Tiempo / voluntariado
                 </option>
 
-                <option value="otro">
+                <option>
                     💚 Otra forma de colaborar
                 </option>
 
@@ -2232,13 +2126,12 @@
         <div class="campo">
 
             <label for="cantidadDonacion">
-                💵 Monto o detalle de la colaboración
+                💵 Monto o detalle
             </label>
 
             <input
                 type="text"
                 id="cantidadDonacion"
-                name="cantidad"
                 placeholder="Ej. S/ 20 o materiales"
                 required
             >
@@ -2255,7 +2148,6 @@
             <input
                 type="email"
                 id="correoDonacion"
-                name="correo"
                 placeholder="ejemplo@correo.com"
                 required
             >
@@ -2323,7 +2215,7 @@
 
 
     /* =====================================================
-       BARRA APARECE AL DESLIZAR
+       BARRA AL DESLIZAR
     ===================================================== */
 
     const barra = document.getElementById("barra");
@@ -2346,12 +2238,14 @@
 
 
     /* =====================================================
-       ABRIR MODALES
+       MODALES
     ===================================================== */
 
     function abrirModal(id) {
 
-        const modal = document.getElementById(id);
+        const modal =
+            document.getElementById(id);
+
 
         if (modal) {
 
@@ -2361,19 +2255,18 @@
 
         }
 
+
         cerrarMenu();
 
     }
 
 
 
-    /* =====================================================
-       CERRAR MODALES
-    ===================================================== */
-
     function cerrarModal(id) {
 
-        const modal = document.getElementById(id);
+        const modal =
+            document.getElementById(id);
+
 
         if (modal) {
 
@@ -2388,7 +2281,7 @@
 
 
     /* =====================================================
-       TRES PUNTOS
+       MENÚ
     ===================================================== */
 
     function alternarMenu() {
@@ -2399,7 +2292,6 @@
         menu.classList.toggle("abierto");
 
     }
-
 
 
     function cerrarMenu() {
@@ -2414,7 +2306,7 @@
 
 
     /* =====================================================
-       CERRAR AL HACER CLIC FUERA
+       CLIC FUERA DEL MODAL
     ===================================================== */
 
     document.querySelectorAll(".modal").forEach(function(modal) {
@@ -2436,7 +2328,7 @@
 
 
     /* =====================================================
-       ESC PARA CERRAR
+       ESC
     ===================================================== */
 
     document.addEventListener("keydown", function(event) {
@@ -2460,7 +2352,7 @@
 
 
     /* =====================================================
-       CAMBIO DE TEMAS
+       CAMBIAR TEMA
     ===================================================== */
 
     function cambiarTema(tema) {
@@ -2468,6 +2360,7 @@
         document.body.classList.remove(
             "tema-cute",
             "tema-nocturno",
+            "tema-urbano",
             "tema-vintage"
         );
 
@@ -2486,6 +2379,13 @@
         }
 
 
+        if (tema === "urbano") {
+
+            document.body.classList.add("tema-urbano");
+
+        }
+
+
         if (tema === "vintage") {
 
             document.body.classList.add("tema-vintage");
@@ -2493,14 +2393,17 @@
         }
 
 
-        localStorage.setItem("temaPagina", tema);
+        localStorage.setItem(
+            "temaPagina",
+            tema
+        );
 
     }
 
 
 
     /* =====================================================
-       RECUPERAR TEMA GUARDADO
+       RECUPERAR TEMA
     ===================================================== */
 
     const temaGuardado =
@@ -2524,7 +2427,9 @@
         event.preventDefault();
 
 
-        const formulario = event.target;
+        const formulario =
+            event.target;
+
 
         const mensaje =
             document.getElementById(idMensaje);
@@ -2542,21 +2447,10 @@
         mensaje.classList.add("mostrar");
 
 
-        formulario
-            .querySelectorAll("input, select, textarea, button[type='submit']")
-            .forEach(function(elemento) {
-
-                if (elemento.type !== "submit") {
-
-                    elemento.value = "";
-
-                }
-
-            });
-
-
         const boton =
-            formulario.querySelector("button[type='submit']");
+            formulario.querySelector(
+                "button[type='submit']"
+            );
 
 
         if (boton) {
@@ -2571,6 +2465,8 @@
 
 
         setTimeout(function() {
+
+            formulario.reset();
 
             mensaje.classList.remove("mostrar");
 
