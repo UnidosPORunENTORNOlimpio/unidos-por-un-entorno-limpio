@@ -10,1998 +10,1636 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Special+Elite&family=Montserrat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Special+Elite&family=Montserrat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
 
 <style>
 
-/* =====================================================
-   VARIABLES DE ESTILO
-===================================================== */
-
-:root {
-    --fondo: url("fondo principal.jpg");
-    --principal: #54582f;
-    --principal-hover: #6b7040;
-    --texto: #f8f5df;
-    --titulo: #f5eec8;
-    --oscuro: #292c18;
-    --sombra: rgba(0,0,0,0.35);
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    scroll-behavior:smooth;
 }
 
-
-/* =====================================================
-   ESTILOS GENERALES
-===================================================== */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-}
-
-body {
-    color: var(--texto);
-    line-height: 1.6;
-    font-family: "Special Elite", "Courier New", monospace;
-    min-height: 100vh;
+body{
+    color:#f5f3df;
+    line-height:1.6;
+    font-family:"Special Elite","Courier New",monospace;
+    min-height:100vh;
 
     background-image:
-        linear-gradient(
-            rgba(48,52,25,0.25),
-            rgba(48,52,25,0.25)
-        ),
-        var(--fondo);
+        linear-gradient(rgba(48,52,25,.25),rgba(48,52,25,.25)),
+        url("fondo principal.jpg");
 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
     transition:
-        background 0.6s ease,
-        color 0.4s ease;
+        background-image .6s ease,
+        color .4s ease;
 }
 
+/* =========================
+   ESTILOS DE LA PÁGINA
+========================= */
 
-/* =====================================================
+body.estilo-natural{
+    background-image:
+        linear-gradient(rgba(48,52,25,.20),rgba(48,52,25,.20)),
+        url("fondo principal.jpg");
+}
+
+body.estilo-cute{
+    background-image:
+        linear-gradient(rgba(255,170,200,.18),rgba(255,170,200,.18)),
+        url("FONDOCUTE2.jfif");
+}
+
+body.estilo-noche{
+    background-image:
+        linear-gradient(rgba(8,12,35,.35),rgba(8,12,35,.35)),
+        url("fondonoche.jfif");
+}
+
+body.estilo-urbano{
+    background-image:
+        linear-gradient(rgba(25,25,25,.25),rgba(25,25,25,.25)),
+        url("fondourbano.jfif");
+}
+
+body.estilo-yura{
+    background-image:
+        linear-gradient(rgba(100,75,35,.20),rgba(100,75,35,.20)),
+        url("fondoyura.jfif");
+}
+
+/* =========================
    PORTADA
-===================================================== */
+========================= */
 
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 80px 20px;
-
-    position: relative;
-    overflow: hidden;
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:80px 20px;
+    position:relative;
+    overflow:hidden;
 }
 
-.hero-content {
-    max-width: 1000px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    position: relative;
-    z-index: 2;
+.hero-content{
+    max-width:1000px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:relative;
+    z-index:2;
 }
 
-
-/* =====================================================
-   FRASE
-===================================================== */
-
-.frase-potente {
-    font-family: "DM Serif Display", Georgia, serif;
-
-    font-size: clamp(48px, 7vw, 90px);
-
-    line-height: 1.05;
-
-    color: var(--texto);
-
-    max-width: 1000px;
-
-    margin-bottom: 30px;
+.frase-potente{
+    font-family:"DM Serif Display",Georgia,serif;
+    font-size:clamp(48px,7vw,90px);
+    line-height:1.05;
+    color:#f8f5df;
+    max-width:1000px;
+    margin-bottom:30px;
 
     text-shadow:
-        0 4px 8px rgba(0,0,0,0.55),
-        0 8px 20px rgba(0,0,0,0.25);
+        0 4px 8px rgba(0,0,0,.55),
+        0 8px 20px rgba(0,0,0,.25);
 }
 
+/* =========================
+   YURI PORTADA
+========================= */
 
-/* =====================================================
-   YURI
-===================================================== */
-
-.mascota {
-    margin-top: 15px;
+.mascota{
+    margin-top:15px;
 }
 
-.mascota img {
-    width: 230px;
-    max-width: 65vw;
-    height: auto;
+.mascota img{
+    width:220px;
+    max-width:65vw;
+    height:auto;
+    display:block;
 
-    display: block;
+    filter:drop-shadow(0 8px 8px rgba(0,0,0,.35));
 
-    filter:
-        drop-shadow(0 8px 8px rgba(0,0,0,0.35));
+    animation:yuriFlota 3.5s ease-in-out infinite;
 
-    animation: yuriFlota 3.5s ease-in-out infinite;
+    transition:opacity .3s ease;
 }
 
-@keyframes yuriFlota {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+@keyframes yuriFlota{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
 }
 
+.hero-subtitulo{
+    font-family:"Special Elite","Courier New",monospace;
+    font-size:19px;
+    max-width:700px;
+    margin:15px auto 25px;
+    color:#f4f1db;
 
-/* =====================================================
-   SUBTÍTULO
-===================================================== */
-
-.hero-subtitulo {
-    font-size: 19px;
-
-    max-width: 700px;
-
-    margin: 15px auto 25px;
-
-    color: var(--texto);
-
-    text-shadow:
-        0 2px 5px rgba(0,0,0,0.65);
+    text-shadow:0 2px 5px rgba(0,0,0,.65);
 }
 
-
-/* =====================================================
+/* =========================
    BOTONES
-===================================================== */
+========================= */
 
-.botones-finales {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin-top: 25px;
+.botones-finales{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
 }
 
-.boton {
-    display: inline-block;
+.boton{
+    display:inline-block;
+    background:#54582f;
+    color:#f8f5df;
+    padding:13px 25px;
+    border-radius:25px;
+    text-decoration:none;
+    font-family:"Montserrat",sans-serif;
+    font-weight:600;
+    border:1px solid rgba(255,255,255,.2);
+    cursor:pointer;
+    transition:.3s;
 
-    background: var(--principal);
-
-    color: var(--texto);
-
-    padding: 13px 25px;
-
-    border-radius: 25px;
-
-    text-decoration: none;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-weight: 600;
-
-    border: 1px solid rgba(255,255,255,0.2);
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,0.2);
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
-.boton:hover {
-    transform: translateY(-3px) scale(1.03);
-
-    background: var(--principal-hover);
+.boton:hover{
+    transform:translateY(-3px) scale(1.03);
+    background:#6b7040;
 }
 
-
-/* =====================================================
+/* =========================
    BARRA
-===================================================== */
+========================= */
 
-header {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    min-height: 92px;
-
-    z-index: 2000;
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    min-height:92px;
+    z-index:2000;
 
     background-image:
-        linear-gradient(
-            rgba(55,58,31,0.22),
-            rgba(55,58,31,0.22)
-        ),
+        linear-gradient(rgba(55,58,31,.22),rgba(55,58,31,.22)),
         url("PANEL DE IMÁGENES.jpg");
 
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
+    background-position:center;
 
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.35);
+    box-shadow:0 5px 20px rgba(0,0,0,.35);
 
-    transform: translateY(-110%);
-
-    transition:
-        transform 0.55s ease;
+    transform:translateY(-110%);
+    transition:transform .55s ease;
 }
 
-header.visible {
-    transform: translateY(0);
+header.visible{
+    transform:translateY(0);
 }
 
-.barra-interior {
-    min-height: 92px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 12px 20px;
-
-    position: relative;
+.barra-interior{
+    min-height:92px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 20px;
+    position:relative;
 }
 
-
-/* =====================================================
+/* =========================
    CONTROLES
-===================================================== */
+========================= */
 
-.controles-izquierda {
-    position: absolute;
+.controles-izquierda{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
 
-    left: 18px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
-.control-boton {
-    width: 45px;
-    height: 45px;
+.control-boton{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    background:#54582f;
+    color:#f8f5df;
+    font-size:22px;
 
-    border-radius: 50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    border: none;
-
-    cursor: pointer;
-
-    background: var(--principal);
-
-    color: var(--texto);
-
-    font-size: 22px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    box-shadow:
-        0 4px 10px rgba(0,0,0,0.3);
-
-    transition: 0.3s;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+    transition:.3s;
 }
 
-.control-boton:hover {
-    transform: scale(1.1);
-
-    background: var(--principal-hover);
+.control-boton:hover{
+    transform:scale(1.1);
+    background:#6b7040;
 }
 
-
-/* =====================================================
+/* =========================
    NAVEGACIÓN
-===================================================== */
+========================= */
 
-nav {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
+nav{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
-nav button {
-    background: transparent;
+nav button{
+    background:transparent;
+    border:none;
+    color:#f8f5df;
+    font-family:"Montserrat",sans-serif;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    padding:10px 13px;
 
-    border: none;
-
-    color: var(--texto);
-
-    font-family: "Montserrat", sans-serif;
-
-    font-weight: 700;
-
-    font-size: 15px;
-
-    cursor: pointer;
-
-    padding: 10px 13px;
-
-    text-shadow:
-        0 2px 4px rgba(0,0,0,0.5);
-
-    transition: 0.3s;
+    text-shadow:0 2px 4px rgba(0,0,0,.5);
+    transition:.3s;
 }
 
-nav button:hover {
-    transform: translateY(-2px);
-
-    color: #ffffff;
+nav button:hover{
+    transform:translateY(-2px);
+    color:#fff;
 }
 
-
-/* =====================================================
+/* =========================
    MENÚ
-===================================================== */
+========================= */
 
-.menu-extra {
-    position: relative;
+.menu-extra{
+    position:relative;
 }
 
-.menu-contenido {
-    position: absolute;
+.menu-contenido{
+    position:absolute;
+    top:58px;
+    left:0;
+    width:245px;
+    padding:12px;
+    background:#54582f;
+    border-radius:18px;
 
-    top: 58px;
-    left: 0;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
 
-    width: 245px;
-
-    padding: 12px;
-
-    background: var(--principal);
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.35);
-
-    display: none;
-
-    border:
-        1px solid rgba(255,255,255,0.15);
+    display:none;
+    border:1px solid rgba(255,255,255,.15);
 }
 
-.menu-contenido.abierto {
-    display: block;
-
-    animation:
-        aparecerMenu 0.25s ease;
+.menu-contenido.abierto{
+    display:block;
+    animation:aparecerMenu .25s ease;
 }
 
-@keyframes aparecerMenu {
-
-    from {
-        opacity: 0;
-        transform: translateY(-8px);
+@keyframes aparecerMenu{
+    from{
+        opacity:0;
+        transform:translateY(-8px);
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }
 
-.menu-contenido button {
-    width: 100%;
-
-    display: block;
-
-    text-align: left;
-
-    padding: 12px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: transparent;
-
-    color: var(--texto);
-
-    font-family: "Special Elite", monospace;
-
-    cursor: pointer;
-
-    margin-bottom: 4px;
+.menu-contenido button{
+    width:100%;
+    display:block;
+    text-align:left;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:transparent;
+    color:#f8f5df;
+    font-family:"Special Elite",monospace;
+    cursor:pointer;
+    margin-bottom:4px;
 }
 
-.menu-contenido button:hover {
-    background: rgba(255,255,255,0.12);
+.menu-contenido button:hover{
+    background:rgba(255,255,255,.12);
 }
 
-
-/* =====================================================
+/* =========================
    MODALES
-===================================================== */
+========================= */
 
-.modal {
-    position: fixed;
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:rgba(20,22,12,.72);
 
-    inset: 0;
+    display:none;
+    justify-content:center;
+    align-items:center;
 
-    z-index: 3000;
-
-    background: rgba(20,22,12,0.72);
-
-    display: none;
-
-    justify-content: center;
-    align-items: center;
-
-    padding: 25px;
+    padding:25px;
 }
 
-.modal.abierto {
-    display: flex;
-
-    animation:
-        aparecerFondo 0.25s ease;
+.modal.abierto{
+    display:flex;
+    animation:aparecerFondo .25s ease;
 }
 
-@keyframes aparecerFondo {
+@keyframes aparecerFondo{
+    from{opacity:0}
+    to{opacity:1}
+}
 
-    from {
-        opacity: 0;
+.modal-contenido{
+    width:min(900px,100%);
+    max-height:85vh;
+    overflow-y:auto;
+
+    background:#54582f;
+    color:#f8f5df;
+
+    border-radius:30px;
+    padding:40px;
+    position:relative;
+
+    box-shadow:0 15px 50px rgba(0,0,0,.45);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    animation:aparecerRecuadro .3s ease;
+}
+
+@keyframes aparecerRecuadro{
+    from{
+        opacity:0;
+        transform:scale(.94) translateY(10px);
     }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.modal-contenido {
-    width: min(900px,100%);
-
-    max-height: 85vh;
-
-    overflow-y: auto;
-
-    background: var(--principal);
-
-    color: var(--texto);
-
-    border-radius: 30px;
-
-    padding: 40px;
-
-    position: relative;
-
-    box-shadow:
-        0 15px 50px rgba(0,0,0,0.45);
-
-    border:
-        1px solid rgba(255,255,255,0.15);
-
-    animation:
-        aparecerRecuadro 0.3s ease;
-}
-
-@keyframes aparecerRecuadro {
-
-    from {
-        opacity: 0;
-        transform: scale(0.94) translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
     }
 }
 
-.modal-contenido h2 {
-    font-family: "Patrick Hand", cursive;
-
-    font-size: 42px;
-
-    margin-bottom: 20px;
-
-    color: var(--titulo);
+.modal-contenido h2{
+    font-family:"Patrick Hand",cursive;
+    font-size:42px;
+    margin-bottom:20px;
+    color:#f5eec8;
 }
 
-.modal-contenido h3 {
-    font-family: "Patrick Hand", cursive;
-
-    font-size: 28px;
-
-    color: var(--titulo);
-
-    margin-top: 20px;
-    margin-bottom: 10px;
+.modal-contenido h3{
+    font-family:"Patrick Hand",cursive;
+    font-size:28px;
+    color:#f5eec8;
+    margin-top:20px;
+    margin-bottom:10px;
 }
 
-.modal-contenido p {
-    font-size: 17px;
-
-    margin-bottom: 12px;
+.modal-contenido p{
+    font-family:"Special Elite",monospace;
+    font-size:17px;
+    margin-bottom:12px;
 }
 
-.cerrar {
-    position: absolute;
-
-    top: 15px;
-    right: 18px;
-
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    border: none;
-
-    background: rgba(255,255,255,0.12);
-
-    color: #fff;
-
-    font-size: 24px;
-
-    cursor: pointer;
+.cerrar{
+    position:absolute;
+    top:15px;
+    right:18px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    font-size:24px;
+    cursor:pointer;
 }
 
-.cerrar:hover {
-    background: rgba(255,255,255,0.22);
+.cerrar:hover{
+    background:rgba(255,255,255,.22);
 }
 
+/* =========================
+   PRESENTACIÓN YURI
+========================= */
 
-/* =====================================================
-   CONÓCENOS - 5 JÓVENES
-===================================================== */
-
-.jovenes-contenedor {
-    margin-top: 25px;
-
-    padding: 20px;
-
-    background: rgba(0,0,0,0.12);
-
-    border-radius: 25px;
-
-    text-align: center;
+.yuri-presentacion{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    margin-top:25px;
+    padding:20px;
+    background:rgba(0,0,0,.12);
+    border-radius:22px;
 }
 
-.jovenes-contenedor h3 {
-    margin-top: 0;
+.yuri-presentacion img{
+    width:160px;
+    max-width:35%;
+
+    filter:drop-shadow(0 6px 7px rgba(0,0,0,.3));
+
+    transition:opacity .3s ease;
 }
 
-.jovenes-imagen {
-    width: 100%;
+/* =========================
+   FOTO 5 JÓVENES
+========================= */
 
-    max-width: 760px;
-
-    display: block;
-
-    margin: 20px auto 10px;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,0.35);
-
-    transition: 0.4s;
+.jovenes-presentacion{
+    margin-top:25px;
+    padding:20px;
+    background:rgba(0,0,0,.12);
+    border-radius:22px;
+    text-align:center;
 }
 
-.jovenes-imagen:hover {
-    transform: scale(1.02);
+.jovenes-presentacion img{
+    width:100%;
+    max-width:760px;
+    max-height:420px;
+    object-fit:contain;
+
+    border-radius:18px;
+
+    display:block;
+    margin:0 auto 15px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+    transition:opacity .3s ease;
 }
 
-
-/* =====================================================
-   YURI EN CONÓCENOS
-===================================================== */
-
-.yuri-presentacion {
-    display: flex;
-
-    align-items: center;
-
-    gap: 30px;
-
-    margin-top: 25px;
-
-    padding: 20px;
-
-    background: rgba(0,0,0,0.12);
-
-    border-radius: 22px;
+.estilo-actual{
+    font-family:"Montserrat",sans-serif;
+    font-weight:700;
+    font-size:15px;
+    margin-top:10px;
 }
 
-.yuri-presentacion img {
-    width: 170px;
-
-    max-width: 35%;
-
-    filter:
-        drop-shadow(0 6px 7px rgba(0,0,0,0.3));
-}
-
-
-/* =====================================================
+/* =========================
    PLANTAS
-===================================================== */
+========================= */
 
-.planta-tarjeta {
-    margin-top: 25px;
-
-    padding: 25px;
-
-    border-radius: 22px;
-
-    background: rgba(0,0,0,0.12);
+.planta-tarjeta{
+    margin-top:25px;
+    padding:25px;
+    border-radius:22px;
+    background:rgba(0,0,0,.12);
 }
 
-.planta-tarjeta h3 {
-    margin-top: 0;
+.planta-tarjeta h3{
+    margin-top:0;
 }
 
-
-/* =====================================================
+/* =========================
    ESTILOS
-===================================================== */
+========================= */
 
-.estilos-opciones {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(180px,1fr));
-
-    gap: 15px;
-
-    margin-top: 25px;
+.estilos-opciones{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+    margin-top:25px;
 }
 
-.estilo-opcion {
-    border: none;
+.estilo-opcion{
+    border:none;
+    padding:20px;
+    border-radius:18px;
+    cursor:pointer;
 
-    padding: 25px 20px;
+    background:rgba(255,255,255,.10);
+    color:#f8f5df;
 
-    border-radius: 20px;
+    font-family:"Montserrat",sans-serif;
+    font-weight:600;
 
-    cursor: pointer;
-
-    background: rgba(255,255,255,0.10);
-
-    color: var(--texto);
-
-    font-family: "Montserrat", sans-serif;
-
-    font-weight: 600;
-
-    font-size: 16px;
-
-    transition: 0.3s;
+    transition:.3s;
 }
 
-.estilo-opcion:hover {
-    background: rgba(255,255,255,0.20);
-
-    transform:
-        translateY(-4px)
-        scale(1.02);
+.estilo-opcion:hover{
+    background:rgba(255,255,255,.20);
+    transform:translateY(-3px);
 }
 
+.estilo-opcion.activo{
+    background:rgba(255,255,255,.28);
+    box-shadow:0 0 0 2px rgba(255,255,255,.35);
+}
 
-/* =====================================================
+/* =========================
    FORMULARIOS
-===================================================== */
+========================= */
 
-.formulario {
-    margin-top: 25px;
-
-    padding: 25px;
-
-    background: rgba(0,0,0,0.12);
-
-    border-radius: 22px;
+.formulario{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-top:20px;
 }
 
-.formulario label {
-    display: block;
-
-    margin-top: 12px;
-    margin-bottom: 5px;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-weight: 600;
+.formulario label{
+    font-family:"Montserrat",sans-serif;
+    font-weight:600;
 }
 
 .formulario input,
 .formulario textarea,
-.formulario select {
-    width: 100%;
+.formulario select{
+    width:100%;
+    padding:13px 15px;
+    border:none;
+    border-radius:13px;
 
-    padding: 12px 14px;
+    background:rgba(255,255,255,.92);
+    color:#30321c;
 
-    border: none;
-
-    border-radius: 12px;
-
-    outline: none;
-
-    font-family: "Montserrat", sans-serif;
-
-    background: rgba(255,255,255,0.92);
-
-    color: #222;
+    font-family:"Montserrat",sans-serif;
+    font-size:15px;
 }
 
-.formulario textarea {
-    min-height: 110px;
-
-    resize: vertical;
+.formulario textarea{
+    min-height:120px;
+    resize:vertical;
 }
 
-.formulario button {
-    margin-top: 18px;
+.formulario button{
+    margin-top:8px;
+    padding:14px;
+    border:none;
+    border-radius:25px;
 
-    border: none;
+    background:#737945;
+    color:white;
 
-    padding: 13px 24px;
+    font-family:"Montserrat",sans-serif;
+    font-weight:700;
 
-    border-radius: 25px;
-
-    background: var(--titulo);
-
-    color: #333;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.3s;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.formulario button:hover {
-    transform: translateY(-2px);
-
-    opacity: 0.9;
+.formulario button:hover{
+    background:#858b52;
+    transform:translateY(-2px);
 }
 
-
-/* =====================================================
-   PARTE FINAL
-===================================================== */
-
-.final {
-    min-height: 70vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    padding: 80px 20px;
-
-    background:
-        rgba(30,32,17,0.48);
+.mensaje-formulario{
+    display:none;
+    margin-top:12px;
+    padding:12px;
+    border-radius:12px;
+    background:rgba(255,255,255,.12);
 }
 
-.final h2 {
-    font-family: "Patrick Hand", cursive;
+/* =========================
+   FINAL
+========================= */
 
-    font-size: clamp(42px,6vw,70px);
+.final{
+    min-height:70vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:80px 20px;
 
-    color: var(--titulo);
-
-    margin-bottom: 20px;
-
-    text-shadow:
-        0 4px 8px rgba(0,0,0,0.5);
+    background:rgba(30,32,17,.48);
 }
 
-.final p {
-    max-width: 750px;
+.final h2{
+    font-family:"Patrick Hand",cursive;
+    font-size:clamp(42px,6vw,70px);
+    color:#f5eec8;
+    margin-bottom:20px;
 
-    font-size: 18px;
-
-    margin-bottom: 15px;
-
-    text-shadow:
-        0 2px 5px rgba(0,0,0,0.6);
+    text-shadow:0 4px 8px rgba(0,0,0,.5);
 }
 
+.final p{
+    max-width:750px;
+    font-size:18px;
+    margin-bottom:15px;
 
-/* =====================================================
+    text-shadow:0 2px 5px rgba(0,0,0,.6);
+}
+
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
-footer {
-    background: var(--oscuro);
-
-    color: var(--texto);
-
-    text-align: center;
-
-    padding: 35px 20px;
-
-    font-family: "Special Elite", monospace;
+footer{
+    background:#292c18;
+    color:#f5f3df;
+    text-align:center;
+    padding:35px 20px;
+    font-family:"Special Elite",monospace;
 }
 
-footer p {
-    margin: 5px;
+footer p{
+    margin:5px;
 }
 
+/* =========================
+   CELULAR
+========================= */
 
-/* =====================================================
-   TEMA CUTE
-===================================================== */
+@media(max-width:700px){
 
-body.estilo-cute {
-    --principal: #d66b91;
-    --principal-hover: #e889aa;
-    --texto: #fff8fc;
-    --titulo: #ffe1ed;
-    --oscuro: #6f4054;
-
-    background-image:
-        linear-gradient(
-            rgba(255,180,210,0.20),
-            rgba(255,180,210,0.20)
-        ),
-        url("FONDOCUTE2.jfif");
-}
-
-body.estilo-cute .modal-contenido,
-body.estilo-cute .menu-contenido {
-    border-radius: 30px;
-}
-
-body.estilo-cute .boton,
-body.estilo-cute .control-boton {
-    border-radius: 30px;
-}
-
-
-/* =====================================================
-   TEMA NOCTURNO
-===================================================== */
-
-body.estilo-nocturno {
-    --principal: #202944;
-    --principal-hover: #33436c;
-    --texto: #eaf0ff;
-    --titulo: #cddcff;
-    --oscuro: #101525;
-
-    background-image:
-        linear-gradient(
-            rgba(5,8,20,0.55),
-            rgba(5,8,20,0.55)
-        ),
-        url("fondonoche.jfif");
-}
-
-
-/* =====================================================
-   TEMA URBANO
-===================================================== */
-
-body.estilo-urbano {
-    --principal: #34383d;
-    --principal-hover: #515860;
-    --texto: #f2f2f2;
-    --titulo: #ffffff;
-    --oscuro: #202326;
-
-    background-image:
-        linear-gradient(
-            rgba(20,24,28,0.38),
-            rgba(20,24,28,0.38)
-        ),
-        url("fondourbano.jfif");
-}
-
-body.estilo-urbano .modal-contenido,
-body.estilo-urbano .menu-contenido {
-    border-radius: 12px;
-}
-
-body.estilo-urbano .boton,
-body.estilo-urbano .control-boton {
-    border-radius: 8px;
-}
-
-
-/* =====================================================
-   TEMA YURA
-===================================================== */
-
-body.estilo-yura {
-    --principal: #7b5b35;
-    --principal-hover: #987448;
-    --texto: #fff7df;
-    --titulo: #ffe0a3;
-    --oscuro: #49351f;
-
-    background-image:
-        linear-gradient(
-            rgba(91,63,31,0.20),
-            rgba(91,63,31,0.20)
-        ),
-        url("fondoyura.jfif");
-}
-
-body.estilo-yura .modal-contenido,
-body.estilo-yura .menu-contenido {
-    border-radius: 18px;
-}
-
-
-/* =====================================================
-   CELULARES
-===================================================== */
-
-@media (max-width:700px) {
-
-    .barra-interior {
-        min-height: 105px;
-
-        padding-top: 55px;
+    .barra-interior{
+        min-height:105px;
+        padding-top:55px;
     }
 
-    header {
-        min-height: 105px;
+    header{
+        min-height:105px;
     }
 
-    .controles-izquierda {
-        top: 12px;
-
-        left: 12px;
-
-        transform: none;
+    .controles-izquierda{
+        top:12px;
+        left:12px;
+        transform:none;
     }
 
-    .control-boton {
-        width: 38px;
-        height: 38px;
-
-        font-size: 19px;
+    .control-boton{
+        width:38px;
+        height:38px;
+        font-size:19px;
     }
 
-    nav {
-        gap: 2px;
+    nav{
+        gap:2px;
     }
 
-    nav button {
-        font-size: 12px;
-
-        padding: 7px 6px;
+    nav button{
+        font-size:12px;
+        padding:7px 6px;
     }
 
-    .menu-contenido {
-        top: 45px;
-
-        left: -10px;
-
-        width: 220px;
+    .menu-contenido{
+        top:45px;
+        left:-10px;
+        width:220px;
     }
 
-    .modal-contenido {
-        padding: 30px 22px;
-
-        border-radius: 24px;
+    .modal-contenido{
+        padding:30px 22px;
+        border-radius:24px;
     }
 
-    .modal-contenido h2 {
-        font-size: 34px;
+    .modal-contenido h2{
+        font-size:34px;
     }
 
-    .yuri-presentacion {
-        flex-direction: column;
-
-        text-align: center;
+    .yuri-presentacion{
+        flex-direction:column;
+        text-align:center;
     }
 
-    .yuri-presentacion img {
-        max-width: 55%;
-
-        width: 170px;
+    .yuri-presentacion img{
+        max-width:55%;
+        width:170px;
     }
 
-    .mascota img {
-        width: 175px;
+    .mascota img{
+        width:175px;
     }
 
-    .hero {
-        padding-top: 50px;
+    .hero{
+        padding-top:50px;
     }
 
+    .jovenes-presentacion img{
+        max-height:300px;
+    }
 }
 
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
+<!-- =========================
      PORTADA
-===================================================== -->
+========================= -->
 
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="frase-potente">
-            ¿EN QUÉ MOMENTO SE JODIÓ EL PERÚ?
-        </div>
+<div class="frase-potente">
+¿EN QUÉ MOMENTO SE JODIÓ EL PERÚ?
+</div>
 
-        <div class="mascota">
+<div class="mascota">
 
-            <img
-                src="yuribienvenidayura.png"
-                alt="Yuri dando la bienvenida"
-            >
+<img
+id="yuriPortada"
+src="yurinaturalplantas.png"
+alt="Yuri"
+/>
 
-        </div>
+</div>
 
-        <p class="hero-subtitulo">
-            “Cuando dejamos de cuidar lo que nos daba vida.”
-        </p>
+<p class="hero-subtitulo">
+“Cuando dejamos de cuidar lo que nos daba vida.”
+</p>
 
-    </div>
-
+</div>
 </section>
 
 
-<!-- =====================================================
-     BARRA PRINCIPAL
-===================================================== -->
+<!-- =========================
+     BARRA
+========================= -->
 
 <header id="barra">
 
-    <div class="barra-interior">
+<div class="barra-interior">
 
-        <div class="controles-izquierda">
+<div class="controles-izquierda">
 
-            <div class="menu-extra">
+<div class="menu-extra">
 
-                <button
-                    class="control-boton"
-                    onclick="alternarMenu()"
-                    aria-label="Abrir menú"
-                >
-                    ⋮
-                </button>
+<button
+class="control-boton"
+onclick="alternarMenu()"
+aria-label="Abrir menú">
+⋮
+</button>
 
-                <div
-                    class="menu-contenido"
-                    id="menuContenido"
-                >
+<div class="menu-contenido" id="menuContenido">
 
-                    <button onclick="abrirModal('cuidemos')">
-                        ♻️ Cuidemos nuestro entorno
-                    </button>
+<button onclick="abrirModal('cuidemos')">
+♻️ Cuidemos nuestro entorno
+</button>
 
-                    <button onclick="abrirModal('sabias')">
-                        💡 ¿Sabías que?
-                    </button>
+<button onclick="abrirModal('sabias')">
+💡 ¿Sabías que?
+</button>
 
-                    <button onclick="abrirModal('compromiso')">
-                        💚 Nuestro compromiso
-                    </button>
+<button onclick="abrirModal('compromiso')">
+💚 Nuestro compromiso
+</button>
 
-                    <button onclick="abrirModal('estilos')">
-                        🎨 Estilos
-                    </button>
+<button onclick="abrirModal('estilos')">
+🎨 Estilos
+</button>
 
-                </div>
+</div>
+</div>
 
-            </div>
+<button
+class="control-boton"
+onclick="abrirModal('plantas')"
+aria-label="Abrir plantas">
+🌸
+</button>
 
-
-            <button
-                class="control-boton"
-                onclick="abrirModal('plantas')"
-                aria-label="Abrir plantas"
-            >
-                🌸
-            </button>
-
-        </div>
+</div>
 
 
-        <nav>
+<nav>
 
-            <button onclick="abrirModal('quienes')">
-                👋 Conócenos
-            </button>
+<button onclick="abrirModal('quienes')">
+👋 Conócenos
+</button>
 
-            <button onclick="abrirModal('proyecto')">
-                📖 Sobre el proyecto
-            </button>
+<button onclick="abrirModal('proyecto')">
+📖 Sobre el proyecto
+</button>
 
-            <button onclick="abrirModal('yura')">
-                🌄 Yura
-            </button>
+<button onclick="abrirModal('yura')">
+🌄 Yura
+</button>
 
-        </nav>
+</nav>
 
-    </div>
-
+</div>
 </header>
 
 
-<!-- =====================================================
+<!-- =========================
      CONÓCENOS
-===================================================== -->
+========================= -->
 
 <div class="modal" id="quienes">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('quienes')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('quienes')">
+×
+</button>
 
-        <h2>
-            👋 Conócenos
-        </h2>
+<h2>👋 Conócenos</h2>
 
-        <p>
-            Somos un grupo de 5 jóvenes que cree que cuidar
-            nuestro entorno no tiene que comenzar con una
-            acción enorme.
-        </p>
+<p>
+Somos un grupo de 5 jóvenes que cree que cuidar
+nuestro entorno no tiene que comenzar con una
+acción enorme.
+</p>
 
-        <p>
-            Creemos que cuando conocemos el lugar donde vivimos,
-            aprendemos a valorarlo y podemos comenzar a protegerlo.
-        </p>
+<p>
+Creemos que cuando conocemos el lugar donde vivimos,
+aprendemos a valorarlo y podemos comenzar a protegerlo.
+</p>
 
-        <!-- IMAGEN DE LOS 5 JÓVENES -->
-
-        <div class="jovenes-contenedor">
-
-            <h3>
-                🌱 Los 5 jóvenes detrás del proyecto
-            </h3>
-
-            <img
-                class="jovenes-imagen"
-                src="5jovenescute.png"
-                alt="Los cinco jóvenes del proyecto"
-            >
-
-            <p>
-                Juntos queremos compartir información,
-                despertar curiosidad y motivar pequeñas acciones
-                para cuidar nuestra comunidad.
-            </p>
-
-        </div>
+<p>
+🌱 Nuestra intención es compartir información,
+despertar curiosidad y motivar pequeñas acciones
+que ayuden a cuidar nuestra comunidad.
+</p>
 
 
-        <!-- YURI -->
+<div class="jovenes-presentacion">
 
-        <div class="yuri-presentacion">
+<img
+id="imagenJovenes"
+src="5jovenesnatural.png"
+alt="Los cinco jóvenes del proyecto"
+>
 
-            <img
-                src="yuribienvenidayura.png"
-                alt="Yuri"
-            >
-
-            <div>
-
-                <h3>
-                    🐰 Ella es Yuri
-                </h3>
-
-                <p>
-                    Yuri es nuestra mascota y compañera
-                    durante este recorrido.
-                </p>
-
-                <p>
-                    Está inspirada en una vizcacha y nos
-                    acompaña mientras conocemos, valoramos
-                    y protegemos nuestro entorno.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+<div class="estilo-actual">
+🌿 Presentación estilo: <span id="nombreEstilo">Natural</span>
+</div>
 
 </div>
 
 
-<!-- =====================================================
-     SOBRE EL PROYECTO
-===================================================== -->
+<div class="yuri-presentacion">
+
+<img
+id="yuriConocenos"
+src="yurinaturalplantas.png"
+alt="Yuri"
+/>
+
+<div>
+
+<h3>🐰 Ella es Yuri</h3>
+
+<p>
+Yuri es nuestra mascota y compañera
+durante este recorrido.
+</p>
+
+<p>
+Está inspirada en una vizcacha y tiene
+una apariencia tranquila y un poquito
+soñolienta.
+</p>
+
+<p>
+Su misión es acompañarnos mientras
+conocemos, valoramos y protegemos
+nuestro entorno. 🌱
+</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<!-- =========================
+     PROYECTO
+========================= -->
 
 <div class="modal" id="proyecto">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('proyecto')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('proyecto')">×</button>
 
-        <h2>
-            📖 Sobre el proyecto
-        </h2>
+<h2>📖 Sobre el proyecto</h2>
 
-        <p>
-            <strong>Unidos por un Entorno Limpio</strong>
-            es una iniciativa de sensibilización ambiental
-            creada para acercarnos a la naturaleza de nuestro
-            entorno.
-        </p>
+<p>
+<strong>Unidos por un Entorno Limpio</strong>
+es una iniciativa de sensibilización ambiental
+creada para acercarnos a la naturaleza de nuestro
+entorno.
+</p>
 
-        <p>
-            Queremos que conocer nuestro ambiente sea también
-            una forma de aprender a valorarlo.
-        </p>
+<p>
+Queremos que conocer nuestro ambiente sea también
+una forma de aprender a valorarlo.
+</p>
 
-        <p>
-            A través de información, recomendaciones y recursos
-            interactivos buscamos incentivar el cuidado de
-            nuestros ecosistemas, plantas, suelos y recursos.
-        </p>
+<p>
+A través de información, recomendaciones y recursos
+interactivos buscamos incentivar el cuidado de
+nuestros ecosistemas, plantas, suelos y recursos.
+</p>
 
-        <h3>
-            🌎 Nuestra idea
-        </h3>
+<h3>🌎 Nuestra idea</h3>
 
-        <p>
-            Conocer → Valorar → Proteger
-        </p>
+<p>
+Conocer → Valorar → Proteger
+</p>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      YURA
-===================================================== -->
+========================= -->
 
 <div class="modal" id="yura">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('yura')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('yura')">×</button>
 
-        <h2>
-            🌄 Yura
-        </h2>
+<h2>🌄 Yura</h2>
 
-        <p>
-            Yura posee paisajes, plantas y ecosistemas que
-            forman parte de nuestra identidad.
-        </p>
+<p>
+Yura posee paisajes, plantas y ecosistemas que
+forman parte de nuestra identidad.
+</p>
 
-        <p>
-            Vivimos en una zona donde el agua es un recurso
-            muy importante y donde la naturaleza ha desarrollado
-            diferentes formas de adaptarse a condiciones secas.
-        </p>
+<p>
+Vivimos en una zona donde el agua es un recurso
+muy importante y donde la naturaleza ha desarrollado
+diferentes formas de adaptarse a condiciones secas.
+</p>
 
-        <h3>
-            🌵 Naturaleza
-        </h3>
+<h3>🌵 Naturaleza</h3>
 
-        <p>
-            Algunas especies vegetales pueden sobrevivir
-            en condiciones de poca disponibilidad de agua.
-        </p>
+<p>
+Algunas especies vegetales pueden sobrevivir
+en condiciones de poca disponibilidad de agua.
+</p>
 
-        <h3>
-            💧 El agua importa
-        </h3>
+<h3>💧 El agua importa</h3>
 
-        <p>
-            Cuidar el agua también significa cuidar los suelos,
-            las plantas, los animales y a las personas.
-        </p>
+<p>
+Cuidar el agua también significa cuidar los suelos,
+las plantas, los animales y a las personas.
+</p>
 
-        <h3>
-            🌎 Nuestro hogar
-        </h3>
+<h3>🌎 Nuestro hogar</h3>
 
-        <p>
-            Proteger nuestro entorno empieza por conocerlo,
-            valorarlo y participar en su cuidado.
-        </p>
+<p>
+Proteger nuestro entorno empieza por conocerlo,
+valorarlo y participar en su cuidado.
+</p>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      PLANTAS
-===================================================== -->
+========================= -->
 
 <div class="modal" id="plantas">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('plantas')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('plantas')">×</button>
 
-        <h2>
-            🌿 Plantas de nuestra zona
-        </h2>
+<h2>🌿 Plantas de nuestra zona</h2>
 
-        <p>
-            Algunas plantas que crecen en zonas áridas pueden
-            parecer simples, pero cumplen funciones importantes
-            dentro del ecosistema.
-        </p>
+<p>
+Algunas plantas que crecen en zonas áridas pueden
+parecer simples, pero cumplen funciones importantes
+dentro del ecosistema.
+</p>
 
-        <div class="planta-tarjeta">
+<div class="planta-tarjeta">
 
-            <h3>
-                🌼 Encelia farinosa
-            </h3>
+<h3>🌼 Encelia farinosa</h3>
 
-            <p>
-                La <i>Encelia farinosa</i> es una planta adaptada
-                a ambientes áridos. Sus características le permiten
-                sobrevivir donde otras especies tendrían dificultades.
-            </p>
+<p>
+La <i>Encelia farinosa</i> es una planta adaptada
+a ambientes áridos. Sus características le permiten
+sobrevivir donde otras especies tendrían dificultades.
+</p>
 
-            <p>
-                Conocer las especies de nuestro entorno nos ayuda
-                a comprender por qué es importante evitar la
-                destrucción innecesaria de la vegetación.
-            </p>
+<p>
+Conocer las especies de nuestro entorno nos ayuda
+a comprender por qué es importante evitar la
+destrucción innecesaria de la vegetación.
+</p>
 
-            <p>
-                🌱 <strong>
-                    Conocer → Valorar → Proteger
-                </strong>
-            </p>
+<p>
+🌱 <strong>Conocer → Valorar → Proteger</strong>
+</p>
 
-        </div>
-
-    </div>
-
+</div>
+</div>
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      CUIDEMOS
-===================================================== -->
+========================= -->
 
 <div class="modal" id="cuidemos">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('cuidemos')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('cuidemos')">×</button>
 
-        <h2>
-            ♻️ Cuidemos nuestro entorno
-        </h2>
+<h2>♻️ Cuidemos nuestro entorno</h2>
 
-        <h3>
-            🔥 Evitemos las quemas
-        </h3>
+<h3>🔥 Evitemos las quemas</h3>
+<p>
+Quemar vegetación puede afectar plantas, animales,
+suelo y calidad del aire.
+</p>
 
-        <p>
-            Quemar vegetación puede afectar plantas, animales,
-            suelo y calidad del aire.
-        </p>
+<h3>🗑️ No dejemos basura</h3>
+<p>
+Los residuos abandonados pueden permanecer durante
+mucho tiempo en el ambiente y afectar a otros seres vivos.
+</p>
 
-        <h3>
-            🗑️ No dejemos basura
-        </h3>
+<h3>🌱 Protejamos las plantas</h3>
+<p>
+No arrancar ni destruir plantas innecesariamente
+es una forma sencilla de cuidar nuestro entorno.
+</p>
 
-        <p>
-            Los residuos abandonados pueden permanecer durante
-            mucho tiempo en el ambiente y afectar a otros seres vivos.
-        </p>
+<h3>💧 Cuidemos el agua</h3>
+<p>
+Utilicemos el agua de manera responsable,
+especialmente en zonas donde este recurso es limitado.
+</p>
 
-        <h3>
-            🌱 Protejamos las plantas
-        </h3>
-
-        <p>
-            No arrancar ni destruir plantas innecesariamente
-            es una forma sencilla de cuidar nuestro entorno.
-        </p>
-
-        <h3>
-            💧 Cuidemos el agua
-        </h3>
-
-        <p>
-            Utilicemos el agua de manera responsable,
-            especialmente en zonas donde este recurso es limitado.
-        </p>
-
-    </div>
-
+</div>
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      SABÍAS QUE
-===================================================== -->
+========================= -->
 
 <div class="modal" id="sabias">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('sabias')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('sabias')">×</button>
 
-        <h2>
-            💡 ¿Sabías que...?
-        </h2>
+<h2>💡 ¿Sabías que...?</h2>
 
-        <p>
-            🌵 Las plantas de zonas áridas poseen adaptaciones
-            que les permiten enfrentar condiciones de poca
-            disponibilidad de agua.
-        </p>
+<p>
+🌵 Las plantas de zonas áridas poseen adaptaciones
+que les permiten enfrentar condiciones de poca
+disponibilidad de agua.
+</p>
 
-        <p>
-            🌱 La vegetación forma parte del equilibrio de los
-            ecosistemas y proporciona refugio y recursos para
-            otros organismos.
-        </p>
+<p>
+🌱 La vegetación forma parte del equilibrio de los
+ecosistemas y proporciona refugio y recursos para
+otros organismos.
+</p>
 
-        <p>
-            💧 En lugares secos, conservar la humedad del suelo
-            puede ser especialmente importante para el desarrollo
-            de las plantas.
-        </p>
+<p>
+💧 En lugares secos, conservar la humedad del suelo
+puede ser especialmente importante para el desarrollo
+de las plantas.
+</p>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      COMPROMISO
-===================================================== -->
+========================= -->
 
 <div class="modal" id="compromiso">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('compromiso')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('compromiso')">×</button>
 
-        <h2>
-            💚 Nuestro compromiso
-        </h2>
+<h2>💚 Nuestro compromiso</h2>
 
-        <p>
-            No necesitamos hacer algo enorme para comenzar.
-        </p>
+<p>
+No necesitamos hacer algo enorme para comenzar.
+</p>
 
-        <p>
-            Podemos empezar con una acción pequeña:
-            no tirar basura, cuidar una planta, ahorrar agua
-            o enseñar a alguien más a proteger nuestro entorno.
-        </p>
+<p>
+Podemos empezar con una acción pequeña:
+no tirar basura, cuidar una planta, ahorrar agua
+o enseñar a alguien más a proteger nuestro entorno.
+</p>
 
-        <h3>
-            🌎 El cambio comienza con nosotros.
-        </h3>
+<h3>🌎 El cambio comienza con nosotros.</h3>
 
-    </div>
-
+</div>
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      ESTILOS
-===================================================== -->
+========================= -->
 
 <div class="modal" id="estilos">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('estilos')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('estilos')">×</button>
 
-        <h2>
-            🎨 Estilos
-        </h2>
+<h2>🎨 Estilos</h2>
 
-        <p>
-            Elige una apariencia diferente para nuestra página.
-            El cambio se aplicará a todo el sitio.
-        </p>
+<p>
+Elige un estilo para cambiar la apariencia de toda
+la página, incluyendo el fondo, Yuri y la presentación
+de los cinco jóvenes.
+</p>
 
-        <div class="estilos-opciones">
+<div class="estilos-opciones">
 
-            <button
-                class="estilo-opcion"
-                onclick="cambiarEstilo('natural')"
-            >
-                🌿
-                <br>
-                Natural
-            </button>
+<button class="estilo-opcion" onclick="cambiarEstilo('natural',this)">
+🌿 Natural
+</button>
 
-            <button
-                class="estilo-opcion"
-                onclick="cambiarEstilo('cute')"
-            >
-                🌸
-                <br>
-                Cute
-            </button>
+<button class="estilo-opcion" onclick="cambiarEstilo('cute',this)">
+🌸 Cute
+</button>
 
-            <button
-                class="estilo-opcion"
-                onclick="cambiarEstilo('nocturno')"
-            >
-                🌙
-                <br>
-                Nocturno
-            </button>
+<button class="estilo-opcion" onclick="cambiarEstilo('noche',this)">
+🌙 Nocturno
+</button>
 
-            <button
-                class="estilo-opcion"
-                onclick="cambiarEstilo('urbano')"
-            >
-                🏙️
-                <br>
-                Urbano
-            </button>
+<button class="estilo-opcion" onclick="cambiarEstilo('urbano',this)">
+🏙️ Urbano
+</button>
 
-            <button
-                class="estilo-opcion"
-                onclick="cambiarEstilo('yura')"
-            >
-                🌄
-                <br>
-                Yura
-            </button>
-
-        </div>
-
-    </div>
+<button class="estilo-opcion" onclick="cambiarEstilo('yura',this)">
+🏔️ Yura
+</button>
 
 </div>
 
+</div>
+</div>
 
-<!-- =====================================================
+
+<!-- =========================
      FINAL
-===================================================== -->
+========================= -->
 
 <section class="final">
 
-    <h2>
-        Juntos podemos hacer la diferencia.
-    </h2>
+<h2>
+Juntos podemos hacer la diferencia.
+</h2>
 
-    <p>
-        Una pequeña acción puede convertirse en el comienzo
-        de un cambio mucho más grande.
-    </p>
+<p>
+Una pequeña acción puede convertirse en el comienzo
+de un cambio mucho más grande.
+</p>
 
-    <div class="botones-finales">
+<div
+class="botones-finales"
+style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:15px;margin-top:30px;width:100%;">
 
-        <button
-            type="button"
-            class="boton"
-            onclick="abrirModal('unete')"
-        >
-            💚 Únete
-        </button>
+<button
+type="button"
+class="boton"
+onclick="abrirModal('unete')">
+💚 Únete
+</button>
 
-        <button
-            type="button"
-            class="boton"
-            onclick="abrirModal('reporta')"
-        >
-            🚨 Reporta
-        </button>
+<button
+type="button"
+class="boton"
+onclick="abrirModal('reporta')">
+🚨 Reporta
+</button>
 
-        <button
-            type="button"
-            class="boton"
-            onclick="abrirModal('donaciones')"
-        >
-            🤲 Donaciones
-        </button>
+<button
+type="button"
+class="boton"
+onclick="abrirModal('donaciones')">
+🤲 Donaciones
+</button>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      FORMULARIO ÚNETE
-===================================================== -->
+========================= -->
 
 <div class="modal" id="unete">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('unete')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('unete')">×</button>
 
-        <h2>
-            💚 Únete
-        </h2>
+<h2>💚 Únete</h2>
 
-        <p>
-            Si quieres formar parte de las actividades
-            de cuidado ambiental, puedes dejarnos tus datos.
-        </p>
+<p>
+Queremos que más personas formen parte del cuidado
+de nuestro entorno.
+</p>
 
-        <form
-            class="formulario"
-            onsubmit="enviarFormulario(event,'¡Gracias por querer unirte! 🌱')"
-        >
+<form
+class="formulario"
+onsubmit="enviarFormulario(event,'mensajeUnete')">
 
-            <label>
-                Nombre:
-            </label>
+<label>Nombre completo</label>
+<input
+type="text"
+required
+placeholder="Escribe tu nombre">
 
-            <input
-                type="text"
-                required
-                placeholder="Escribe tu nombre"
-            >
+<label>Correo electrónico</label>
+<input
+type="email"
+required
+placeholder="ejemplo@gmail.com">
 
-            <label>
-                Correo:
-            </label>
+<label>¿Cómo te gustaría participar?</label>
 
-            <input
-                type="email"
-                required
-                placeholder="ejemplo@gmail.com"
-            >
+<select required>
 
-            <label>
-                ¿Cómo te gustaría participar?
-            </label>
+<option value="">
+Selecciona una opción
+</option>
 
-            <select required>
+<option>
+Actividades ambientales
+</option>
 
-                <option value="">
-                    Selecciona una opción
-                </option>
+<option>
+Limpieza de espacios
+</option>
 
-                <option>
-                    Actividades ambientales
-                </option>
+<option>
+Cuidado de plantas
+</option>
 
-                <option>
-                    Difusión
-                </option>
+<option>
+Difusión del proyecto
+</option>
 
-                <option>
-                    Limpieza de espacios
-                </option>
+</select>
 
-                <option>
-                    Educación ambiental
-                </option>
+<label>Mensaje</label>
 
-            </select>
+<textarea
+placeholder="Cuéntanos cómo te gustaría ayudar..."></textarea>
 
-            <button type="submit">
-                Enviar 💚
-            </button>
+<button type="submit">
+Enviar mi participación 💚
+</button>
 
-        </form>
+<div
+id="mensajeUnete"
+class="mensaje-formulario">
+¡Gracias por querer formar parte del cambio! 🌱
+</div>
 
-    </div>
+</form>
 
+</div>
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      FORMULARIO REPORTA
-===================================================== -->
+========================= -->
 
 <div class="modal" id="reporta">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('reporta')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('reporta')">×</button>
 
-        <h2>
-            🚨 Reporta
-        </h2>
+<h2>🚨 Reporta</h2>
 
-        <p>
-            ¿Encontraste basura, quema de vegetación u otro
-            problema ambiental? Cuéntanos.
-        </p>
+<p>
+¿Encontraste un problema relacionado con el cuidado
+del entorno? Puedes dejar aquí tu reporte.
+</p>
 
-        <form
-            class="formulario"
-            onsubmit="enviarFormulario(event,'¡Reporte recibido! Gracias por ayudarnos a cuidar nuestro entorno. 🌱')"
-        >
+<form
+class="formulario"
+onsubmit="enviarFormulario(event,'mensajeReporta')">
 
-            <label>
-                Nombre:
-            </label>
+<label>Nombre</label>
 
-            <input
-                type="text"
-                required
-                placeholder="Escribe tu nombre"
-            >
+<input
+type="text"
+required
+placeholder="Tu nombre">
 
-            <label>
-                Tipo de problema:
-            </label>
+<label>Tipo de problema</label>
 
-            <select required>
+<select required>
 
-                <option value="">
-                    Selecciona
-                </option>
+<option value="">
+Selecciona una opción
+</option>
 
-                <option>
-                    Basura
-                </option>
+<option>
+Basura
+</option>
 
-                <option>
-                    Quema de vegetación
-                </option>
+<option>
+Quema de vegetación
+</option>
 
-                <option>
-                    Daño a plantas
-                </option>
+<option>
+Daño a plantas
+</option>
 
-                <option>
-                    Contaminación
-                </option>
+<option>
+Desperdicio de agua
+</option>
 
-                <option>
-                    Otro
-                </option>
+<option>
+Otro
+</option>
 
-            </select>
+</select>
 
-            <label>
-                Cuéntanos qué ocurrió:
-            </label>
+<label>Describe el problema</label>
 
-            <textarea
-                required
-                placeholder="Describe el problema..."
-            ></textarea>
+<textarea
+required
+placeholder="Cuéntanos qué ocurrió y dónde..."></textarea>
 
-            <button type="submit">
-                Enviar reporte 🚨
-            </button>
+<button type="submit">
+Enviar reporte 🚨
+</button>
 
-        </form>
+<div
+id="mensajeReporta"
+class="mensaje-formulario">
+¡Reporte registrado! Gracias por ayudarnos a cuidar nuestro entorno. 🌱
+</div>
 
-    </div>
+</form>
 
+</div>
 </div>
 
 
-<!-- =====================================================
-     FORMULARIO DONACIONES
-===================================================== -->
+<!-- =========================
+     DONACIONES
+========================= -->
 
 <div class="modal" id="donaciones">
 
-    <div class="modal-contenido">
+<div class="modal-contenido">
 
-        <button
-            class="cerrar"
-            onclick="cerrarModal('donaciones')"
-        >
-            ×
-        </button>
+<button class="cerrar" onclick="cerrarModal('donaciones')">×</button>
 
-        <h2>
-            🤲 Donaciones
-        </h2>
+<h2>🤲 Donaciones</h2>
 
-        <p>
-            Tu colaboración puede ayudar a realizar
-            actividades de educación y cuidado ambiental.
-        </p>
+<p>
+Las donaciones pueden ayudar a apoyar actividades
+relacionadas con el cuidado y protección de nuestro entorno.
+</p>
 
-        <form
-            class="formulario"
-            onsubmit="enviarFormulario(event,'¡Gracias por tu interés en colaborar! 💚')"
-        >
+<form
+class="formulario"
+onsubmit="enviarFormulario(event,'mensajeDonacion')">
 
-            <label>
-                Nombre:
-            </label>
+<label>Nombre</label>
 
-            <input
-                type="text"
-                required
-                placeholder="Escribe tu nombre"
-            >
+<input
+type="text"
+required
+placeholder="Tu nombre">
 
-            <label>
-                Correo:
-            </label>
+<label>Correo electrónico</label>
 
-            <input
-                type="email"
-                required
-                placeholder="ejemplo@gmail.com"
-            >
+<input
+type="email"
+required
+placeholder="ejemplo@gmail.com">
 
-            <label>
-                ¿Cómo deseas colaborar?
-            </label>
+<label>Tipo de colaboración</label>
 
-            <select required>
+<select required>
 
-                <option value="">
-                    Selecciona
-                </option>
+<option value="">
+Selecciona una opción
+</option>
 
-                <option>
-                    Donación económica
-                </option>
+<option>
+Materiales
+</option>
 
-                <option>
-                    Materiales
-                </option>
+<option>
+Plantas
+</option>
 
-                <option>
-                    Plantas
-                </option>
+<option>
+Apoyo económico
+</option>
 
-                <option>
-                    Participación voluntaria
-                </option>
+<option>
+Voluntariado
+</option>
 
-            </select>
+<option>
+Otra colaboración
+</option>
 
-            <label>
-                Mensaje:
-            </label>
+</select>
 
-            <textarea
-                placeholder="Escribe un mensaje..."
-            ></textarea>
+<label>Mensaje</label>
 
-            <button type="submit">
-                Enviar 🤲
-            </button>
+<textarea
+placeholder="Escribe cómo deseas colaborar..."></textarea>
 
-        </form>
+<button type="submit">
+Enviar propuesta 🤲
+</button>
 
-    </div>
+<div
+id="mensajeDonacion"
+class="mensaje-formulario">
+¡Gracias por tu disposición para colaborar! 💚
+</div>
 
+</form>
+
+</div>
 </div>
 
 
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
-    <p>
-        🌱 Unidos por un Entorno Limpio
-    </p>
+<p>🌱 Unidos por un Entorno Limpio</p>
 
-    <p>
-        Yura, Arequipa 🇵🇪
-    </p>
+<p>Yura, Arequipa 🇵🇪</p>
 
-    <p>
-        Juntos podemos cuidar nuestro hogar. 💚
-    </p>
+<p>Juntos podemos cuidar nuestro hogar. 💚</p>
 
 </footer>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
-/* =====================================================
+/* =========================
+   DATOS DE LOS 5 ESTILOS
+========================= */
+
+const estilos = {
+
+    natural:{
+        clase:"estilo-natural",
+        nombre:"Natural",
+        yuri:"yurinaturalplantas.png",
+        jovenes:"5jovenesnatural.png"
+    },
+
+    cute:{
+        clase:"estilo-cute",
+        nombre:"Cute",
+        yuri:"yuribienvenidacute.png",
+        jovenes:"5jovenescute.png"
+    },
+
+    noche:{
+        clase:"estilo-noche",
+        nombre:"Nocturno",
+        yuri:"yuribienvenidanoche.png",
+        jovenes:"5jovenesnoche.jfif"
+    },
+
+    urbano:{
+        clase:"estilo-urbano",
+        nombre:"Urbano",
+        yuri:"yuribienvenidaurbano.png",
+        jovenes:"5jovenesurbano.png"
+    },
+
+    yura:{
+        clase:"estilo-yura",
+        nombre:"Yura",
+        yuri:"yuribienvenidayura.png",
+        jovenes:"5yurajovenes.png"
+    }
+
+};
+
+
+/* =========================
+   ESTILO INICIAL
+========================= */
+
+let estiloActual="natural";
+
+
+/* =========================
+   CAMBIAR ESTILO
+========================= */
+
+function cambiarEstilo(estilo, boton){
+
+    const datos=estilos[estilo];
+
+    if(!datos) return;
+
+    /* Quitar estilos anteriores */
+
+    Object.values(estilos).forEach(function(item){
+
+        document.body.classList.remove(item.clase);
+
+    });
+
+
+    /* Agregar nuevo estilo */
+
+    document.body.classList.add(datos.clase);
+
+    estiloActual=estilo;
+
+
+    /* Cambiar Yuri de portada */
+
+    document.getElementById("yuriPortada").src=datos.yuri;
+
+
+    /* Cambiar Yuri de Conócenos */
+
+    document.getElementById("yuriConocenos").src=datos.yuri;
+
+
+    /* Cambiar imagen de los jóvenes */
+
+    document.getElementById("imagenJovenes").src=datos.jovenes;
+
+
+    /* Cambiar nombre */
+
+    document.getElementById("nombreEstilo").textContent=datos.nombre;
+
+
+    /* Marcar botón activo */
+
+    document.querySelectorAll(".estilo-opcion").forEach(function(b){
+
+        b.classList.remove("activo");
+
+    });
+
+    if(boton){
+
+        boton.classList.add("activo");
+
+    }
+
+}
+
+
+/* =========================
    BARRA APARECE AL DESLIZAR
-===================================================== */
+========================= */
 
-const barra = document.getElementById("barra");
+const barra=document.getElementById("barra");
 
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll",function(){
 
-    if (window.scrollY > 80) {
+    if(window.scrollY>80){
 
         barra.classList.add("visible");
 
-    } else {
+    }else{
 
         barra.classList.remove("visible");
 
@@ -2010,19 +1648,19 @@ window.addEventListener("scroll", function() {
 });
 
 
-/* =====================================================
-   ABRIR MODAL
-===================================================== */
+/* =========================
+   ABRIR MODALES
+========================= */
 
-function abrirModal(id) {
+function abrirModal(id){
 
-    const modal = document.getElementById(id);
+    const modal=document.getElementById(id);
 
-    if (modal) {
+    if(modal){
 
         modal.classList.add("abierto");
 
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow="hidden";
 
     }
 
@@ -2031,119 +1669,81 @@ function abrirModal(id) {
 }
 
 
-/* =====================================================
-   CERRAR MODAL
-===================================================== */
+/* =========================
+   CERRAR MODALES
+========================= */
 
-function cerrarModal(id) {
+function cerrarModal(id){
 
-    const modal = document.getElementById(id);
+    const modal=document.getElementById(id);
 
-    if (modal) {
+    if(modal){
 
         modal.classList.remove("abierto");
 
-        document.body.style.overflow = "";
+        document.body.style.overflow="";
 
     }
 
 }
 
 
-/* =====================================================
+/* =========================
    MENÚ
-===================================================== */
+========================= */
 
-function alternarMenu() {
+function alternarMenu(){
 
-    const menu =
-        document.getElementById("menuContenido");
+    const menu=document.getElementById("menuContenido");
 
     menu.classList.toggle("abierto");
 
 }
 
 
-function cerrarMenu() {
+function cerrarMenu(){
 
-    const menu =
-        document.getElementById("menuContenido");
+    const menu=document.getElementById("menuContenido");
 
     menu.classList.remove("abierto");
 
 }
 
 
-/* =====================================================
-   CAMBIAR ESTILO
-===================================================== */
-
-function cambiarEstilo(estilo) {
-
-    document.body.classList.remove(
-        "estilo-cute",
-        "estilo-nocturno",
-        "estilo-urbano",
-        "estilo-yura"
-    );
-
-    if (estilo === "cute") {
-
-        document.body.classList.add("estilo-cute");
-
-    }
-
-    if (estilo === "nocturno") {
-
-        document.body.classList.add("estilo-nocturno");
-
-    }
-
-    if (estilo === "urbano") {
-
-        document.body.classList.add("estilo-urbano");
-
-    }
-
-    if (estilo === "yura") {
-
-        document.body.classList.add("estilo-yura");
-
-    }
-
-    cerrarModal("estilos");
-
-}
-
-
-/* =====================================================
+/* =========================
    FORMULARIOS
-===================================================== */
+========================= */
 
-function enviarFormulario(event, mensaje) {
+function enviarFormulario(event,idMensaje){
 
     event.preventDefault();
 
-    alert(mensaje);
+    const mensaje=document.getElementById(idMensaje);
+
+    if(mensaje){
+
+        mensaje.style.display="block";
+
+    }
 
     event.target.reset();
 
 }
 
 
-/* =====================================================
-   CERRAR AL HACER CLIC FUERA
-===================================================== */
+/* =========================
+   CLIC FUERA DEL MODAL
+========================= */
 
-document.querySelectorAll(".modal").forEach(function(modal) {
+document.querySelectorAll(".modal").forEach(function(modal){
 
-    modal.addEventListener("click", function(event) {
+    modal.addEventListener("click",function(event){
 
-        if (event.target === modal) {
+        if(event.target===modal){
 
             modal.classList.remove("abierto");
 
-            document.body.style.overflow = "";
+            document.body.style.overflow="";
 
         }
 
@@ -2152,15 +1752,15 @@ document.querySelectorAll(".modal").forEach(function(modal) {
 });
 
 
-/* =====================================================
-   ESC PARA CERRAR
-===================================================== */
+/* =========================
+   ESC
+========================= */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown",function(event){
 
-    if (event.key === "Escape") {
+    if(event.key==="Escape"){
 
-        document.querySelectorAll(".modal").forEach(function(modal) {
+        document.querySelectorAll(".modal").forEach(function(modal){
 
             modal.classList.remove("abierto");
 
@@ -2168,11 +1768,18 @@ document.addEventListener("keydown", function(event) {
 
         cerrarMenu();
 
-        document.body.style.overflow = "";
+        document.body.style.overflow="";
 
     }
 
 });
+
+
+/* =========================
+   ESTILO NATURAL INICIAL
+========================= */
+
+document.body.classList.add("estilo-natural");
 
 </script>
 
