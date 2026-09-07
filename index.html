@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -615,6 +614,32 @@ nav button:hover{
 }
 
 /* =========================
+   ESTADO DE ENVÍO
+========================= */
+
+.estado-envio{
+    display:none;
+    margin-top:10px;
+    padding:12px;
+    border-radius:12px;
+    text-align:center;
+    font-family:"Montserrat",sans-serif;
+    font-size:14px;
+    font-weight:600;
+    background:rgba(255,255,255,.12);
+}
+
+.estado-envio.exito{
+    display:block;
+    background:rgba(80,160,80,.25);
+}
+
+.estado-envio.error{
+    display:block;
+    background:rgba(180,60,60,.30);
+}
+
+/* =========================
    FINAL
 ========================= */
 
@@ -735,6 +760,7 @@ footer p{
     .jovenes-presentacion img{
         max-height:300px;
     }
+
 }
 
 </style>
@@ -1179,7 +1205,7 @@ de los cinco jóvenes.
 
 <div class="estilos-opciones">
 
-<button class="estilo-opcion" onclick="cambiarEstilo('natural',this)">
+<button class="estilo-opcion activo" onclick="cambiarEstilo('natural',this)">
 🌿 Natural
 </button>
 
@@ -1272,38 +1298,44 @@ class="formulario"
 onsubmit="enviarFormulario(event,'mensajeUnete')">
 
 <label>Nombre completo</label>
+
 <input
 type="text"
+name="nombre"
 required
 placeholder="Escribe tu nombre">
 
 <label>Correo electrónico</label>
+
 <input
 type="email"
+name="correo"
 required
 placeholder="ejemplo@gmail.com">
 
 <label>¿Cómo te gustaría participar?</label>
 
-<select required>
+<select
+name="participacion"
+required>
 
 <option value="">
 Selecciona una opción
 </option>
 
-<option>
+<option value="Actividades ambientales">
 Actividades ambientales
 </option>
 
-<option>
+<option value="Limpieza de espacios">
 Limpieza de espacios
 </option>
 
-<option>
+<option value="Cuidado de plantas">
 Cuidado de plantas
 </option>
 
-<option>
+<option value="Difusión del proyecto">
 Difusión del proyecto
 </option>
 
@@ -1312,6 +1344,7 @@ Difusión del proyecto
 <label>Mensaje</label>
 
 <textarea
+name="mensaje"
 placeholder="Cuéntanos cómo te gustaría ayudar..."></textarea>
 
 <button type="submit">
@@ -1321,7 +1354,14 @@ Enviar mi participación 💚
 <div
 id="mensajeUnete"
 class="mensaje-formulario">
+
 ¡Gracias por querer formar parte del cambio! 🌱
+
+</div>
+
+<div
+id="estadoUnete"
+class="estado-envio">
 </div>
 
 </form>
@@ -1355,34 +1395,37 @@ onsubmit="enviarFormulario(event,'mensajeReporta')">
 
 <input
 type="text"
+name="nombre"
 required
 placeholder="Tu nombre">
 
 <label>Tipo de problema</label>
 
-<select required>
+<select
+name="tipoProblema"
+required>
 
 <option value="">
 Selecciona una opción
 </option>
 
-<option>
+<option value="Basura">
 Basura
 </option>
 
-<option>
+<option value="Quema de vegetación">
 Quema de vegetación
 </option>
 
-<option>
+<option value="Daño a plantas">
 Daño a plantas
 </option>
 
-<option>
+<option value="Desperdicio de agua">
 Desperdicio de agua
 </option>
 
-<option>
+<option value="Otro">
 Otro
 </option>
 
@@ -1391,6 +1434,7 @@ Otro
 <label>Describe el problema</label>
 
 <textarea
+name="descripcion"
 required
 placeholder="Cuéntanos qué ocurrió y dónde..."></textarea>
 
@@ -1401,7 +1445,14 @@ Enviar reporte 🚨
 <div
 id="mensajeReporta"
 class="mensaje-formulario">
+
 ¡Reporte registrado! Gracias por ayudarnos a cuidar nuestro entorno. 🌱
+
+</div>
+
+<div
+id="estadoReporta"
+class="estado-envio">
 </div>
 
 </form>
@@ -1435,6 +1486,7 @@ onsubmit="enviarFormulario(event,'mensajeDonacion')">
 
 <input
 type="text"
+name="nombre"
 required
 placeholder="Tu nombre">
 
@@ -1442,34 +1494,37 @@ placeholder="Tu nombre">
 
 <input
 type="email"
+name="correo"
 required
 placeholder="ejemplo@gmail.com">
 
 <label>Tipo de colaboración</label>
 
-<select required>
+<select
+name="colaboracion"
+required>
 
 <option value="">
 Selecciona una opción
 </option>
 
-<option>
+<option value="Materiales">
 Materiales
 </option>
 
-<option>
+<option value="Plantas">
 Plantas
 </option>
 
-<option>
+<option value="Apoyo económico">
 Apoyo económico
 </option>
 
-<option>
+<option value="Voluntariado">
 Voluntariado
 </option>
 
-<option>
+<option value="Otra colaboración">
 Otra colaboración
 </option>
 
@@ -1478,6 +1533,7 @@ Otra colaboración
 <label>Mensaje</label>
 
 <textarea
+name="mensaje"
 placeholder="Escribe cómo deseas colaborar..."></textarea>
 
 <button type="submit">
@@ -1487,7 +1543,14 @@ Enviar propuesta 🤲
 <div
 id="mensajeDonacion"
 class="mensaje-formulario">
+
 ¡Gracias por tu disposición para colaborar! 💚
+
+</div>
+
+<div
+id="estadoDonacion"
+class="estado-envio">
 </div>
 
 </form>
@@ -1511,11 +1574,72 @@ class="mensaje-formulario">
 </footer>
 
 
-<script>
+<!-- ==================================================
+     FIREBASE + JAVASCRIPT
+================================================== -->
 
-/* =========================
+<script type="module">
+
+/* ==================================================
+   FIREBASE
+================================================== */
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    push,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+
+
+/* ==================================================
+   CONFIGURACIÓN DE TU PROYECTO FIREBASE
+================================================== */
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyDvERtg7i7CF5RKHA-PytOi5CJBAzbxdgs",
+
+    authDomain:
+        "unidos-por-un-entorno-limpio.firebaseapp.com",
+
+    databaseURL:
+        "https://unidos-por-un-entorno-limpio-default-rtdb.firebaseio.com",
+
+    projectId:
+        "unidos-por-un-entorno-limpio",
+
+    storageBucket:
+        "unidos-por-un-entorno-limpio.firebasestorage.app",
+
+    messagingSenderId:
+        "316245158752",
+
+    appId:
+        "1:316245158752:web:e6da53e832c3a6354d8c05",
+
+    measurementId:
+        "G-D9K3XDMXRL"
+
+};
+
+
+/* ==================================================
+   INICIAR FIREBASE
+================================================== */
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+
+/* ==================================================
    DATOS DE LOS 5 ESTILOS
-========================= */
+================================================== */
 
 const estilos = {
 
@@ -1557,16 +1681,16 @@ const estilos = {
 };
 
 
-/* =========================
+/* ==================================================
    ESTILO INICIAL
-========================= */
+================================================== */
 
 let estiloActual="natural";
 
 
-/* =========================
+/* ==================================================
    CAMBIAR ESTILO
-========================= */
+================================================== */
 
 function cambiarEstilo(estilo, boton){
 
@@ -1574,7 +1698,6 @@ function cambiarEstilo(estilo, boton){
 
     if(!datos) return;
 
-    /* Quitar estilos anteriores */
 
     Object.values(estilos).forEach(function(item){
 
@@ -1583,40 +1706,60 @@ function cambiarEstilo(estilo, boton){
     });
 
 
-    /* Agregar nuevo estilo */
-
     document.body.classList.add(datos.clase);
 
     estiloActual=estilo;
 
 
-    /* Cambiar Yuri de portada */
+    const yuriPortada=
+        document.getElementById("yuriPortada");
 
-    document.getElementById("yuriPortada").src=datos.yuri;
+    const yuriConocenos=
+        document.getElementById("yuriConocenos");
 
+    const imagenJovenes=
+        document.getElementById("imagenJovenes");
 
-    /* Cambiar Yuri de Conócenos */
-
-    document.getElementById("yuriConocenos").src=datos.yuri;
-
-
-    /* Cambiar imagen de los jóvenes */
-
-    document.getElementById("imagenJovenes").src=datos.jovenes;
+    const nombreEstilo=
+        document.getElementById("nombreEstilo");
 
 
-    /* Cambiar nombre */
+    if(yuriPortada){
 
-    document.getElementById("nombreEstilo").textContent=datos.nombre;
+        yuriPortada.src=datos.yuri;
+
+    }
 
 
-    /* Marcar botón activo */
+    if(yuriConocenos){
 
-    document.querySelectorAll(".estilo-opcion").forEach(function(b){
+        yuriConocenos.src=datos.yuri;
 
-        b.classList.remove("activo");
+    }
 
-    });
+
+    if(imagenJovenes){
+
+        imagenJovenes.src=datos.jovenes;
+
+    }
+
+
+    if(nombreEstilo){
+
+        nombreEstilo.textContent=datos.nombre;
+
+    }
+
+
+    document
+        .querySelectorAll(".estilo-opcion")
+        .forEach(function(b){
+
+            b.classList.remove("activo");
+
+        });
+
 
     if(boton){
 
@@ -1627,11 +1770,12 @@ function cambiarEstilo(estilo, boton){
 }
 
 
-/* =========================
+/* ==================================================
    BARRA APARECE AL DESLIZAR
-========================= */
+================================================== */
 
-const barra=document.getElementById("barra");
+const barra=
+    document.getElementById("barra");
 
 window.addEventListener("scroll",function(){
 
@@ -1648,13 +1792,14 @@ window.addEventListener("scroll",function(){
 });
 
 
-/* =========================
+/* ==================================================
    ABRIR MODALES
-========================= */
+================================================== */
 
 function abrirModal(id){
 
-    const modal=document.getElementById(id);
+    const modal=
+        document.getElementById(id);
 
     if(modal){
 
@@ -1669,13 +1814,14 @@ function abrirModal(id){
 }
 
 
-/* =========================
+/* ==================================================
    CERRAR MODALES
-========================= */
+================================================== */
 
 function cerrarModal(id){
 
-    const modal=document.getElementById(id);
+    const modal=
+        document.getElementById(id);
 
     if(modal){
 
@@ -1688,83 +1834,393 @@ function cerrarModal(id){
 }
 
 
-/* =========================
+/* ==================================================
    MENÚ
-========================= */
+================================================== */
 
 function alternarMenu(){
 
-    const menu=document.getElementById("menuContenido");
+    const menu=
+        document.getElementById("menuContenido");
 
-    menu.classList.toggle("abierto");
+    if(menu){
+
+        menu.classList.toggle("abierto");
+
+    }
 
 }
 
 
 function cerrarMenu(){
 
-    const menu=document.getElementById("menuContenido");
+    const menu=
+        document.getElementById("menuContenido");
 
-    menu.classList.remove("abierto");
+    if(menu){
 
-}
-
-
-/* =========================
-   FORMULARIOS
-========================= */
-
-function enviarFormulario(event,idMensaje){
-
-    event.preventDefault();
-
-    const mensaje=document.getElementById(idMensaje);
-
-    if(mensaje){
-
-        mensaje.style.display="block";
+        menu.classList.remove("abierto");
 
     }
 
-    event.target.reset();
+}
+
+
+/* ==================================================
+   MENSAJES
+================================================== */
+
+function mostrarEstado(id, texto, tipo){
+
+    const estado=
+        document.getElementById(id);
+
+    if(!estado) return;
+
+    estado.textContent=texto;
+
+    estado.className="estado-envio";
+
+    estado.classList.add(tipo);
 
 }
 
 
-/* =========================
-   CLIC FUERA DEL MODAL
-========================= */
+/* ==================================================
+   ENVIAR FORMULARIOS A FIREBASE
+================================================== */
 
-document.querySelectorAll(".modal").forEach(function(modal){
+async function enviarFormulario(event,idMensaje){
 
-    modal.addEventListener("click",function(event){
+    event.preventDefault();
 
-        if(event.target===modal){
 
-            modal.classList.remove("abierto");
+    const formulario=
+        event.target;
 
-            document.body.style.overflow="";
+
+    const boton=
+        formulario.querySelector("button[type='submit']");
+
+
+    if(boton){
+
+        boton.disabled=true;
+
+        boton.textContent="Enviando...";
+
+    }
+
+
+    try{
+
+
+        /* ==========================================
+           REPORTE
+        ========================================== */
+
+        if(idMensaje==="mensajeReporta"){
+
+            const nombre=
+                formulario
+                .querySelector('[name="nombre"]')
+                .value
+                .trim();
+
+
+            const tipoProblema=
+                formulario
+                .querySelector('[name="tipoProblema"]')
+                .value;
+
+
+            const descripcion=
+                formulario
+                .querySelector('[name="descripcion"]')
+                .value
+                .trim();
+
+
+            await push(
+                ref(db,"reportes"),
+                {
+
+                    nombre:nombre,
+
+                    tipoProblema:tipoProblema,
+
+                    descripcion:descripcion,
+
+                    estado:"pendiente",
+
+                    fecha:serverTimestamp()
+
+                }
+            );
+
+
+            mostrarEstado(
+                "estadoReporta",
+                "✅ ¡Reporte enviado correctamente! Nuestro equipo podrá revisarlo.",
+                "exito"
+            );
 
         }
 
+
+        /* ==========================================
+           VOLUNTARIOS
+        ========================================== */
+
+        if(idMensaje==="mensajeUnete"){
+
+            const nombre=
+                formulario
+                .querySelector('[name="nombre"]')
+                .value
+                .trim();
+
+
+            const correo=
+                formulario
+                .querySelector('[name="correo"]')
+                .value
+                .trim();
+
+
+            const participacion=
+                formulario
+                .querySelector('[name="participacion"]')
+                .value;
+
+
+            const mensajeUsuario=
+                formulario
+                .querySelector('[name="mensaje"]')
+                .value
+                .trim();
+
+
+            await push(
+                ref(db,"voluntarios"),
+                {
+
+                    nombre:nombre,
+
+                    correo:correo,
+
+                    participacion:participacion,
+
+                    mensaje:mensajeUsuario,
+
+                    fecha:serverTimestamp(),
+
+                    estado:"nuevo"
+
+                }
+            );
+
+
+            mostrarEstado(
+                "estadoUnete",
+                "✅ ¡Tu participación fue registrada! Gracias por querer formar parte.",
+                "exito"
+            );
+
+        }
+
+
+        /* ==========================================
+           DONACIONES / COLABORACIONES
+        ========================================== */
+
+        if(idMensaje==="mensajeDonacion"){
+
+            const nombre=
+                formulario
+                .querySelector('[name="nombre"]')
+                .value
+                .trim();
+
+
+            const correo=
+                formulario
+                .querySelector('[name="correo"]')
+                .value
+                .trim();
+
+
+            const colaboracion=
+                formulario
+                .querySelector('[name="colaboracion"]')
+                .value;
+
+
+            const mensajeUsuario=
+                formulario
+                .querySelector('[name="mensaje"]')
+                .value
+                .trim();
+
+
+            await push(
+                ref(db,"donaciones"),
+                {
+
+                    nombre:nombre,
+
+                    correo:correo,
+
+                    colaboracion:colaboracion,
+
+                    mensaje:mensajeUsuario,
+
+                    fecha:serverTimestamp(),
+
+                    estado:"nuevo"
+
+                }
+            );
+
+
+            mostrarEstado(
+                "estadoDonacion",
+                "✅ ¡Gracias! Tu propuesta de colaboración fue registrada.",
+                "exito"
+            );
+
+        }
+
+
+        /* ==========================================
+           MOSTRAR MENSAJE PRINCIPAL
+        ========================================== */
+
+        const mensaje=
+            document.getElementById(idMensaje);
+
+
+        if(mensaje){
+
+            mensaje.style.display="block";
+
+        }
+
+
+        formulario.reset();
+
+
+    }catch(error){
+
+        console.error(
+            "Error al enviar a Firebase:",
+            error
+        );
+
+
+        if(idMensaje==="mensajeReporta"){
+
+            mostrarEstado(
+                "estadoReporta",
+                "❌ No se pudo enviar el reporte. Revisa tu conexión e inténtalo nuevamente.",
+                "error"
+            );
+
+        }
+
+
+        if(idMensaje==="mensajeUnete"){
+
+            mostrarEstado(
+                "estadoUnete",
+                "❌ No se pudo registrar tu participación. Revisa tu conexión e inténtalo nuevamente.",
+                "error"
+            );
+
+        }
+
+
+        if(idMensaje==="mensajeDonacion"){
+
+            mostrarEstado(
+                "estadoDonacion",
+                "❌ No se pudo enviar la propuesta. Revisa tu conexión e inténtalo nuevamente.",
+                "error"
+            );
+
+        }
+
+
+    }finally{
+
+        if(boton){
+
+            boton.disabled=false;
+
+
+            if(idMensaje==="mensajeReporta"){
+
+                boton.textContent="Enviar reporte 🚨";
+
+            }
+
+            if(idMensaje==="mensajeUnete"){
+
+                boton.textContent="Enviar mi participación 💚";
+
+            }
+
+            if(idMensaje==="mensajeDonacion"){
+
+                boton.textContent="Enviar propuesta 🤲";
+
+            }
+
+        }
+
+    }
+
+}
+
+
+/* ==================================================
+   CLIC FUERA DEL MODAL
+================================================== */
+
+document
+    .querySelectorAll(".modal")
+    .forEach(function(modal){
+
+        modal.addEventListener("click",function(event){
+
+            if(event.target===modal){
+
+                modal.classList.remove("abierto");
+
+                document.body.style.overflow="";
+
+            }
+
+        });
+
     });
 
-});
 
-
-/* =========================
-   ESC
-========================= */
+/* ==================================================
+   ESC PARA CERRAR
+================================================== */
 
 document.addEventListener("keydown",function(event){
 
     if(event.key==="Escape"){
 
-        document.querySelectorAll(".modal").forEach(function(modal){
+        document
+            .querySelectorAll(".modal")
+            .forEach(function(modal){
 
-            modal.classList.remove("abierto");
+                modal.classList.remove("abierto");
 
-        });
+            });
 
         cerrarMenu();
 
@@ -1775,14 +2231,44 @@ document.addEventListener("keydown",function(event){
 });
 
 
-/* =========================
+/* ==================================================
    ESTILO NATURAL INICIAL
-========================= */
+================================================== */
 
 document.body.classList.add("estilo-natural");
+
+
+/* ==================================================
+   IMPORTANTE:
+   HACEMOS LAS FUNCIONES VISIBLES PARA LOS
+   onclick="" DEL HTML
+================================================== */
+
+window.cambiarEstilo=
+    cambiarEstilo;
+
+window.abrirModal=
+    abrirModal;
+
+window.cerrarModal=
+    cerrarModal;
+
+window.alternarMenu=
+    alternarMenu;
+
+window.enviarFormulario=
+    enviarFormulario;
+
+
+/* ==================================================
+   MENSAJE DE CONEXIÓN EN CONSOLA
+================================================== */
+
+console.log(
+    "🌱 Unidos por un Entorno Limpio conectado a Firebase."
+);
 
 </script>
 
 </body>
 </html>
-```
