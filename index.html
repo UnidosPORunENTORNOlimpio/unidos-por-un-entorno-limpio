@@ -1288,11 +1288,28 @@ footer p{
 }
 
 
+
 /* ==================================================
-   COMUNIDAD, ZONAS Y MISIONES
+   MINI APP / COMUNIDAD
 ================================================== */
-.zona-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}.zona-card{padding:18px;border-radius:18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12)}.zona-card strong{font-family:"Montserrat",sans-serif}.mision-card{margin-top:18px;padding:22px;border-radius:22px;background:rgba(255,255,255,.10);border-left:5px solid #d8d39b}.mision-card h3{margin-top:0}.perfil-resumen{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}.dato-perfil{padding:15px;border-radius:16px;background:rgba(0,0,0,.12)}.dato-perfil b{display:block;font-family:"Montserrat",sans-serif;margin-bottom:4px}.prioridad{display:inline-block;padding:6px 12px;border-radius:20px;font-family:"Montserrat",sans-serif;font-weight:700;font-size:13px;margin-top:8px}.prioridad.urgente{background:#8f2d2d}.prioridad.importante{background:#9a6b22}.prioridad.leve{background:#47704a}.acciones-mision{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.acciones-mision button{border:none;border-radius:22px;padding:11px 18px;cursor:pointer;font-family:"Montserrat",sans-serif;font-weight:700;background:#737945;color:white}.estado-envio{margin-top:8px;font-family:"Montserrat",sans-serif;font-weight:600}.estado-envio.exito{color:#d8f3c8}.estado-envio.error{color:#ffd0d0}
-@media(max-width:700px){.zona-grid{grid-template-columns:1fr 1fr}.perfil-resumen{grid-template-columns:1fr 1fr}}
+.unete-opciones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:25px}
+.unete-card{border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:25px;background:rgba(255,255,255,.08);color:#f8f5df;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:10px;transition:.3s;font-family:"Montserrat",sans-serif}
+.unete-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.15)}
+.unete-icono{font-size:42px}.unete-card strong{font-size:20px}.unete-card small{font-size:14px;line-height:1.5}
+.estado-envio{margin-top:10px;font-family:"Montserrat",sans-serif;font-size:14px}.estado-envio.exito{display:block;padding:10px;border-radius:10px;background:rgba(110,190,110,.18)}.estado-envio.error{display:block;padding:10px;border-radius:10px;background:rgba(220,90,90,.18)}
+.app-page{position:fixed;inset:0;z-index:10000;background:#edf3e7;color:#203323;display:none;overflow:auto;font-family:"Montserrat",sans-serif}
+.app-page.abierto{display:block;animation:appEntrada .35s ease}
+@keyframes appEntrada{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:scale(1)}}
+.app-topbar{height:72px;position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 24px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(32,51,35,.1)}
+.app-back{justify-self:start;border:none;background:transparent;color:#315f39;font-weight:700;cursor:pointer;font-size:14px}.app-logo{font-family:"DM Serif Display",serif;font-size:25px}.app-profile-button{justify-self:end;width:45px;height:45px;border-radius:50%;border:2px solid #c4d8bf;background:#fff;cursor:pointer;font-size:23px;overflow:hidden}.app-profile-button img{width:100%;height:100%;object-fit:cover}
+.app-main{max-width:1050px;margin:0 auto;padding:35px 22px 80px}.app-card{max-width:620px;margin:30px auto;padding:35px;border-radius:30px;background:#fff;box-shadow:0 20px 50px rgba(31,65,39,.12)}.app-yuri-badge{font-size:55px;text-align:center}.app-card h1{font-family:"DM Serif Display",serif;font-size:42px;text-align:center;margin:8px 0 12px}.app-card>p{text-align:center;color:#58705b}.app-form{display:flex;flex-direction:column;gap:9px;margin-top:25px}.app-form label{font-weight:700;font-size:14px;margin-top:7px}.app-form input,.app-form select,.app-form textarea,#cambiarInteres{padding:13px 14px;border:1px solid #d3dfd0;border-radius:13px;background:#f8fbf6;font-family:"Montserrat",sans-serif;color:#203323}.app-primary,.app-small-button{border:none;border-radius:16px;padding:14px;cursor:pointer;font-weight:700;font-family:"Montserrat",sans-serif}.app-primary{background:#315f39;color:#fff;margin-top:12px}.avatar-preview{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#e2efdf;font-size:45px;overflow:hidden;margin:5px auto}.avatar-preview img{width:100%;height:100%;object-fit:cover}
+.app-dashboard{display:flex;flex-direction:column;gap:28px}.app-welcome{padding:28px;border-radius:28px;background:linear-gradient(135deg,#dcebd7,#fff);box-shadow:0 12px 35px rgba(31,65,39,.08)}.app-kicker{font-size:11px;letter-spacing:1.8px;font-weight:800;opacity:.65;margin-bottom:5px}.app-welcome h1,.huella-card h2,.section-heading h2{font-family:"DM Serif Display",serif}.app-welcome h1{font-size:42px}.app-welcome p:last-child{color:#55715a}
+.huella-card{padding:28px;border-radius:28px;background:#fff;box-shadow:0 12px 35px rgba(31,65,39,.08)}.huella-header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.huella-header h2{font-size:30px}.huella-header>strong{font-size:23px}.bateria{height:50px;border:4px solid #315f39;border-radius:15px;margin:22px 0 12px;padding:4px;position:relative;background:#e7eee5}.bateria:after{content:"";position:absolute;right:-13px;top:13px;width:8px;height:16px;border-radius:0 4px 4px 0;background:#315f39}.bateria-relleno{height:100%;width:0%;border-radius:7px;background:#78a96d;transition:width .5s ease}.huella-card>p{font-size:14px;color:#5b725f}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:15px}.section-heading h2{font-size:30px}.interes-badge{padding:8px 12px;border-radius:20px;background:#fff;font-size:13px;font-weight:700}.misiones-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:15px}.mision-card{padding:20px;border-radius:22px;background:#fff;box-shadow:0 10px 25px rgba(31,65,39,.08);display:flex;flex-direction:column;min-height:220px}.mision-icono{font-size:35px}.mision-card h3{font-family:"DM Serif Display",serif;font-size:22px;margin:8px 0}.mision-card p{font-size:13px;color:#5c715f;flex:1}.mision-card button{border:none;border-radius:14px;padding:11px;background:#315f39;color:#fff;font-weight:700;cursor:pointer}.mision-card.completada{opacity:.65}.mision-card.completada button{background:#8a9b87;cursor:default}
+.desbloqueos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:15px}.unlock-card{padding:20px;border-radius:22px;background:#fff;box-shadow:0 10px 25px rgba(31,65,39,.07);display:flex;flex-direction:column;gap:7px}.unlock-card span{font-size:32px}.unlock-card strong{font-size:15px}.unlock-card small{font-size:12px;color:#657566}.unlock-card.bloqueado{filter:grayscale(.7);opacity:.6}.unlock-card.desbloqueado{filter:none;opacity:1;outline:2px solid #9bc093;background:#f4faef}
+.perfil-panel{position:fixed;right:0;top:0;height:100%;width:min(340px,90vw);z-index:40;background:#fff;padding:85px 25px 30px;box-shadow:-15px 0 40px rgba(0,0,0,.15);transform:translateX(110%);transition:.35s;overflow:auto}.perfil-panel.abierto{transform:translateX(0)}.cerrar-panel{position:absolute;right:18px;top:18px;border:none;background:#edf3e7;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:22px}.perfil-avatar-grande{width:100px;height:100px;border-radius:50%;background:#e2efdf;margin:0 auto 15px;display:flex;align-items:center;justify-content:center;font-size:50px;overflow:hidden}.perfil-avatar-grande img{width:100%;height:100%;object-fit:cover}.perfil-panel h2{text-align:center}.perfil-panel>p{text-align:center;color:#617063;font-size:14px}.perfil-panel hr{border:none;border-top:1px solid #e2e9e0;margin:20px 0}.perfil-label{font-size:13px;font-weight:700;display:block;margin-bottom:7px}.app-small-button{width:100%;margin-top:20px;background:#e9f0e6;color:#315f39}
+body.interes-agua .app-page{background:#eaf6f7}body.interes-agua .app-primary,body.interes-agua .mision-card button{background:#28727a}body.interes-residuos .app-page{background:#f3f4e8}body.interes-residuos .app-primary,body.interes-residuos .mision-card button{background:#5c6f32}body.interes-animales .app-page{background:#f7f0e8}body.interes-animales .app-primary,body.interes-animales .mision-card button{background:#865e3c}body.interes-comunidad .app-page{background:#f2edf7}body.interes-comunidad .app-primary,body.interes-comunidad .mision-card button{background:#6d4f82}body.interes-ciencia .app-page{background:#edf0f7}body.interes-ciencia .app-primary,body.interes-ciencia .mision-card button{background:#4c5d8b}
+@media(max-width:800px){.unete-opciones,.misiones-grid,.desbloqueos-grid{grid-template-columns:1fr}.app-topbar{padding:0 12px}.app-main{padding:22px 14px 60px}.app-card{padding:25px 18px}.app-card h1{font-size:34px}.app-welcome h1{font-size:32px}.huella-header h2,.section-heading h2{font-size:25px}}
 
 </style>
 
@@ -2175,172 +2192,60 @@ footer p{
 
 
 <!-- ==================================================
-     FORMULARIO ÚNETE
+     ÚNETE / SUGERENCIAS
 ================================================== -->
 
-<div
-    class="modal"
-    id="unete">
-
-
-    <div class="modal-contenido">
-
-
-        <button
-            class="cerrar"
-            onclick="cerrarModal('unete')">
-
-            ×
-
-        </button>
-
-
-        <h2>
-            💚 Únete
-        </h2>
-
-
+<div class="modal" id="unete">
+    <div class="modal-contenido unete-menu">
+        <button class="cerrar" onclick="cerrarModal('unete')">×</button>
+        <h2>💚 Únete a la comunidad</h2>
         <p>
-
-            Queremos que más personas formen parte del cuidado
-            de nuestro entorno.
-
+            Aquí hay dos caminos: puedes entrar a nuestra mini comunidad ambiental
+            o enviarnos una sugerencia para mejorar el proyecto.
         </p>
 
-
-        <form
-            class="formulario"
-            onsubmit="enviarFormulario(event,'mensajeUnete')">
-
-
-            <label>
-                Nombre completo
-            </label>
-
-
-            <input
-                type="text"
-                name="nombre"
-                required
-                placeholder="Escribe tu nombre"
-            >
-
-
-            <label>
-                Correo electrónico
-            </label>
-
-
-            <input
-                type="email"
-                name="correo"
-                required
-                placeholder="ejemplo@gmail.com"
-            >
-
-
-            <label>
-                ¿Cómo te gustaría participar?
-            </label>
-
-
-            <select
-                name="participacion"
-                required>
-
-
-                <option value="">
-                    Selecciona una opción
-                </option>
-
-
-                <option value="Actividades ambientales">
-                    Actividades ambientales
-                </option>
-
-
-                <option value="Limpieza de espacios">
-                    Limpieza de espacios
-                </option>
-
-
-                <option value="Cuidado de plantas">
-                    Cuidado de plantas
-                </option>
-
-
-                <option value="Difusión del proyecto">
-                    Difusión del proyecto
-                </option>
-
-
-            </select>
-
-
-            <label>
-                📍 ¿En qué zona participas?
-            </label>
-
-            <select name="zona" required>
-                <option value="">Selecciona tu zona</option>
-                <option value="Yura Centro">Yura Centro</option>
-                <option value="La Calera">La Calera</option>
-                <option value="Ciudad de Dios">Ciudad de Dios</option>
-                <option value="Otra zona de Yura">Otra zona de Yura</option>
-            </select>
-
-            <label>
-                🌱 ¿Qué actividades te interesan?
-            </label>
-
-            <select name="interes" required>
-                <option value="">Selecciona una opción</option>
-                <option value="Limpieza">Limpieza de espacios</option>
-                <option value="Plantas">Cuidado de plantas</option>
-                <option value="Agua">Cuidado del agua</option>
-                <option value="Difusion">Difusión y sensibilización</option>
-            </select>
-
-            <label>
-                Mensaje
-            </label>
-
-
-            <textarea
-                name="mensaje"
-                placeholder="Cuéntanos cómo te gustaría ayudar..."
-            ></textarea>
-
-
-            <button type="submit">
-
-                Enviar mi participación 💚
-
+        <div class="unete-opciones">
+            <button class="unete-card" type="button" onclick="cerrarModal('unete'); abrirAppComunidad()">
+                <span class="unete-icono">🌱</span>
+                <strong>Quiero ser parte</strong>
+                <small>Crea tu usuario, elige tus intereses, recibe misiones y construye tu huella ambiental.</small>
             </button>
 
-
-            <div
-                id="mensajeUnete"
-                class="mensaje-formulario">
-
-                ¡Gracias por querer formar parte del cambio! 🌱
-
-            </div>
-
-
-            <div
-                id="estadoUnete"
-                class="estado-envio">
-            </div>
-
-
-        </form>
-
-
+            <button class="unete-card" type="button" onclick="abrirModal('sugerencias')">
+                <span class="unete-icono">💡</span>
+                <strong>Quiero enviar una sugerencia</strong>
+                <small>Ayúdanos a mejorar Unidos por un Entorno Limpio.</small>
+            </button>
+        </div>
     </div>
-
 </div>
 
+<!-- ==================================================
+     SUGERENCIAS
+================================================== -->
+
+<div class="modal" id="sugerencias">
+    <div class="modal-contenido">
+        <button class="cerrar" onclick="cerrarModal('sugerencias')">×</button>
+        <h2>💡 Sugerencias</h2>
+        <p>Cuéntanos qué podríamos mejorar, agregar o cambiar en el proyecto.</p>
+
+        <form class="formulario" onsubmit="enviarFormulario(event,'mensajeSugerencia')">
+            <label>Nombre o usuario</label>
+            <input type="text" name="nombre" required placeholder="¿Cómo quieres que te llamemos?">
+
+            <label>Correo electrónico (opcional)</label>
+            <input type="email" name="correo" placeholder="ejemplo@gmail.com">
+
+            <label>Tu sugerencia</label>
+            <textarea name="sugerencia" required placeholder="¿Qué te gustaría que tuviera la página?"></textarea>
+
+            <button type="submit">Enviar sugerencia 💡</button>
+            <div id="mensajeSugerencia" class="mensaje-formulario">¡Gracias! Tu sugerencia fue enviada. 🌱</div>
+            <div id="estadoSugerencia" class="estado-envio"></div>
+        </form>
+    </div>
+</div>
 
 
 <!-- ==================================================
@@ -2439,11 +2344,11 @@ footer p{
 
 
             <label>
-                📍 Zona del reporte
+                Zona o sector
             </label>
 
             <select name="zona" required>
-                <option value="">Selecciona la zona</option>
+                <option value="">Selecciona una zona</option>
                 <option value="Yura Centro">Yura Centro</option>
                 <option value="La Calera">La Calera</option>
                 <option value="Ciudad de Dios">Ciudad de Dios</option>
@@ -2451,24 +2356,24 @@ footer p{
             </select>
 
             <label>
-                📏 Tamaño o alcance del problema
+                Tamaño del problema
             </label>
 
-            <select name="alcance" required>
+            <select name="magnitud" required>
                 <option value="">Selecciona una opción</option>
-                <option value="Pequeño">Pequeño</option>
-                <option value="Mediano">Mediano</option>
-                <option value="Grande">Grande</option>
+                <option value="Pequeño">🟢 Pequeño</option>
+                <option value="Mediano">🟠 Mediano</option>
+                <option value="Grande">🔴 Grande</option>
             </select>
 
             <label>
-                ⚠️ ¿Representa peligro?
+                ¿Representa algún peligro?
             </label>
 
             <select name="peligro" required>
                 <option value="">Selecciona una opción</option>
                 <option value="No">No</option>
-                <option value="Sí">Sí</option>
+                <option value="Si">Sí</option>
             </select>
 
             <label>
@@ -2666,28 +2571,124 @@ footer p{
 
 
 <!-- ==================================================
-     PÁGINA DEL USUARIO: MI COMUNIDAD
+     MINI APLICACIÓN DE LA COMUNIDAD
 ================================================== -->
-<div class="modal" id="comunidad">
-  <div class="modal-contenido">
-    <button class="cerrar" onclick="cerrarModal('comunidad')">×</button>
-    <h2>🌱 Mi comunidad</h2>
-    <p id="bienvenidaComunidad">Tu participación empieza aquí.</p>
-    <div class="perfil-resumen">
-      <div class="dato-perfil"><b>📍 Mi zona</b><span id="perfilZona">-</span></div>
-      <div class="dato-perfil"><b>🌱 Interés</b><span id="perfilInteres">-</span></div>
-      <div class="dato-perfil"><b>🎯 Misiones</b><span id="perfilMisiones">0</span></div>
+
+<div id="appPage" class="app-page" aria-hidden="true">
+    <div class="app-topbar">
+        <button class="app-back" onclick="cerrarAppComunidad()">← Salir</button>
+        <div class="app-logo">🌱 Unidos</div>
+        <button class="app-profile-button" onclick="alternarPerfilPanel()">
+            <span id="appAvatarMini">🌱</span>
+        </button>
     </div>
-    <h3>🎯 Misiones de tu zona</h3>
-    <div id="listaMisiones">
-      <div class="mision-card"><h3>🌿 Primera misión</h3><p>Pronto aparecerán aquí las acciones organizadas para tu zona. Los administradores podrán crear jornadas a partir de los reportes recibidos.</p></div>
-    </div>
-    <div class="acciones-mision">
-      <button type="button" onclick="abrirModal('reporta')">🚨 Reportar un problema</button>
-      <button type="button" onclick="cerrarModal('comunidad')">Seguir explorando 🌎</button>
-    </div>
-  </div>
+
+    <aside id="perfilPanel" class="perfil-panel">
+        <button class="cerrar-panel" onclick="alternarPerfilPanel()">×</button>
+        <div class="perfil-avatar-grande" id="appAvatarGrande">🌱</div>
+        <h2 id="perfilUsuario">@usuario</h2>
+        <p id="perfilNombre">Tu nombre</p>
+        <p>📍 <span id="perfilZona">Tu zona</span></p>
+        <p>🎯 Interés: <strong id="perfilInteres">Plantas</strong></p>
+        <hr>
+        <h3>⚙️ Mi perfil</h3>
+        <label class="perfil-label">Cambiar interés</label>
+        <select id="cambiarInteres" onchange="actualizarInteres()">
+            <option value="plantas">🌿 Plantas</option>
+            <option value="agua">💧 Agua</option>
+            <option value="residuos">♻️ Residuos</option>
+            <option value="animales">🐾 Animales</option>
+            <option value="comunidad">🤝 Comunidad</option>
+            <option value="ciencia">🔬 Ciencia ambiental</option>
+        </select>
+        <button class="app-small-button" onclick="cerrarSesionLocal()">Cambiar de usuario</button>
+    </aside>
+
+    <main id="appMain" class="app-main">
+        <section id="appRegistro" class="app-card app-registro">
+            <div class="app-yuri-badge">🌱</div>
+            <h1>Bienvenido a tu mundo verde</h1>
+            <p>Primero crea tu personaje. Después podrás completar misiones y desbloquear nuevas funciones.</p>
+            <form id="perfilForm" class="app-form" onsubmit="crearPerfil(event)">
+                <label>Tu usuario</label>
+                <input id="perfilUsuarioInput" name="usuario" required maxlength="20" placeholder="ej. yuri_verde">
+
+                <label>¿Cómo quieres que te llamemos?</label>
+                <input id="perfilNombreInput" name="nombre" required maxlength="40" placeholder="Tu nombre">
+
+                <label>Tu zona</label>
+                <select id="perfilZonaInput" name="zona" required>
+                    <option value="">Selecciona tu zona</option>
+                    <option>Yura Centro</option>
+                    <option>La Calera</option>
+                    <option>Ciudad de Dios</option>
+                    <option>Otra zona de Yura</option>
+                </select>
+
+                <label>Elige tu interés principal</label>
+                <select id="perfilInteresInput" name="interes" required>
+                    <option value="plantas">🌿 Plantas</option>
+                    <option value="agua">💧 Agua</option>
+                    <option value="residuos">♻️ Residuos</option>
+                    <option value="animales">🐾 Animales</option>
+                    <option value="comunidad">🤝 Comunidad</option>
+                    <option value="ciencia">🔬 Ciencia ambiental</option>
+                </select>
+
+                <label>Tu foto / avatar</label>
+                <input id="perfilFotoInput" type="file" accept="image/*" onchange="previsualizarAvatar(event)">
+                <div id="avatarPreview" class="avatar-preview">🌱</div>
+
+                <button class="app-primary" type="submit">Entrar a mi comunidad 🌎</button>
+                <div id="estadoPerfil" class="estado-envio"></div>
+            </form>
+        </section>
+
+        <section id="appDashboard" class="app-dashboard" style="display:none;">
+            <div class="app-welcome">
+                <div>
+                    <p class="app-kicker">TU ESPACIO PERSONAL</p>
+                    <h1>Hola, <span id="dashNombre">amigo</span> 👋</h1>
+                    <p id="dashInteresTexto">Tu mundo está enfocado en las plantas.</p>
+                </div>
+            </div>
+
+            <section class="huella-card">
+                <div class="huella-header">
+                    <div>
+                        <p class="app-kicker">TU PROGRESO</p>
+                        <h2>🌎 Tu huella ambiental</h2>
+                    </div>
+                    <strong id="huellaNumero">0 / 10</strong>
+                </div>
+                <div class="bateria">
+                    <div id="bateriaRelleno" class="bateria-relleno"></div>
+                    <div class="bateria-separadores"></div>
+                </div>
+                <p id="huellaTexto">Completa misiones para llenar tu batería ambiental.</p>
+            </section>
+
+            <section class="misiones-section">
+                <div class="section-heading">
+                    <div><p class="app-kicker">HOY</p><h2>🎯 Misiones para ti</h2></div>
+                    <span id="interesBadge" class="interes-badge">🌿 Plantas</span>
+                </div>
+                <div id="misionesGrid" class="misiones-grid"></div>
+            </section>
+
+            <section class="desbloqueos-section">
+                <div class="section-heading"><div><p class="app-kicker">A MEDIDA QUE AVANZAS</p><h2>🔓 Nuevas funciones</h2></div></div>
+                <div class="desbloqueos-grid">
+                    <div id="unlockPlaylist" class="unlock-card bloqueado"><span>🎵</span><strong>Playlist ambiental</strong><small>Se desbloquea con 3 misiones.</small></div>
+                    <div id="unlockAlbum" class="unlock-card bloqueado"><span>🖼️</span><strong>Álbum de stickers</strong><small>Se desbloquea con 5 misiones.</small></div>
+                    <div id="unlockFrase" class="unlock-card bloqueado"><span>💬</span><strong>Frases coleccionables</strong><small>Se desbloquea con 7 misiones.</small></div>
+                    <div id="unlockGames" class="unlock-card bloqueado"><span>🎮</span><strong>Mini juegos</strong><small>Se desbloquea con 10 misiones.</small></div>
+                </div>
+            </section>
+        </section>
+    </main>
 </div>
+
 
 <!-- ==================================================
      FOOTER
@@ -3173,64 +3174,28 @@ async function enviarFormulario(
                 .value;
 
 
-            const descripcion =
-                formulario
-                .querySelector(
-                    '[name="descripcion"]'
-                )
-                .value
-                .trim();
-
             const zona = formulario.querySelector('[name="zona"]').value;
-            const alcance = formulario.querySelector('[name="alcance"]').value;
+            const magnitud = formulario.querySelector('[name="magnitud"]').value;
             const peligro = formulario.querySelector('[name="peligro"]').value;
+            const descripcion = formulario.querySelector('[name="descripcion"]').value.trim();
 
             let prioridad = "leve";
-            if (peligro === "Sí" || alcance === "Grande" || tipoProblema === "Quema de vegetación") {
-                prioridad = "urgente";
-            } else if (alcance === "Mediano" || tipoProblema === "Desperdicio de agua" || tipoProblema === "Daño a plantas") {
-                prioridad = "importante";
-            }
-
+            if(peligro === "Si" || magnitud === "Grande") prioridad = "urgente";
+            else if(magnitud === "Mediano") prioridad = "importante";
 
             await push(
-
-                ref(
-                    db,
-                    "reportes"
-                ),
-
+                ref(db,"reportes"),
                 {
-
-                    nombre:
-                        nombre,
-
-                    tipoProblema:
-                        tipoProblema,
-
-                    zona:
-                        zona,
-
-                    alcance:
-                        alcance,
-
-                    peligro:
-                        peligro,
-
-                    prioridad:
-                        prioridad,
-
-                    descripcion:
-                        descripcion,
-
-                    fecha:
-                        serverTimestamp(),
-
-                    estado:
-                        "nuevo"
-
+                    nombre:nombre,
+                    tipoProblema:tipoProblema,
+                    zona:zona,
+                    magnitud:magnitud,
+                    peligro:peligro,
+                    prioridad:prioridad,
+                    descripcion:descripcion,
+                    fecha:serverTimestamp(),
+                    estado:"nuevo"
                 }
-
             );
 
 
@@ -3249,120 +3214,24 @@ async function enviarFormulario(
 
 
         /* ==========================================
-           ÚNETE
+           SUGERENCIAS
         ========================================== */
 
+        if(idMensaje === "mensajeSugerencia"){
+            const nombre = formulario.querySelector('[name="nombre"]').value.trim();
+            const correo = formulario.querySelector('[name="correo"]').value.trim();
+            const sugerencia = formulario.querySelector('[name="sugerencia"]').value.trim();
 
-        if(
-            idMensaje ===
-            "mensajeUnete"
-        ){
+            await push(ref(db,"sugerencias"),{
+                nombre:nombre,
+                correo:correo,
+                sugerencia:sugerencia,
+                fecha:serverTimestamp(),
+                estado:"nuevo"
+            });
 
-            const nombre =
-                formulario
-                .querySelector(
-                    '[name="nombre"]'
-                )
-                .value
-                .trim();
-
-
-            const correo =
-                formulario
-                .querySelector(
-                    '[name="correo"]'
-                )
-                .value
-                .trim();
-
-
-            const participacion =
-                formulario
-                .querySelector(
-                    '[name="participacion"]'
-                )
-                .value;
-
-            const zona =
-                formulario.querySelector('[name="zona"]').value;
-
-            const interes =
-                formulario.querySelector('[name="interes"]').value;
-
-            const mensajeUsuario =
-                formulario
-                .querySelector(
-                    '[name="mensaje"]'
-                )
-                .value
-                .trim();
-
-
-            await push(
-
-                ref(
-                    db,
-                    "voluntarios"
-                ),
-
-                {
-
-                    nombre:
-                        nombre,
-
-                    correo:
-                        correo,
-
-                    participacion:
-                        participacion,
-
-                    zona:
-                        zona,
-
-                    interes:
-                        interes,
-
-                    misionesCompletadas:
-                        0,
-
-                    mensaje:
-                        mensajeUsuario,
-
-                    fecha:
-                        serverTimestamp(),
-
-                    estado:
-                        "nuevo"
-
-                }
-
-            );
-
-
-            mostrarEstado(
-
-                "estadoUnete",
-
-                "✅ ¡Tu participación fue registrada! Gracias por querer formar parte.",
-
-                "exito"
-
-            );
-
-            localStorage.setItem("perfilUnidos", JSON.stringify({nombre, zona, interes, participacion, misiones:0}));
-
-            document.getElementById("perfilZona").textContent = zona;
-            document.getElementById("perfilInteres").textContent = interes;
-            document.getElementById("perfilMisiones").textContent = "0";
-            document.getElementById("bienvenidaComunidad").textContent = "¡Bienvenido/a, " + nombre + "! Tu zona es " + zona + ".";
-
-            setTimeout(function(){
-                cerrarModal("unete");
-                abrirModal("comunidad");
-            }, 900);
-
+            mostrarEstado("estadoSugerencia","✅ ¡Sugerencia enviada! Gracias por ayudarnos a mejorar.","exito");
         }
-
 
 
         /* ==========================================
@@ -3505,21 +3374,8 @@ async function enviarFormulario(
         }
 
 
-        if(
-            idMensaje ===
-            "mensajeUnete"
-        ){
-
-            mostrarEstado(
-
-                "estadoUnete",
-
-                "❌ No se pudo registrar tu participación. Revisa tu conexión y las reglas de Firebase.",
-
-                "error"
-
-            );
-
+        if(idMensaje === "mensajeSugerencia"){
+            mostrarEstado("estadoSugerencia","❌ No se pudo enviar la sugerencia. Revisa tu conexión y las reglas de Firebase.","error");
         }
 
 
@@ -3561,14 +3417,8 @@ async function enviarFormulario(
             }
 
 
-            if(
-                idMensaje ===
-                "mensajeUnete"
-            ){
-
-                boton.textContent =
-                    "Enviar mi participación 💚";
-
+            if(idMensaje === "mensajeSugerencia"){
+                boton.textContent = "Enviar sugerencia 💡";
             }
 
 
@@ -3589,6 +3439,231 @@ async function enviarFormulario(
 }
 
 
+
+/* ==================================================
+   MINI APP: PERFIL, MISIONES Y DESBLOQUEOS
+================================================== */
+
+const datosIntereses = {
+    plantas:{nombre:"Plantas",icono:"🌿",texto:"Tu mundo está enfocado en conocer y proteger la vegetación de Yura.",misiones:[
+        ["🌱","Observa una planta","Identifica una planta de tu zona y aprende algo nuevo sobre ella."],
+        ["💧","Cuida una planta","Ayuda a una planta sin desperdiciar agua."],
+        ["📸","Descubre Encelia","Observa Encelia farinosa y registra mentalmente una de sus adaptaciones."]]},
+    agua:{nombre:"Agua",icono:"💧",texto:"Tu mundo está enfocado en cuidar uno de los recursos más importantes de nuestro entorno.",misiones:[
+        ["🚰","Detecta un desperdicio","Observa tu entorno y encuentra una forma de ahorrar agua."],
+        ["💧","Reto de ahorro","Durante un día evita un desperdicio innecesario de agua."],
+        ["🌵","Agua y plantas","Aprende por qué la humedad del suelo importa en zonas secas."]]},
+    residuos:{nombre:"Residuos",icono:"♻️",texto:"Tu mundo está enfocado en reducir residuos y mantener espacios limpios.",misiones:[
+        ["🗑️","Detective de residuos","Identifica un punto donde se acumulen residuos."],
+        ["♻️","Separa mejor","Separa correctamente tus residuos en una actividad cotidiana."],
+        ["🧤","Espacio limpio","Participa en una acción segura de limpieza o anima a alguien a hacerlo."]]},
+    animales:{nombre:"Animales",icono:"🐾",texto:"Tu mundo está enfocado en respetar y proteger la vida que comparte nuestro entorno.",misiones:[
+        ["🐦","Observador de fauna","Observa un animal de tu zona sin molestarlo."],
+        ["🏡","Protege su espacio","Identifica una forma de evitar afectar un hábitat."],
+        ["🐾","Aprende y comparte","Investiga una especie local y comparte un dato interesante."]]},
+    comunidad:{nombre:"Comunidad",icono:"🤝",texto:"Tu mundo está enfocado en unir personas para mejorar su zona.",misiones:[
+        ["🤝","Invita a alguien","Cuéntale a una persona una forma sencilla de cuidar el entorno."],
+        ["📍","Conoce tu zona","Identifica un lugar de tu comunidad que merece más cuidado."],
+        ["🌱","Propón una acción","Piensa una actividad ambiental que podría realizar tu zona."]]},
+    ciencia:{nombre:"Ciencia ambiental",icono:"🔬",texto:"Tu mundo está enfocado en observar, preguntar y comprender el ambiente.",misiones:[
+        ["🔎","Pregunta ambiental","Formula una pregunta sobre un problema ambiental de tu zona."],
+        ["🧪","Observa y compara","Compara dos lugares y nota una diferencia ambiental."],
+        ["📚","Dato científico","Aprende un dato sobre una especie o ecosistema local."]]}
+};
+
+let perfilComunidad = null;
+let progresoMisiones = 0;
+let misionesCompletadas = [];
+let avatarData = "";
+
+function abrirAppComunidad(){
+    cerrarMenu();
+    document.getElementById("appPage").classList.add("abierto");
+    document.getElementById("appPage").setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+    cargarPerfilLocal();
+}
+
+function cerrarAppComunidad(){
+    document.getElementById("appPage").classList.remove("abierto");
+    document.getElementById("appPage").setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
+}
+
+function cargarPerfilLocal(){
+    const guardado = localStorage.getItem("uuelPerfil");
+    const progreso = localStorage.getItem("uuelProgreso");
+    const completadas = localStorage.getItem("uuelMisiones");
+    if(guardado){
+        perfilComunidad=JSON.parse(guardado);
+        progresoMisiones=Number(progreso||0);
+        misionesCompletadas=JSON.parse(completadas||"[]");
+        mostrarDashboard();
+    }else{
+        document.getElementById("appRegistro").style.display="block";
+        document.getElementById("appDashboard").style.display="none";
+    }
+}
+
+function previsualizarAvatar(event){
+    const archivo=event.target.files[0];
+    if(!archivo) return;
+    const lector=new FileReader();
+    lector.onload=function(){
+        avatarData=lector.result;
+        document.getElementById("avatarPreview").innerHTML='<img src="'+avatarData+'" alt="Avatar">';
+    };
+    lector.readAsDataURL(archivo);
+}
+
+async function crearPerfil(event){
+    event.preventDefault();
+    const form=event.target;
+    const usuario=form.usuario.value.trim().replace(/\s+/g,"_").toLowerCase();
+    const nombre=form.nombre.value.trim();
+    const zona=form.zona.value;
+    const interes=form.interes.value;
+    perfilComunidad={usuario,nombre,zona,interes,avatar:avatarData||"🌱"};
+
+    try{
+        await push(ref(db,"perfiles"),{
+            usuario,nombre,zona,interes,
+            fecha:serverTimestamp(),
+            estado:"activo"
+        });
+        localStorage.setItem("uuelPerfil",JSON.stringify(perfilComunidad));
+        localStorage.setItem("uuelProgreso","0");
+        localStorage.setItem("uuelMisiones","[]");
+        progresoMisiones=0;
+        misionesCompletadas=[];
+        mostrarDashboard();
+    }catch(error){
+        console.error(error);
+        const estado=document.getElementById("estadoPerfil");
+        estado.className="estado-envio error";
+        estado.textContent="No se pudo guardar el perfil en Firebase. Revisa las reglas de la base de datos.";
+    }
+}
+
+function mostrarDashboard(){
+    document.getElementById("appRegistro").style.display="none";
+    document.getElementById("appDashboard").style.display="flex";
+    document.getElementById("perfilUsuario").textContent="@"+perfilComunidad.usuario;
+    document.getElementById("perfilNombre").textContent=perfilComunidad.nombre;
+    document.getElementById("perfilZona").textContent=perfilComunidad.zona;
+    document.getElementById("cambiarInteres").value=perfilComunidad.interes;
+    actualizarAvatarUI();
+    actualizarInteresUI();
+    actualizarHuella();
+}
+
+function actualizarAvatarUI(){
+    const mini=document.getElementById("appAvatarMini");
+    const grande=document.getElementById("appAvatarGrande");
+    if(perfilComunidad.avatar && perfilComunidad.avatar.startsWith("data:")){
+        mini.innerHTML='<img src="'+perfilComunidad.avatar+'" alt="Avatar">';
+        grande.innerHTML='<img src="'+perfilComunidad.avatar+'" alt="Avatar">';
+    }else{
+        mini.textContent=perfilComunidad.avatar||"🌱";
+        grande.textContent=perfilComunidad.avatar||"🌱";
+    }
+}
+
+function actualizarInteres(){
+    const nuevo=document.getElementById("cambiarInteres").value;
+    perfilComunidad.interes=nuevo;
+    localStorage.setItem("uuelPerfil",JSON.stringify(perfilComunidad));
+    actualizarInteresUI();
+}
+
+function actualizarInteresUI(){
+    const datos=datosIntereses[perfilComunidad.interes]||datosIntereses.plantas;
+    document.body.classList.remove("interes-agua","interes-residuos","interes-animales","interes-comunidad","interes-ciencia");
+    if(perfilComunidad.interes!=="plantas") document.body.classList.add("interes-"+perfilComunidad.interes);
+    document.getElementById("perfilInteres").textContent=datos.nombre;
+    document.getElementById("dashInteresTexto").textContent=datos.texto;
+    document.getElementById("interesBadge").textContent=datos.icono+" "+datos.nombre;
+    renderMisiones(datos);
+}
+
+function renderMisiones(datos){
+    const grid=document.getElementById("misionesGrid");
+    grid.innerHTML="";
+    datos.misiones.forEach((mision,index)=>{
+        const id=perfilComunidad.interes+"-"+index;
+        const hecha=misionesCompletadas.includes(id);
+        const card=document.createElement("article");
+        card.className="mision-card"+(hecha?" completada":"");
+        card.innerHTML='<span class="mision-icono">'+mision[0]+'</span><h3>'+mision[1]+'</h3><p>'+mision[2]+'</p><button type="button" '+(hecha?"disabled":"")+'>'+ (hecha?"✅ Completada":"Completar misión") +'</button>';
+        if(!hecha) card.querySelector("button").onclick=()=>completarMision(id,card);
+        grid.appendChild(card);
+    });
+}
+
+function completarMision(id,card){
+    if(misionesCompletadas.includes(id)) return;
+    misionesCompletadas.push(id);
+    progresoMisiones=Math.min(10,progresoMisiones+1);
+    localStorage.setItem("uuelMisiones",JSON.stringify(misionesCompletadas));
+    localStorage.setItem("uuelProgreso",String(progresoMisiones));
+    card.classList.add("completada");
+    const boton=card.querySelector("button");
+    boton.disabled=true;
+    boton.textContent="✅ Completada";
+    actualizarHuella();
+}
+
+function actualizarHuella(){
+    const porcentaje=(progresoMisiones/10)*100;
+    document.getElementById("huellaNumero").textContent=progresoMisiones+" / 10";
+    document.getElementById("bateriaRelleno").style.width=porcentaje+"%";
+    let texto="Completa misiones para llenar tu batería ambiental.";
+    if(progresoMisiones>=10) texto="🌎 ¡Huella completa! Has desbloqueado todas las funciones disponibles.";
+    else if(progresoMisiones>=7) texto="✨ Casi llegas al final. Ya puedes coleccionar frases.";
+    else if(progresoMisiones>=5) texto="🖼️ ¡Nuevo desbloqueo! Ya puedes acceder al álbum de stickers.";
+    else if(progresoMisiones>=3) texto="🎵 ¡Nuevo desbloqueo! Ya puedes descubrir la playlist ambiental.";
+    document.getElementById("huellaTexto").textContent=texto;
+    desbloquear("unlockPlaylist",3);
+    desbloquear("unlockAlbum",5);
+    desbloquear("unlockFrase",7);
+    desbloquear("unlockGames",10);
+}
+
+function desbloquear(id,limite){
+    const elemento=document.getElementById(id);
+    if(progresoMisiones>=limite){
+        elemento.classList.remove("bloqueado");
+        elemento.classList.add("desbloqueado");
+        elemento.querySelector("small").textContent="🔓 Desbloqueado";
+    }
+}
+
+function alternarPerfilPanel(){
+    document.getElementById("perfilPanel").classList.toggle("abierto");
+}
+
+function cerrarSesionLocal(){
+    if(!confirm("¿Quieres cambiar de usuario en este dispositivo? Se conservará el perfil actual en Firebase, pero esta pantalla volverá al registro.")) return;
+    localStorage.removeItem("uuelPerfil");
+    localStorage.removeItem("uuelProgreso");
+    localStorage.removeItem("uuelMisiones");
+    perfilComunidad=null;
+    progresoMisiones=0;
+    misionesCompletadas=[];
+    document.getElementById("perfilPanel").classList.remove("abierto");
+    document.getElementById("appRegistro").style.display="block";
+    document.getElementById("appDashboard").style.display="none";
+    document.getElementById("perfilForm").reset();
+    document.getElementById("avatarPreview").textContent="🌱";
+}
+
+window.abrirAppComunidad=abrirAppComunidad;
+window.cerrarAppComunidad=cerrarAppComunidad;
+window.alternarPerfilPanel=alternarPerfilPanel;
+window.crearPerfil=crearPerfil;
+window.previsualizarAvatar=previsualizarAvatar;
+window.actualizarInteres=actualizarInteres;
+window.cerrarSesionLocal=cerrarSesionLocal;
 
 /* ==================================================
    CLIC FUERA DEL MODAL
@@ -3663,24 +3738,6 @@ document.addEventListener(
 
 
 /* ==================================================
-   RECUPERAR PERFIL DEL USUARIO
-================================================== */
-function cargarPerfil(){
-    try{
-        const perfil = JSON.parse(localStorage.getItem("perfilUnidos"));
-        if(!perfil) return;
-        const zona = document.getElementById("perfilZona");
-        const interes = document.getElementById("perfilInteres");
-        const misiones = document.getElementById("perfilMisiones");
-        const bienvenida = document.getElementById("bienvenidaComunidad");
-        if(zona) zona.textContent = perfil.zona || "-";
-        if(interes) interes.textContent = perfil.interes || "-";
-        if(misiones) misiones.textContent = perfil.misiones || 0;
-        if(bienvenida) bienvenida.textContent = "¡Bienvenido/a, " + (perfil.nombre || "participante") + "! Tu comunidad es " + (perfil.zona || "Yura") + ".";
-    }catch(e){ console.log("No hay perfil guardado."); }
-}
-
-/* ==================================================
    ESTILO INICIAL
 ================================================== */
 
@@ -3688,8 +3745,6 @@ function cargarPerfil(){
 document.body
     .classList
     .add("estilo-natural");
-
-cargarPerfil();
 
 
 
