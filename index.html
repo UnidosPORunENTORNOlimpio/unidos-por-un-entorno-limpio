@@ -1287,6 +1287,13 @@ footer p{
 
 }
 
+
+/* ==================================================
+   COMUNIDAD, ZONAS Y MISIONES
+================================================== */
+.zona-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}.zona-card{padding:18px;border-radius:18px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12)}.zona-card strong{font-family:"Montserrat",sans-serif}.mision-card{margin-top:18px;padding:22px;border-radius:22px;background:rgba(255,255,255,.10);border-left:5px solid #d8d39b}.mision-card h3{margin-top:0}.perfil-resumen{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}.dato-perfil{padding:15px;border-radius:16px;background:rgba(0,0,0,.12)}.dato-perfil b{display:block;font-family:"Montserrat",sans-serif;margin-bottom:4px}.prioridad{display:inline-block;padding:6px 12px;border-radius:20px;font-family:"Montserrat",sans-serif;font-weight:700;font-size:13px;margin-top:8px}.prioridad.urgente{background:#8f2d2d}.prioridad.importante{background:#9a6b22}.prioridad.leve{background:#47704a}.acciones-mision{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.acciones-mision button{border:none;border-radius:22px;padding:11px 18px;cursor:pointer;font-family:"Montserrat",sans-serif;font-weight:700;background:#737945;color:white}.estado-envio{margin-top:8px;font-family:"Montserrat",sans-serif;font-weight:600}.estado-envio.exito{color:#d8f3c8}.estado-envio.error{color:#ffd0d0}
+@media(max-width:700px){.zona-grid{grid-template-columns:1fr 1fr}.perfil-resumen{grid-template-columns:1fr 1fr}}
+
 </style>
 
 </head>
@@ -2271,6 +2278,30 @@ footer p{
 
 
             <label>
+                📍 ¿En qué zona participas?
+            </label>
+
+            <select name="zona" required>
+                <option value="">Selecciona tu zona</option>
+                <option value="Yura Centro">Yura Centro</option>
+                <option value="La Calera">La Calera</option>
+                <option value="Ciudad de Dios">Ciudad de Dios</option>
+                <option value="Otra zona de Yura">Otra zona de Yura</option>
+            </select>
+
+            <label>
+                🌱 ¿Qué actividades te interesan?
+            </label>
+
+            <select name="interes" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Limpieza">Limpieza de espacios</option>
+                <option value="Plantas">Cuidado de plantas</option>
+                <option value="Agua">Cuidado del agua</option>
+                <option value="Difusion">Difusión y sensibilización</option>
+            </select>
+
+            <label>
                 Mensaje
             </label>
 
@@ -2406,6 +2437,39 @@ footer p{
 
             </select>
 
+
+            <label>
+                📍 Zona del reporte
+            </label>
+
+            <select name="zona" required>
+                <option value="">Selecciona la zona</option>
+                <option value="Yura Centro">Yura Centro</option>
+                <option value="La Calera">La Calera</option>
+                <option value="Ciudad de Dios">Ciudad de Dios</option>
+                <option value="Otra zona de Yura">Otra zona de Yura</option>
+            </select>
+
+            <label>
+                📏 Tamaño o alcance del problema
+            </label>
+
+            <select name="alcance" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Pequeño">Pequeño</option>
+                <option value="Mediano">Mediano</option>
+                <option value="Grande">Grande</option>
+            </select>
+
+            <label>
+                ⚠️ ¿Representa peligro?
+            </label>
+
+            <select name="peligro" required>
+                <option value="">Selecciona una opción</option>
+                <option value="No">No</option>
+                <option value="Sí">Sí</option>
+            </select>
 
             <label>
                 Describe el problema
@@ -2600,6 +2664,30 @@ footer p{
 </div>
 
 
+
+<!-- ==================================================
+     PÁGINA DEL USUARIO: MI COMUNIDAD
+================================================== -->
+<div class="modal" id="comunidad">
+  <div class="modal-contenido">
+    <button class="cerrar" onclick="cerrarModal('comunidad')">×</button>
+    <h2>🌱 Mi comunidad</h2>
+    <p id="bienvenidaComunidad">Tu participación empieza aquí.</p>
+    <div class="perfil-resumen">
+      <div class="dato-perfil"><b>📍 Mi zona</b><span id="perfilZona">-</span></div>
+      <div class="dato-perfil"><b>🌱 Interés</b><span id="perfilInteres">-</span></div>
+      <div class="dato-perfil"><b>🎯 Misiones</b><span id="perfilMisiones">0</span></div>
+    </div>
+    <h3>🎯 Misiones de tu zona</h3>
+    <div id="listaMisiones">
+      <div class="mision-card"><h3>🌿 Primera misión</h3><p>Pronto aparecerán aquí las acciones organizadas para tu zona. Los administradores podrán crear jornadas a partir de los reportes recibidos.</p></div>
+    </div>
+    <div class="acciones-mision">
+      <button type="button" onclick="abrirModal('reporta')">🚨 Reportar un problema</button>
+      <button type="button" onclick="cerrarModal('comunidad')">Seguir explorando 🌎</button>
+    </div>
+  </div>
+</div>
 
 <!-- ==================================================
      FOOTER
@@ -3093,6 +3181,17 @@ async function enviarFormulario(
                 .value
                 .trim();
 
+            const zona = formulario.querySelector('[name="zona"]').value;
+            const alcance = formulario.querySelector('[name="alcance"]').value;
+            const peligro = formulario.querySelector('[name="peligro"]').value;
+
+            let prioridad = "leve";
+            if (peligro === "Sí" || alcance === "Grande" || tipoProblema === "Quema de vegetación") {
+                prioridad = "urgente";
+            } else if (alcance === "Mediano" || tipoProblema === "Desperdicio de agua" || tipoProblema === "Daño a plantas") {
+                prioridad = "importante";
+            }
+
 
             await push(
 
@@ -3108,6 +3207,18 @@ async function enviarFormulario(
 
                     tipoProblema:
                         tipoProblema,
+
+                    zona:
+                        zona,
+
+                    alcance:
+                        alcance,
+
+                    peligro:
+                        peligro,
+
+                    prioridad:
+                        prioridad,
 
                     descripcion:
                         descripcion,
@@ -3172,6 +3283,11 @@ async function enviarFormulario(
                 )
                 .value;
 
+            const zona =
+                formulario.querySelector('[name="zona"]').value;
+
+            const interes =
+                formulario.querySelector('[name="interes"]').value;
 
             const mensajeUsuario =
                 formulario
@@ -3200,6 +3316,15 @@ async function enviarFormulario(
                     participacion:
                         participacion,
 
+                    zona:
+                        zona,
+
+                    interes:
+                        interes,
+
+                    misionesCompletadas:
+                        0,
+
                     mensaje:
                         mensajeUsuario,
 
@@ -3223,6 +3348,18 @@ async function enviarFormulario(
                 "exito"
 
             );
+
+            localStorage.setItem("perfilUnidos", JSON.stringify({nombre, zona, interes, participacion, misiones:0}));
+
+            document.getElementById("perfilZona").textContent = zona;
+            document.getElementById("perfilInteres").textContent = interes;
+            document.getElementById("perfilMisiones").textContent = "0";
+            document.getElementById("bienvenidaComunidad").textContent = "¡Bienvenido/a, " + nombre + "! Tu zona es " + zona + ".";
+
+            setTimeout(function(){
+                cerrarModal("unete");
+                abrirModal("comunidad");
+            }, 900);
 
         }
 
@@ -3526,6 +3663,24 @@ document.addEventListener(
 
 
 /* ==================================================
+   RECUPERAR PERFIL DEL USUARIO
+================================================== */
+function cargarPerfil(){
+    try{
+        const perfil = JSON.parse(localStorage.getItem("perfilUnidos"));
+        if(!perfil) return;
+        const zona = document.getElementById("perfilZona");
+        const interes = document.getElementById("perfilInteres");
+        const misiones = document.getElementById("perfilMisiones");
+        const bienvenida = document.getElementById("bienvenidaComunidad");
+        if(zona) zona.textContent = perfil.zona || "-";
+        if(interes) interes.textContent = perfil.interes || "-";
+        if(misiones) misiones.textContent = perfil.misiones || 0;
+        if(bienvenida) bienvenida.textContent = "¡Bienvenido/a, " + (perfil.nombre || "participante") + "! Tu comunidad es " + (perfil.zona || "Yura") + ".";
+    }catch(e){ console.log("No hay perfil guardado."); }
+}
+
+/* ==================================================
    ESTILO INICIAL
 ================================================== */
 
@@ -3533,6 +3688,8 @@ document.addEventListener(
 document.body
     .classList
     .add("estilo-natural");
+
+cargarPerfil();
 
 
 
